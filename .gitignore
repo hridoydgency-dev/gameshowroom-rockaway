@@ -19,3 +19,4 @@ qa-artifacts/
 /publish-to-github.bat
 /push-updates.ps1
 /push-updates.bat
+!/start-local-dev.bat

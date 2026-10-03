@@ -52,6 +52,8 @@ Playwright tests need Chromium: `npx playwright install chromium` locally.
 See `.env.example` and `docs/deployment.md`. Key ones: `SITE_URL`, `ALLOW_INDEXING` (false until launch), `PUBLIC_GTM_ID`, consent defaults. No secrets are needed.
 
 ## Content management
+A WordPress-style admin (Decap CMS) runs **locally only** at `http://localhost:4173/admin/` via `start-local-dev.bat` / `npm run dev` + `npx decap-server`. It is never deployed. See `docs/admin.md`.
+
 - **Business facts** (phone, hours, price, ages): edit `src/data/business.ts` only — every page, schema and FAQ reads from it. Never add a fact the owner hasn't published/confirmed.
 - **FAQ:** add to `src/data/faqs.ts` with `topics` (pages pull by topic) and `source`.
 - **Testimonials:** add to `content.ts → testimonials` with `source`, `sourceUrl`, `verified: true`. `/reviews/` becomes indexable at 3 verified reviews. No AggregateRating is emitted.

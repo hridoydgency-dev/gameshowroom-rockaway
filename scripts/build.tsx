@@ -28,6 +28,8 @@ const t0 = Date.now();
 rmSync(DIST, { recursive: true, force: true });
 mkdirSync(join(DIST, 'assets'), { recursive: true });
 if (existsSync(join(ROOT, 'public'))) cpSync(join(ROOT, 'public'), DIST, { recursive: true });
+// Safety net: the admin is local-only (repo /admin folder). Never ship a stray public/admin.
+rmSync(join(DIST, 'admin'), { recursive: true, force: true });
 
 const hash = (s: string | Buffer) => createHash('sha256').update(s).digest('hex').slice(0, 10);
 const walk = (d: string): string[] =>
@@ -94,10 +96,11 @@ writeFileSync(join(DIST, 'sitemap.xml'), sitemap);
 writeFileSync(
   join(DIST, 'robots.txt'),
   config.allowIndexing
-    ? `User-agent: *\nAllow: /\nDisallow: /lp/\nDisallow: /thank-you/\nDisallow: /admin/\n\nSitemap: ${absUrl('/sitemap.xml')}\n`
+    ? `User-agent: *\nAllow: /\nDisallow: /lp/\nDisallow: /thank-you/\n\nSitemap: ${absUrl('/sitemap.xml')}\n`
     : `# Staging build — indexing disabled (set ALLOW_INDEXING=true at launch)\nUser-agent: *\nDisallow: /\n`,
 );
-writeFileSync(join(DIST, '_redirects'), redirects.map((r) => `${r.from}  ${r.to}  ${r.status}`).join('\n') + '\n');
+// The admin (Decap CMS) is local-only: it is never copied to dist, and /admin returns 404 on Netlify.
+writeFileSync(join(DIST, '_redirects'), redirects.map((r) => `${r.from}  ${r.to}  ${r.status}`).join('\n') + '\n/admin  /404.html  404!\n/admin/*  /404.html  404!\n');
 // Netlify _headers (read from the publish dir; single source of truth for headers)
 writeFileSync(join(DIST, '_headers'), headersFile());
 
@@ -121,7 +124,6 @@ function headersFile() {
     block('/assets/*', { 'Cache-Control': 'public, max-age=31536000, immutable' }),
     block('/images/*', { 'Cache-Control': 'public, max-age=2592000' }),
     block('/lp/*', { 'X-Robots-Tag': 'noindex, follow' }),
-    block('/admin/*', { 'X-Robots-Tag': 'noindex, nofollow', 'Cache-Control': 'no-cache' }),
     block('/thank-you/*', { 'X-Robots-Tag': 'noindex, follow' }),
   ].join('\n');
 }

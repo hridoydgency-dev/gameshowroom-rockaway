@@ -181,14 +181,21 @@ test('reviews: only verified, sourced reviews render; /reviews/ indexable; no ra
   for (const fake of ['Michelle T.', 'Mr. Delgado', 'Ms. Chen']) assert.ok(!h.includes(fake));
 });
 
-test('admin (Decap CMS) ships, is noindex and points at the GitHub repo', () => {
-  const idx = readFileSync(join(DIST, 'admin/index.html'), 'utf8');
-  const cfg = readFileSync(join(DIST, 'admin/config.yml'), 'utf8');
-  assert.match(idx, /decap-cms/);
-  assert.match(idx, /noindex/);
-  assert.match(cfg, /repo: hridoydgency-dev\/gameshowroom-rockaway/);
+test('admin (Decap CMS) is local-only: not in the build, 404 on Netlify, config covers all content', () => {
+  assert.ok(!existsSync(join(DIST, 'admin')), 'dist/admin must not exist');
+  assert.match(readFileSync(join(DIST, '_redirects'), 'utf8'), /^\/admin\/\*\s+\/404\.html\s+404!$/m);
+  const cfg = readFileSync(join(ROOT, 'admin/config.yml'), 'utf8');
+  assert.match(cfg, /local_backend: true/);
   for (const f of ['business.json', 'settings.json', 'faqs.json', 'reviews.json', 'promotions.json', 'packages.json', 'gallery.json', 'seo.json']) assert.match(cfg, new RegExp(`content/${f}`));
-  assert.match(readFileSync(join(DIST, '_headers'), 'utf8'), /\/admin\/\*\n  X-Robots-Tag: noindex/);
+});
+
+test('dev server serves the admin locally from /admin', async () => {
+  const { serve } = await import('../scripts/serve');
+  const srv = await serve(DIST, 4179, { admin: join(ROOT, 'admin') });
+  try {
+    const a = await fetch('http://localhost:4179/admin/'); assert.equal(a.status, 200); assert.match(await a.text(), /decap-cms/);
+    assert.equal((await fetch('http://localhost:4179/admin/config.yml')).status, 200);
+  } finally { srv.close(); }
 });
 
 test('content tokens are resolved and CSP is set per page (not for /admin)', () => {
@@ -198,6 +205,7 @@ test('content tokens are resolved and CSP is set per page (not for /admin)', () 
     assert.match(h, /http-equiv="Content-Security-Policy"/);
   }
   assert.ok(!/Content-Security-Policy/.test(readFileSync(join(DIST, '_headers'), 'utf8')));
+  assert.ok(!/admin/.test(readFileSync(join(DIST, 'robots.txt'), 'utf8')));
 });
 
 test('blog posts render from Markdown with quick-answer boxes and tables', () => {

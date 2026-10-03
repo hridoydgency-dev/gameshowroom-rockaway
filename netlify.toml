@@ -6,6 +6,8 @@
 [build.environment]
   NODE_VERSION = "22"
   SITE_URL = "https://gameshowroomrockaway.com"
+  # Tests use Playwright locally; skip its ~150 MB browser download on Netlify builds
+  PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD = "1"
 
 # Indexing is OFF unless explicitly enabled. Flip ALLOW_INDEXING to "true" for the
 # production context ONLY when the custom domain is live (see docs/deployment.md).

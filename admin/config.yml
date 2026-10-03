@@ -1,17 +1,20 @@
-# Decap CMS — WordPress-style admin for Game Show Room Rockaway
-# Every "Publish" commits to GitHub (main) and Netlify rebuilds the site (~1–2 min).
-# If an edit breaks the build, Netlify keeps the previous version live.
+# Decap CMS — WordPress-style admin for Game Show Room Rockaway — LOCAL ONLY.
+# Runs at http://localhost:4173/admin/ via start-local-dev.bat (npm run dev + npx decap-server).
+# It is never deployed: the build does not copy /admin and Netlify returns 404 for /admin.
+# "Publish" writes to the files in /content; the local site rebuilds instantly.
+# Send changes live with push-updates.bat (GitHub → Netlify).
 backend:
   name: github
   repo: hridoydgency-dev/gameshowroom-rockaway
   branch: main
-  base_url: https://api.netlify.com   # Netlify's GitHub OAuth provider (set up once — see docs/admin.md)
   commit_messages:
     create: "[CMS] Create {{collection}} “{{slug}}”"
     update: "[CMS] Update {{collection}} “{{slug}}”"
     delete: "[CMS] Delete {{collection}} “{{slug}}”"
     uploadMedia: "[CMS] Upload “{{path}}”"
     deleteMedia: "[CMS] Delete “{{path}}”"
+
+local_backend: true   # uses `npx decap-server` on localhost:8081 (started by start-local-dev.bat)
 
 site_url: https://gameshowroom-rockaway.netlify.app
 display_url: https://gameshowroom-rockaway.netlify.app

@@ -1,9 +1,20 @@
-# Site admin (WordPress-style) — /admin/
+# Site admin (WordPress-style) — local only
 
-The site has a WordPress-like admin at **`/admin/`** powered by [Decap CMS](https://decapcms.org) (open source, free).
-Editors log in with GitHub, edit with forms, upload photos and click **Publish**. Each publish is a Git commit
-to `main`; Netlify rebuilds in ~1–2 minutes. If an edit is invalid (e.g. a wrong phone format), the build stops
-with a clear message in the Netlify deploy log and **the live site stays on the previous version**.
+The site has a WordPress-like admin powered by [Decap CMS](https://decapcms.org) (open source, free).
+**It runs only on your computer** at `http://localhost:4173/admin/`. It is never deployed: the build does not
+include it and the live site returns 404 for `/admin`.
+
+## Start it (Windows)
+1. Install **Node.js LTS** from https://nodejs.org (once).
+2. Open **`start-local-dev.bat`** in the project folder. First run installs the tools (~1 minute).
+   It opens two windows (keep both open) and your browser at `http://localhost:4173/admin/`:
+   - the local site + auto-rebuild (`npm run dev`)
+   - the admin's file backend (`npx decap-server`, port 8081)
+3. Edit and click **Publish** → the file in `/content` is saved and the local site rebuilds in about a second.
+4. Happy with it? Open **`push-updates.bat`** → GitHub → Netlify updates the live site in ~1–2 minutes.
+
+If an edit is invalid (e.g. a wrong phone format) the rebuild stops with a clear message in the dev window,
+and the previous version keeps being served; Netlify would also refuse to publish it.
 
 ## What can be edited
 
@@ -16,29 +27,11 @@ with a clear message in the Netlify deploy log and **the live site stays on the 
 | Promotions | `content/promotions.json` | Banner on chosen pages between start/end dates |
 | Party packages | `content/packages.json` | Package card on birthday, pricing and landing pages |
 | Photos | `content/gallery.json` + `public/images/uploads/` | "Inside the room" on the game show page |
-| Blog posts | `content/blog/*.md` | /blog/ and each post (new posts appear automatically) |
+| Blog posts | `content/blog/*.md` | /blog/ and each post |
 | SEO titles | `content/seo.json` | Google title + description per page |
 
-Page layouts and long-form page copy stay in code (`src/pages/*.tsx`) on purpose — they are built around search data and tested.
+Tokens usable in any text: `%PRICE%`, `%HOURS%`, `%PHONE%`.
 
-### Tokens
-Write these in any text field; they are replaced on publish: `%PRICE%` (price per guest), `%HOURS%` (opening hours), `%PHONE%`.
-
-## One-time setup (≈5 minutes, done by the GitHub repo owner)
-
-1. **Create a GitHub OAuth app** — GitHub → Settings → Developer settings → OAuth Apps → **New OAuth App**
-   - Application name: `Game Show Room Admin`
-   - Homepage URL: `https://gameshowroom-rockaway.netlify.app` (change to the real domain at launch)
-   - Authorization callback URL: **`https://api.netlify.com/auth/done`**
-   - Register → copy the **Client ID** → **Generate a new client secret** → copy it.
-2. **Connect it in Netlify** — Project → **Project configuration → Access & security → OAuth → Authentication providers → Install provider → GitHub** → paste Client ID + Client secret → Install.
-3. Open **`/admin/`** on the site → **Login with GitHub** → Authorize.
-
-### Adding editors
-Anyone who should edit needs **write access** to `hridoydgency-dev/gameshowroom-rockaway` (GitHub repo → Settings → Collaborators → Add people). They then log in at `/admin/` with their own GitHub account.
-
-## Good to know
-- `/admin/` is excluded from search (noindex header + robots.txt).
-- Uploaded photos are committed to `public/images/uploads/`; keep them under ~500 KB (resize to ~1600px wide).
-- Want drafts and review before publishing (like WordPress "Pending review")? Add `publish_mode: editorial_workflow` to `public/admin/config.yml`; edits then open pull requests and Netlify builds a preview for each.
-- Developers editing locally: change the same files under `content/`, run `npm run check`, push.
+## Files
+- `admin/index.html`, `admin/config.yml` — the admin (served only by `npm run dev`).
+- `start-local-preview.bat` — read-only preview without Node.js (no editing).
