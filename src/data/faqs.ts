@@ -1,0 +1,223 @@
+/**
+ * FAQ ENGINE — every answer is sourced from the business's published FAQ
+ * (gameshowroomrockaway.com/faqs, Oct 2026) or derived strictly from facts in business.ts.
+ * `searchEvidence` records which PPC/GSC/review signal makes the question worth answering.
+ * Pages pull FAQs by topic: faqsFor(['birthday']).
+ */
+import type { FAQ } from '../lib/types';
+
+export const faqs: FAQ[] = [
+  // ---------- Experience ----------
+  {
+    id: 'what-is', topics: ['game-show', 'general', 'home'], source: 'business-site',
+    q: 'What is the Game Show Room in Rockaway, NJ?',
+    a: 'Game Show Room is a live, host-led game show that your group plays together inside Rockaway Townsquare. For about 60 minutes your group becomes the contestants — buzzing in for trivia, solving puzzles and taking on creative and light physical challenges, with lights, music and a live host running the show.',
+    searchEvidence: 'GSC "game show room" (215 impr), "interactive game show experience", "what is game show palooza"',
+  },
+  {
+    id: 'how-long', topics: ['game-show', 'general', 'home', 'birthday'], source: 'business-site',
+    q: 'How long does the live game show last?',
+    a: 'Each Game Show Room session runs about 60 minutes. Birthday party bookings that include celebration time in the private Party Room run about 90 minutes to 2 hours in total.',
+  },
+  {
+    id: 'ages', topics: ['game-show', 'birthday', 'kids', 'home', 'general'], source: 'business-site',
+    q: 'What ages is the game show for?',
+    a: 'The game show is designed for ages 6 and up — kids, teens and adults can all play, and the host can adjust some activities for younger players. Younger siblings are welcome to watch and cheer from the sidelines.',
+    searchEvidence: 'PPC age modifiers peak at ages 6–13 ("10 year old birthday party", "13th birthday party ideas")',
+  },
+  {
+    id: 'challenges', topics: ['game-show'], source: 'business-site',
+    q: 'What kinds of challenges are in the game show?',
+    a: 'Expect a mix of trivia questions, puzzles, creative challenges and light physical challenges. Family-friendly, kid-focused and adult-level versions of the game are available, so the questions fit your group.',
+  },
+  {
+    id: 'players', topics: ['game-show', 'groups', 'pricing', 'home'], source: 'business-site',
+    q: 'How many players can play in one session?',
+    a: 'A standard Game Show Room session is designed for a group of 6–8 players, and every booking is private to your group. Larger groups of 40–60 players can be hosted with extended sessions or back-to-back shows.',
+  },
+  {
+    id: 'private', topics: ['game-show', 'groups', 'birthday'], source: 'business-site',
+    q: 'Will we be playing with strangers?',
+    a: 'No. Every Game Show Room booking is private to your group.',
+    searchEvidence: 'Competitor reviews: Great Big Game Show requires buying unused seats or pairing with other guests',
+  },
+  {
+    id: 'watchers', topics: ['game-show', 'birthday', 'kids'], source: 'business-site',
+    q: 'Can parents or guests watch without playing?',
+    a: 'Yes. Parents and guests who don’t want to play are welcome to watch and cheer from the sidelines.',
+  },
+  {
+    id: 'what-to-wear', topics: ['game-show', 'visit'], source: 'business-site',
+    q: 'What should we wear?',
+    a: 'Comfortable clothes and closed-toe shoes, so everyone can take part in the light physical challenges. All equipment is provided.',
+  },
+  {
+    id: 'photos', topics: ['game-show'], source: 'business-site',
+    q: 'Can we take photos or video?',
+    a: 'Limited photography is allowed. Please avoid filming entire challenges so the games stay fresh for future players.',
+  },
+  // ---------- Pricing ----------
+  {
+    id: 'price', topics: ['pricing', 'game-show', 'home', 'birthday', 'general'], source: 'business-site',
+    q: 'How much does the Game Show Room cost?',
+    a: 'Pricing depends on group size and package and starts at $33 per guest. For parties, large groups and corporate events, request a free event quote for an exact price.',
+    searchEvidence: 'GSC "how much is this?"; PPC "affordable birthday party places", "sky zone birthday party price", "how much is the great big game show"',
+  },
+  {
+    id: 'deposit', topics: ['pricing', 'groups'], source: 'business-site',
+    q: 'Is a deposit required?',
+    a: 'For large groups or private events, a deposit may be required to hold your time slot. The team will confirm the details with your quote.',
+  },
+  {
+    id: 'discounts', topics: ['pricing'], source: 'business-site',
+    q: 'Do you offer discounts for schools, nonprofits or large groups?',
+    a: 'Special rates are available for qualifying groups, including nonprofits and large groups. Promotions and returning-player perks run from time to time — call or request a quote for current offers.',
+  },
+  {
+    id: 'gift-cards', topics: ['pricing', 'general'], source: 'business-site',
+    q: 'Do you sell gift cards?',
+    a: 'Yes. Gift cards are available for families, groups or custom amounts. Call the Rockaway location to purchase one.',
+  },
+  // ---------- Birthday ----------
+  {
+    id: 'bday-how', topics: ['birthday', 'kids', 'teen', 'adult'], source: 'business-site',
+    q: 'How does a Game Show Room birthday party work?',
+    a: 'The Game Show Room Party Package includes one hour playing in the Game Show Room followed by an extra hour in a private Party Room for cake, food and presents.',
+  },
+  {
+    id: 'bday-room', topics: ['birthday', 'kids', 'teen'], source: 'business-site',
+    q: 'Is there a private party room for cake and food?',
+    a: 'Yes. The Party Package includes an extra hour in a private Party Room where you can serve cake, pizza or catering.',
+    searchEvidence: 'PPC "party room near me", "birthday party halls near me"',
+  },
+  {
+    id: 'bday-cake', topics: ['birthday', 'kids', 'teen', 'adult'], source: 'business-site',
+    q: 'Can we bring our own cake, food or decorations?',
+    a: 'Yes. You’re welcome to bring your own cake, cupcakes, food or decorations — just let the team know in advance so everything can be set up smoothly.',
+    searchEvidence: 'Competitor policy contrast: Sky Zone prohibits outside food except dessert',
+  },
+  {
+    id: 'bday-custom', topics: ['birthday', 'kids', 'teen', 'adult'], source: 'business-site',
+    q: 'Can the game show be customized for the birthday guest?',
+    a: 'Yes. The host can add personalized trivia, themed rounds or spotlight moments so the birthday guest is the star of the show.',
+  },
+  {
+    id: 'bday-advance', topics: ['birthday', 'booking'], source: 'business-site',
+    q: 'How far in advance should I book a birthday party?',
+    a: 'Book at least 48 hours in advance. Weekends and evenings fill quickly, so earlier is better.',
+  },
+  {
+    id: 'bday-supervision', topics: ['birthday', 'kids'], source: 'business-site',
+    q: 'Do parents need to stay for a kids party?',
+    a: 'Yes. All children’s parties require at least one adult (18+) present. Game Show Room staff host the game, and parents keep everything safe and smooth.',
+  },
+  {
+    id: 'bday-little', topics: ['birthday', 'kids'], source: 'business-site',
+    q: 'Can younger siblings come to the party?',
+    a: 'Yes. The main games are designed for ages 6 and up, but little ones are welcome to watch, cheer and join the celebration from the sidelines.',
+    searchEvidence: 'PPC toddler/1st-birthday searches — answer honestly that play is 6+',
+  },
+  {
+    id: 'bday-nonplayers', topics: ['birthday'], source: 'business-site',
+    q: 'What if some guests don’t want to play?',
+    a: 'That’s fine — non-players can watch, cheer and join the celebration from the sidelines.',
+  },
+  // ---------- Groups ----------
+  {
+    id: 'large', topics: ['groups', 'corporate', 'school'], source: 'business-site',
+    q: 'Can you host large groups?',
+    a: 'Yes. Groups of 40–60 players can be hosted with extended sessions or back-to-back shows. Groups larger than 8 are split into teams that rotate through rounds, and an overall champion can be crowned across all groups.',
+    searchEvidence: 'GSC "rockaway nj event space" (201 impr), "group activities near me"',
+  },
+  {
+    id: 'corporate', topics: ['corporate', 'groups'], source: 'business-site',
+    q: 'Do you offer corporate team-building events?',
+    a: 'Yes. Companies across New Jersey book the Game Show Room for team building. Games can be customized with company-specific or industry-based trivia to build teamwork and energy.',
+  },
+  {
+    id: 'school', topics: ['school', 'groups'], source: 'business-site',
+    q: 'Can school groups, sports teams or youth groups book?',
+    a: 'Yes. Game Show Room regularly hosts schools, sports teams and youth groups at Rockaway Townsquare.',
+    searchEvidence: 'GSC "school game shows new jersey" (37 impr)',
+  },
+  {
+    id: 'fundraiser', topics: ['school'], source: 'business-site',
+    q: 'Do you donate to school or nonprofit fundraisers?',
+    a: 'Yes. Game Show Room supports local nonprofits and schools with raffle and auction donations.',
+  },
+  {
+    id: 'seasonal', topics: ['groups', 'corporate', 'game-show'], source: 'business-site',
+    q: 'Do you run holiday or seasonal game shows?',
+    a: 'Yes. Special themed shows run throughout the year, from Halloween to Christmas.',
+  },
+  // ---------- Booking ----------
+  {
+    id: 'book-how', topics: ['booking', 'home', 'general'], source: 'business-site',
+    q: 'How do I book?',
+    a: 'Small groups of 6–8 players can book online and pick a date and time. For birthday parties with the Party Room, large groups or corporate events, request a free event quote or call (862) 200-7134.',
+  },
+  {
+    id: 'same-day', topics: ['booking'], source: 'business-site',
+    q: 'Can I book same-day or walk in?',
+    a: 'Walk-ins may be possible on some days, but reservations are strongly encouraged. Call the Rockaway location to check same-day availability.',
+    searchEvidence: 'GSC "activities near me open now", "any events today?"',
+  },
+  {
+    id: 'cancel', topics: ['booking'], source: 'business-site',
+    q: 'What is the cancellation or rescheduling policy?',
+    a: 'Contact the team as soon as possible if your plans change. They will review your booking and offer the best accommodation available.',
+  },
+  {
+    id: 'add-people', topics: ['booking'], source: 'business-site',
+    q: 'Can I add people after booking?',
+    a: 'Yes, if space allows. Contact the team before your session so they can adjust your booking.',
+  },
+  {
+    id: 'late', topics: ['booking', 'visit'], source: 'business-site',
+    q: 'How early should we arrive, and what if we are late?',
+    a: 'Arrive 10–15 minutes early for check-in and instructions. Late arrivals may have reduced playtime so other groups aren’t delayed.',
+  },
+  // ---------- Visit ----------
+  {
+    id: 'where', topics: ['visit', 'home', 'general'], source: 'business-site',
+    q: 'Where is the Game Show Room?',
+    a: 'Inside Rockaway Townsquare at 301 Mt Hope Ave, Suite 1001c, Rockaway, NJ 07866. Use the mall entrance near JCPenney — the Game Show Room entrance is on the first floor, next to the JCPenney entrance.',
+    searchEvidence: 'GSC "rockaway mall activities" (47), "rockaway mall events" (34), "301 mount hope ave rockaway nj"',
+  },
+  {
+    id: 'parking', topics: ['visit', 'birthday', 'general'], source: 'business-site',
+    q: 'Is parking free?',
+    a: 'Yes. Parking at Rockaway Townsquare is free — no validation required.',
+  },
+  {
+    id: 'transit', topics: ['visit'], source: 'business-site',
+    q: 'Can I get there by public transportation?',
+    a: 'Yes. NJ Transit bus routes serve Rockaway Townsquare. Check current NJ Transit schedules for routes and times.',
+  },
+  {
+    id: 'accessible', topics: ['visit', 'general'], source: 'business-site',
+    q: 'Is the Game Show Room wheelchair accessible?',
+    a: 'Yes. The Rockaway location is fully wheelchair accessible.',
+  },
+  {
+    id: 'food-included', topics: ['visit', 'pricing'], source: 'business-site',
+    q: 'Is food or drink included?',
+    a: 'Food and drinks are not included in a standard game show booking. Birthday parties can use the private Party Room for cake, pizza or catering, and Rockaway Townsquare has dining options nearby.',
+  },
+  {
+    id: 'escape-vs', topics: ['escape'], source: 'derived-from-business-facts',
+    q: 'Is the Game Show Room an escape room?',
+    a: 'No. In an escape room your group is locked in a themed room solving puzzles against a clock with no host on stage. The Game Show Room is a host-led live game show: your group competes in rounds of trivia, puzzles and challenges with buzzers, lights and music. The same company also operates escape rooms at Rockaway Townsquare if you want both.',
+    searchEvidence: 'GSC escape-room cluster: 1,483 impressions ("escape room rockaway nj" 453, "rockaway mall escape room" 324)',
+  },
+];
+
+export const faqsFor = (topics: string[], limit = 99) =>
+  faqs.filter((f) => f.topics.some((t) => topics.includes(t))).slice(0, limit);
+
+export const faqById = (id: string) => {
+  const f = faqs.find((x) => x.id === id);
+  if (!f) throw new Error(`Unknown FAQ id: ${id}`);
+  return f;
+};
+export const faqsByIds = (ids: string[]) => ids.map(faqById);
