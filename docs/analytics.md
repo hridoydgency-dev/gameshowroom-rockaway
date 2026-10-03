@@ -24,6 +24,7 @@ GTM     → GA4 events, Google Ads conversions, Meta Pixel, Microsoft UET (via t
 | `outbound_booking_click` | FareHarbor link click | cta_label, link_url | **Secondary Ads conversion** |
 | `phone_click` | tel: link | cta_label | **Ads conversion (calls from website)** |
 | `email_click` / `map_click` | mailto: / maps link | cta_label | Micro-conversion |
+| `review_click` / `review_write_click` | Google review links (read / leave a review) | cta_label | Trust engagement; review-request funnel |
 | `faq_open` | FAQ accordion opened | faq_id | Content insight |
 | `form_start` | first focus in a lead form | form_name, form_context | Form friction analysis |
 | `form_submit` | valid form submit | form_context, event_type, guests | — |

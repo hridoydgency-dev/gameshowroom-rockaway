@@ -1,26 +1,27 @@
 {
   "generatedBy": "scripts/seo-audit.ts",
   "inboundCounts": {
-    "/": 19,
-    "/game-show-experience/": 19,
-    "/birthday-parties/": 19,
-    "/birthday-parties/kids/": 19,
-    "/birthday-parties/teen-and-sweet-16/": 19,
-    "/birthday-parties/adult/": 19,
-    "/group-events/": 19,
-    "/group-events/corporate-team-building/": 19,
-    "/group-events/school-and-youth-groups/": 19,
-    "/pricing/": 19,
-    "/faq/": 19,
-    "/location/rockaway-nj/": 19,
-    "/game-show-vs-escape-room/": 19,
-    "/game-show-experiences-new-jersey/": 19,
-    "/things-to-do-rockaway-nj/": 19,
-    "/blog/": 19,
+    "/": 20,
+    "/game-show-experience/": 20,
+    "/birthday-parties/": 20,
+    "/birthday-parties/kids/": 20,
+    "/birthday-parties/teen-and-sweet-16/": 20,
+    "/birthday-parties/adult/": 20,
+    "/group-events/": 20,
+    "/group-events/corporate-team-building/": 20,
+    "/group-events/school-and-youth-groups/": 20,
+    "/pricing/": 20,
+    "/faq/": 20,
+    "/location/rockaway-nj/": 20,
+    "/game-show-vs-escape-room/": 20,
+    "/game-show-experiences-new-jersey/": 20,
+    "/things-to-do-rockaway-nj/": 20,
+    "/blog/": 20,
     "/blog/birthday-party-ideas-by-age/": 6,
     "/blog/how-much-does-a-kids-birthday-party-cost-nj/": 4,
-    "/book/": 19,
-    "/contact/": 19
+    "/book/": 20,
+    "/contact/": 20,
+    "/reviews/": 20
   },
   "outbound": {
     "/": [
@@ -115,6 +116,10 @@
       {
         "to": "/game-show-experience/",
         "anchor": "Friends & family A night out, any night Book a private session for 6–8 players —"
+      },
+      {
+        "to": "/reviews/",
+        "anchor": "Read all reviews"
       },
       {
         "to": "/pricing/",
@@ -271,6 +276,10 @@
         "anchor": "full pricing"
       },
       {
+        "to": "/reviews/",
+        "anchor": "Read all reviews"
+      },
+      {
         "to": "/location/rockaway-nj/",
         "anchor": "Parking, hours & nearby towns"
       },
@@ -405,6 +414,10 @@
         "anchor": "Adult and milestone birthdays"
       },
       {
+        "to": "/reviews/",
+        "anchor": "Read all reviews"
+      },
+      {
         "to": "/book/",
         "anchor": "Get my party quote"
       },
@@ -537,6 +550,10 @@
       {
         "to": "/",
         "anchor": "Home"
+      },
+      {
+        "to": "/reviews/",
+        "anchor": "Read all reviews"
       },
       {
         "to": "/book/",
@@ -807,6 +824,10 @@
         "anchor": "Book 6–8 online"
       },
       {
+        "to": "/reviews/",
+        "anchor": "Read all reviews"
+      },
+      {
         "to": "/book/",
         "anchor": "Get my party quote"
       },
@@ -947,6 +968,10 @@
       {
         "to": "/birthday-parties/",
         "anchor": "Birthday & celebration parties →"
+      },
+      {
+        "to": "/reviews/",
+        "anchor": "Read all reviews"
       },
       {
         "to": "/location/rockaway-nj/",
@@ -2689,6 +2714,144 @@
       {
         "to": "/location/rockaway-nj/",
         "anchor": "Directions & parking"
+      },
+      {
+        "to": "/privacy/",
+        "anchor": "Privacy"
+      },
+      {
+        "to": "/terms/",
+        "anchor": "Terms"
+      }
+    ],
+    "/reviews/": [
+      {
+        "to": "/",
+        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+      },
+      {
+        "to": "/game-show-experience/",
+        "anchor": "The Game Show"
+      },
+      {
+        "to": "/birthday-parties/",
+        "anchor": "Birthday Parties"
+      },
+      {
+        "to": "/birthday-parties/",
+        "anchor": "All birthday parties"
+      },
+      {
+        "to": "/birthday-parties/kids/",
+        "anchor": "Kids parties (ages 6–12)"
+      },
+      {
+        "to": "/birthday-parties/teen-and-sweet-16/",
+        "anchor": "Teen & Sweet 16 parties"
+      },
+      {
+        "to": "/birthday-parties/adult/",
+        "anchor": "Adult birthday parties"
+      },
+      {
+        "to": "/group-events/",
+        "anchor": "Groups & Events"
+      },
+      {
+        "to": "/group-events/",
+        "anchor": "All group events"
+      },
+      {
+        "to": "/group-events/corporate-team-building/",
+        "anchor": "Corporate team building"
+      },
+      {
+        "to": "/group-events/school-and-youth-groups/",
+        "anchor": "Schools & youth groups"
+      },
+      {
+        "to": "/pricing/",
+        "anchor": "Pricing"
+      },
+      {
+        "to": "/faq/",
+        "anchor": "FAQ"
+      },
+      {
+        "to": "/location/rockaway-nj/",
+        "anchor": "Visit"
+      },
+      {
+        "to": "/book/",
+        "anchor": "Book Now"
+      },
+      {
+        "to": "/",
+        "anchor": "Home"
+      },
+      {
+        "to": "/game-show-experience/",
+        "anchor": "How the live-hosted show works"
+      },
+      {
+        "to": "/group-events/",
+        "anchor": "Group events"
+      },
+      {
+        "to": "/birthday-parties/",
+        "anchor": "Birthday party package"
+      },
+      {
+        "to": "/birthday-parties/kids/",
+        "anchor": "Kids parties (6+)"
+      },
+      {
+        "to": "/birthday-parties/",
+        "anchor": "Custom birthday trivia"
+      },
+      {
+        "to": "/book/",
+        "anchor": "Book your game show"
+      },
+      {
+        "to": "/game-show-experience/",
+        "anchor": "Live game show experience"
+      },
+      {
+        "to": "/birthday-parties/",
+        "anchor": "Birthday parties"
+      },
+      {
+        "to": "/birthday-parties/kids/",
+        "anchor": "Kids birthday parties"
+      },
+      {
+        "to": "/group-events/school-and-youth-groups/",
+        "anchor": "School & youth groups"
+      },
+      {
+        "to": "/game-show-vs-escape-room/",
+        "anchor": "Game show vs. escape room"
+      },
+      {
+        "to": "/game-show-experiences-new-jersey/",
+        "anchor": "NJ game show experiences compared"
+      },
+      {
+        "to": "/things-to-do-rockaway-nj/",
+        "anchor": "Things to do in Rockaway, NJ"
+      },
+      {
+        "to": "/blog/",
+        "anchor": "Party planning blog"
+      },
+      {
+        "to": "/location/rockaway-nj/",
+        "anchor": "Directions & parking"
+      },
+      {
+        "to": "/contact/",
+        "anchor": "Contact"
       },
       {
         "to": "/privacy/",

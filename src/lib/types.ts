@@ -17,6 +17,7 @@ export interface Business {
   hours: { days: string[]; label: string; opens: string; closes: string }[];
   mapsUrl: string;
   sameAs: string[];
+  googleBusinessProfileUrl?: string;
   facts: Record<string, Fact>;
   booking: { provider: string; smallGroupUrl: string; largeGroupUrl: string };
   sisterLocations: { name: string; url: string }[];
@@ -40,8 +41,20 @@ export interface Testimonial {
   occasion?: string;
   source: 'google' | 'tripadvisor' | 'yelp' | 'facebook' | 'direct';
   sourceUrl?: string;
-  date?: string;
+  date?: string;            // approximate posting month (YYYY-MM), derived from the platform's relative date
+  rating?: number;          // stars given by the reviewer (1–5)
+  pages?: string[];         // commercial pages where this review is relevant social proof
+  highlight?: string;       // short verbatim excerpt for page snippets
   verified: boolean;        // only verified=true is ever rendered
+}
+
+export interface ReviewProfile {
+  platform: 'google';
+  name: string;
+  rating: number;
+  count: number;
+  capturedAt: string;       // date the rating/count was read from the platform
+  url: string;              // public listing (opens reviews)
 }
 
 export interface Promotion {

@@ -7,6 +7,7 @@ import type { RouteDef } from '../lib/types';
 import { Shell } from '../components/Layout';
 import { Hero, Steps, PackageCard, QuoteForm, TrustRow, PriceStrip, VisitBlock } from '../components/sections';
 import { Section, Eyebrow, H2, Button, BookingLink, CheckList } from '../components/ui';
+import { ReviewSnippets, GoogleRatingLine } from '../components/reviews';
 import { faqsByIds } from '../data/faqs';
 
 interface LP {
@@ -91,7 +92,7 @@ export const ppcRoutes: RouteDef[] = landingPages.map((lp) => {
         <Hero
           eyebrow={lp.eyebrow} title={lp.h1} lead={lp.lead} chips={lp.chips} primary={primary}
           secondary={lp.goal === 'quote' ? <BookingLink kind="large" label={`lp_${lp.slug}_hero_calendar`} size="lg" variant="ghost-light">Check party dates</BookingLink> : undefined}
-          note="Rockaway Townsquare · 301 Mt Hope Ave, Rockaway NJ 07866"
+          note={<span className="flex flex-wrap items-center gap-x-3 gap-y-1"><GoogleRatingLine dark label={`lp_${lp.slug}_hero`} /><span>Rockaway Townsquare · Rockaway NJ</span></span>}
         />
         <Section tone="light">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
@@ -114,6 +115,7 @@ export const ppcRoutes: RouteDef[] = landingPages.map((lp) => {
           </div>
           <div className="mt-10"><TrustRow /></div>
         </Section>
+        <ReviewSnippets path={path} tone="paper" />
         <Section tone="dark">
           <H2>How it works</H2>
           <Steps dark steps={[

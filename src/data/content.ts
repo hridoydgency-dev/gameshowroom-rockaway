@@ -2,7 +2,7 @@
  * Reusable content collections: experiences, birthday packages, locations,
  * testimonials, promotions, nearby areas. Add entries here — pages render them.
  */
-import type { Testimonial, Promotion } from '../lib/types';
+import type { Testimonial, Promotion, ReviewProfile } from '../lib/types';
 import { business } from './business';
 
 /** Bookable experiences (services). Add new games/rooms here. */
@@ -68,11 +68,59 @@ export const nearbyAreas = [
 ];
 
 /**
- * Testimonials — ONLY verified reviews with a source are rendered.
- * The 8 testimonials on the current site have no source attribution and could not be
- * verified, so they are intentionally NOT migrated (see docs/strategy.md).
+ * Google Business Profile snapshot (read 2026-10-03 from the public listing,
+ * kgmid /g/11yjpxzm89). Update `rating`, `count` and `capturedAt` whenever reviews change.
+ * Shown as visible text only — NOT emitted as AggregateRating schema (Google treats a business
+ * marking up its own reviews as self-serving and ineligible for review rich results).
  */
-export const testimonials: Testimonial[] = [];
+export const GOOGLE_REVIEWS_URL =
+  'https://www.google.com/maps/place/Game+Show+Room/@40.9080992,-74.5537202,17z/data=!4m8!3m7!1s0x89c30b1c819ea4f3:0x32f3b4377b6ec2e4!8m2!3d40.9080992!4d-74.5537202!9m1!1b1!16s%2Fg%2F11yjpxzm89';
+
+export const reviewProfiles: ReviewProfile[] = [
+  { platform: 'google', name: 'Google', rating: 5.0, count: 5, capturedAt: '2026-10-03', url: GOOGLE_REVIEWS_URL },
+];
+
+/**
+ * Testimonials — ONLY verified reviews with a public source are rendered.
+ * These are the Google reviews on the Game Show Room Rockaway profile (copied verbatim,
+ * 2026-10-03). Authors are shown as first name + last initial (or the public username).
+ * The 8 unsourced testimonials on the old WordPress site are intentionally NOT used.
+ */
+export const testimonials: Testimonial[] = [
+  {
+    id: 'g-ayouniques1', author: 'ayouniques1', source: 'google', sourceUrl: GOOGLE_REVIEWS_URL, rating: 5, date: '2026-07', verified: true,
+    occasion: "Daughter's 10th birthday party",
+    pages: ['/', '/birthday-parties/', '/birthday-parties/kids/', '/lp/kids-birthday-party/', '/lp/birthday-party/'],
+    highlight: 'One of our favorite touches was the customized Harry Potter and Disney trivia they created for our group.',
+    text: "Did our daughter's 10th birthday party here and overall it was a great experience! Dakota was a fantastic game show host; he came dressed to impress and did an amazing job keeping the kids engaged, laughing, and having fun throughout the event. One of our favorite touches was the customized Harry Potter and Disney trivia they created for our group. The kids were absolutely stoked whenever those categories came up! I also want to recognize manager Amelia, who stayed in communication throughout and ensured that we had a great experience. Most importantly, my daughter and her friends had an absolute blast, and that's what mattered most. Thank you for helping create such a special birthday celebration!",
+  },
+  {
+    id: 'g-coryanna', author: 'Coryanna D.', source: 'google', sourceUrl: GOOGLE_REVIEWS_URL, rating: 5, date: '2026-06', verified: true,
+    occasion: 'Family party with the Party Room',
+    pages: ['/birthday-parties/', '/birthday-parties/adult/', '/group-events/', '/lp/birthday-party/'],
+    highlight: 'A great and fun experience for all ages, children and adults.',
+    text: 'My family and I did a party room was a great and fun experience for all ages children and adults. 10/10 recommend this place and our game host Dakota!!',
+  },
+  {
+    id: 'g-ray', author: 'Ray H.', source: 'google', sourceUrl: GOOGLE_REVIEWS_URL, rating: 5, date: '2026-04', verified: true,
+    occasion: 'Group of friends',
+    pages: ['/', '/game-show-experience/', '/group-events/', '/lp/game-show-room/', '/lp/game-show-experience/'],
+    highlight: 'Had a blast with our group of friends!',
+    text: 'Dakota was awesome! Had a blast with our group of friends!',
+  },
+  {
+    id: 'g-jasmine', author: 'Jasmine H.', source: 'google', sourceUrl: GOOGLE_REVIEWS_URL, rating: 5, date: '2026-06', verified: true,
+    pages: ['/game-show-experience/', '/lp/game-show-experience/'],
+    text: 'Dakota was great .. we had a blast !',
+  },
+  {
+    id: 'g-jon', author: 'Jon T.', source: 'google', sourceUrl: GOOGLE_REVIEWS_URL, rating: 5, date: '2026-07', verified: true,
+    pages: ['/game-show-experience/', '/lp/game-show-room/'],
+    text: 'Great game show fun',
+  },
+];
+
+export const reviewsFor = (path: string, limit = 3) => testimonials.filter((t) => t.verified && t.pages?.includes(path)).slice(0, limit);
 
 /** Promotions — rendered only between start/end dates on listed pages. */
 export const promotions: Promotion[] = [];

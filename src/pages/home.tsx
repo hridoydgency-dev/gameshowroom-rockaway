@@ -2,6 +2,7 @@ import type { RouteDef } from '../lib/types';
 import { Shell } from '../components/Layout';
 import { Hero, QuickAnswer, Steps, Features, FAQSection, PriceStrip, PackageCard, VisitBlock, CtaBand, TrustRow, PromoSlot } from '../components/sections';
 import { Section, Eyebrow, H2, Button, BookingLink } from '../components/ui';
+import { ReviewSnippets, GoogleRatingLine } from '../components/reviews';
 import { faqsByIds } from '../data/faqs';
 import { faqPage, service, ids } from '../lib/schema';
 
@@ -63,7 +64,7 @@ export const home: RouteDef = {
         lead={<>Your group becomes the contestants: <strong>60 minutes</strong> of buzzers, trivia, puzzles and challenges run by a <strong>live host</strong>. Always private to your group — made for birthdays, team building and nights out.</>}
         primary={<Button href="/book/" size="lg" track={{ event: 'click_book_now', label: 'home_hero' }}>Book your game show</Button>}
         secondary={<Button href="/birthday-parties/" size="lg" variant="ghost-light" track={{ event: 'click_book_now', label: 'home_hero_birthday' }}>Plan a birthday party</Button>}
-        note="Book at least 48 hours ahead · Free parking"
+        note={<span className="flex flex-wrap items-center gap-x-3 gap-y-1"><GoogleRatingLine dark label="home_hero" /><span>Book 48+ hours ahead · Free parking</span></span>}
         artOnMobile
         chips={[
           { k: 'Price', v: 'From $33/guest' },
@@ -117,6 +118,8 @@ export const home: RouteDef = {
           ))}
         </ul>
       </Section>
+
+      <ReviewSnippets path="/" />
 
       <Section tone="dark" labelledBy="how-title">
         <Eyebrow dark>How it works</Eyebrow>

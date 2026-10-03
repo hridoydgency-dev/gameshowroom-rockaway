@@ -23,9 +23,10 @@
 | Party Package price & inclusions | Only format published; FAQ also says package "includes food, drinks, and dessert" while elsewhere guests bring their own | Package card shows "from $33/guest, quote for total" until confirmed |
 | Party Room capacity / max guests | not published | Party page planning |
 | Deposit & cancellation terms | "may be required" / "contact us" | Parents' top objection |
-| Exact Google Business Profile URL + lat/lng | not supplied | `sameAs`, `geo` in schema |
+| ~~Google Business Profile URL + lat/lng~~ | ✅ supplied 2026-10-03 (CID 3671476271624143588, pin 40.9080992,-74.5537202) | `sameAs`, `geo`, map links |
+| Opening hours | Website 11–8/11–9/11–7 vs GBP 12–8/12–9/12–6 | **Mismatch — confirm and align both** |
 | Real photos (set, podiums, Party Room, groups) | none accessible | #1 CRO + trust asset; photo slot ready on experience page |
-| Verified reviews | 8 unsourced testimonials on current site — **not migrated** | Reviews page noindex until ≥3 verified |
+| ~~Verified reviews~~ | ✅ 5 Google reviews (5.0) published verbatim with attribution on /reviews/ + page snippets; 8 unsourced WP testimonials still not used | Refresh `content.ts → reviewProfiles/testimonials` when new reviews arrive |
 | "In the Spotlight Rockaway" (189 GSC impr) | unknown | Possible former brand at the address — redirect/mention if related |
 | Gift card purchase URL | "available" | Add CTA |
 | Legal: privacy, terms, cookie policy, consent model | none | Placeholders are noindex |

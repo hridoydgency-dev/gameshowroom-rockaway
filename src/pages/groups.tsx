@@ -2,6 +2,7 @@ import type { RouteDef } from '../lib/types';
 import { Shell } from '../components/Layout';
 import { Hero, QuickAnswer, Steps, Features, FAQSection, VisitBlock, CtaBand, Related, QuoteForm, PriceStrip } from '../components/sections';
 import { Section, Eyebrow, H2, Button, CheckList, Card } from '../components/ui';
+import { ReviewSnippets, GoogleRatingLine } from '../components/reviews';
 import { faqsByIds } from '../data/faqs';
 import { faqPage, service, ids } from '../lib/schema';
 
@@ -59,6 +60,7 @@ export const groupsHub: RouteDef = {
         </div>
         <div className="mt-10"><PriceStrip trackLabel="groups" /></div>
       </Section>
+      <ReviewSnippets path="/group-events/" tone="paper" />
       <Section tone="light" id="quote"><div className="mx-auto max-w-3xl"><QuoteForm context="groups_hub" /></div></Section>
       <VisitBlock id="groups-visit" />
       <FAQSection list={hubFaqs} title="Group event questions" />

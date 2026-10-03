@@ -97,6 +97,8 @@ writeFileSync(
     : `# Staging build — indexing disabled (set ALLOW_INDEXING=true at launch)\nUser-agent: *\nDisallow: /\n`,
 );
 writeFileSync(join(DIST, '_redirects'), redirects.map((r) => `${r.from}  ${r.to}  ${r.status}`).join('\n') + '\n');
+// Netlify _headers (read from the publish dir; single source of truth for headers)
+writeFileSync(join(DIST, '_headers'), headersFile());
 
 // ---------- 5. Report ----------
 const qa = join(ROOT, 'qa-artifacts');
@@ -106,3 +108,27 @@ writeFileSync(join(qa, 'build-report.json'), JSON.stringify({
   css: { bytes: css.length, inlined: !!assets.cssInline }, js: { bytes: js.length }, pages: report, factsToConfirm,
 }, null, 2));
 console.log(`Built ${report.length} pages in ${Date.now() - t0}ms · css ${(css.length / 1024).toFixed(1)}KB${assets.cssInline ? ' (inlined)' : ''} · js ${(js.length / 1024).toFixed(1)}KB · indexing ${config.allowIndexing ? 'ON' : 'OFF'}`);
+
+function headersFile() {
+  const csp = [
+    "default-src 'self'",
+    "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://connect.facebook.net https://bat.bing.com",
+    "img-src 'self' data: https:",
+    "style-src 'self' 'unsafe-inline'",
+    "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.doubleclick.net https://www.google.com https://www.facebook.com https://bat.bing.com",
+    "frame-src https://www.googletagmanager.com https://fareharbor.com https://td.doubleclick.net",
+    "form-action 'self'", "base-uri 'self'", "object-src 'none'",
+  ].join('; ');
+  const block = (path: string, h: Record<string, string>) => `${path}\n${Object.entries(h).map(([k, v]) => `  ${k}: ${v}`).join('\n')}\n`;
+  return [
+    block('/*', {
+      'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'Referrer-Policy': 'strict-origin-when-cross-origin',
+      'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()', 'Content-Security-Policy': csp,
+      ...(config.allowIndexing ? {} : { 'X-Robots-Tag': 'noindex, nofollow' }),
+    }),
+    block('/assets/*', { 'Cache-Control': 'public, max-age=31536000, immutable' }),
+    block('/images/*', { 'Cache-Control': 'public, max-age=2592000' }),
+    block('/lp/*', { 'X-Robots-Tag': 'noindex, follow' }),
+    block('/thank-you/*', { 'X-Robots-Tag': 'noindex, follow' }),
+  ].join('\n');
+}

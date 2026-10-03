@@ -73,7 +73,7 @@ export function sitewideSchema() {
     ],
   };
   if (business.geo) lb.geo = { '@type': 'GeoCoordinates', latitude: business.geo.lat, longitude: business.geo.lng };
-  const sameAs = [...business.sameAs, config.googleBusinessProfileUrl].filter(Boolean);
+  const sameAs = business.sameAs.filter(Boolean);
   if (sameAs.length) lb.sameAs = sameAs;
 
   return [

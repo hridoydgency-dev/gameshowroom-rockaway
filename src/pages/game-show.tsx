@@ -2,6 +2,7 @@ import type { RouteDef } from '../lib/types';
 import { Shell } from '../components/Layout';
 import { Hero, QuickAnswer, Steps, Features, FAQSection, PriceStrip, VisitBlock, CtaBand, Related, TrustRow } from '../components/sections';
 import { Section, Eyebrow, H2, Button, BookingLink, CheckList, Card } from '../components/ui';
+import { ReviewSnippets, GoogleRatingLine } from '../components/reviews';
 import { faqsByIds } from '../data/faqs';
 import { faqPage, service, ids, article } from '../lib/schema';
 import { business } from '../data/business';
@@ -117,6 +118,7 @@ export const gameShow: RouteDef = {
         <H2 id="gs-photos">See the set before you book</H2>
         <p className="mt-3 max-w-2xl text-lg text-muted">Real photos of the Rockaway set — podiums, buzzers and the Party Room — are being added here. In the meantime, call {business.phone.display} and the team can describe the room for your group.</p>
       </Section>
+      <ReviewSnippets path="/game-show-experience/" title="Reviews from real players" />
       <VisitBlock />
       <FAQSection list={gsFaqs} title="Live game show FAQ" />
       <Related links={[

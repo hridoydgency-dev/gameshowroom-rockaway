@@ -32,11 +32,14 @@ export const business: Business = {
     { days: ['Friday', 'Saturday'], label: 'Fri–Sat', opens: '11:00', closes: '21:00' },
     { days: ['Sunday'], label: 'Sun', opens: '11:00', closes: '19:00' },
   ],
-  mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Game+Show+Room+301+Mt+Hope+Ave+Rockaway+NJ+07866',
+  mapsUrl: 'https://www.google.com/maps?cid=3671476271624143588',
   sameAs: [
     // Social profiles listed on the current site are All In Adventures brand profiles.
     'https://allinadventures.com/',
+    // Google Business Profile (knowledge-graph id /g/11yjpxzm89), supplied by owner 2026-10-03
+    'https://www.google.com/maps?cid=3671476271624143588',
   ],
+  googleBusinessProfileUrl: 'https://share.google/pjcBtcrmgphIDwWXv',
   facts: {
     pricePerGuestFrom: { value: 33, currency: 'USD', source: 'site: "starting at $33 per guest"' },
     sessionMinutes: { value: 60, source: 'site FAQ' },
@@ -65,6 +68,11 @@ export const business: Business = {
     giftCards: { value: true, source: 'site FAQ' },
     seasonalShows: { value: 'Holiday and seasonal themed shows (e.g. Halloween to Christmas)', source: 'site FAQ' },
     arrival: { value: 'Arrive 10–15 minutes early', source: 'site FAQ' },
+    hoursMatchGBP: {
+      value: false,
+      source: 'Website: Mon–Thu 11–8, Fri–Sat 11–9, Sun 11–7. Google Business Profile (Oct 3 2026): Mon–Thu 12–8, Fri–Sat 12–9, Sun 12–6 — CONFIRM which is correct and align both',
+      confirm: true,
+    },
   },
   booking: {
     provider: 'FareHarbor',
@@ -81,8 +89,8 @@ export const business: Business = {
       note: 'Escape rooms operated by the same company at Rockaway Townsquare',
     },
   ],
-  // geo intentionally omitted: add exact lat/lng from the Google Business Profile pin.
-  geo: undefined,
+  // Google Business Profile map pin (read 2026-10-03)
+  geo: { lat: 40.9080992, lng: -74.5537202 },
 };
 
 /** Facts the owner must confirm before launch. Surfaced in docs + build report. */

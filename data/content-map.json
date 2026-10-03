@@ -35,7 +35,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1554
+    "words": 1625
   },
   {
     "path": "/game-show-experience/",
@@ -88,7 +88,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1496
+    "words": 1558
   },
   {
     "path": "/birthday-parties/",
@@ -141,7 +141,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1459
+    "words": 1535
   },
   {
     "path": "/birthday-parties/kids/",
@@ -181,7 +181,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1317
+    "words": 1363
   },
   {
     "path": "/birthday-parties/teen-and-sweet-16/",
@@ -267,7 +267,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1237
+    "words": 1279
   },
   {
     "path": "/group-events/",
@@ -298,7 +298,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1042
+    "words": 1105
   },
   {
     "path": "/group-events/corporate-team-building/",
@@ -788,16 +788,16 @@
     "path": "/reviews/",
     "pageType": "utility",
     "template": "utility",
-    "indexable": false,
+    "indexable": true,
     "h1": "Game Show Room Rockaway reviews",
-    "title": "Game Show Room Rockaway Reviews",
+    "title": "Game Show Room Rockaway Reviews | 5.0 on Google",
     "primaryTopic": "game show room rockaway reviews",
     "secondaryTopics": [],
     "organicClusters": [],
     "paidClusters": [],
     "adGroups": [],
     "primaryConversion": "outbound_booking_click (FareHarbor)",
-    "viewEvent": null,
+    "viewEvent": "view_reviews",
     "schemaTypes": [
       "Organization",
       "EntertainmentBusiness",
@@ -806,7 +806,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 306
+    "words": 664
   },
   {
     "path": "/lp/game-show-room/",
@@ -836,7 +836,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 635
+    "words": 683
   },
   {
     "path": "/lp/game-show-experience/",
@@ -871,7 +871,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 647
+    "words": 700
   },
   {
     "path": "/lp/kids-birthday-party/",
@@ -905,7 +905,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 834
+    "words": 881
   },
   {
     "path": "/lp/birthday-party/",
@@ -942,7 +942,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 843
+    "words": 917
   },
   {
     "path": "/lp/team-building/",
@@ -973,7 +973,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 752
+    "words": 753
   },
   {
     "path": "/thank-you/",

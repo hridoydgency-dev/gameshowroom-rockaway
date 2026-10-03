@@ -10,3 +10,12 @@ dist/
 data-private/
 scripts/analysis/*.csv
 qa-artifacts/
+# Local helper files (kept out of the repo)
+/_git-history.bundle
+/_netlify-drop-staging-site.zip
+/serve-local.ps1
+/start-local-preview.bat
+/publish-to-github.ps1
+/publish-to-github.bat
+/push-updates.ps1
+/push-updates.bat

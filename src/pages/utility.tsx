@@ -1,9 +1,10 @@
 import type { RouteDef } from '../lib/types';
 import { Shell } from '../components/Layout';
 import { Section, H2, Eyebrow, Button, BookingLink, PhoneLink, EmailLink, MapLink, Card } from '../components/ui';
-import { QuoteForm, VisitBlock } from '../components/sections';
+import { QuoteForm, VisitBlock, CtaBand } from '../components/sections';
+import { RatingSummary, ReviewWall } from '../components/reviews';
 import { business } from '../data/business';
-import { testimonials, REVIEWS_INDEX_THRESHOLD } from '../data/content';
+import { testimonials, reviewProfiles, REVIEWS_INDEX_THRESHOLD } from '../data/content';
 import { config } from '../lib/config';
 
 const crumb = (name: string, path: string) => [{ name: 'Home', path: '/' }, { name, path }];
@@ -125,40 +126,70 @@ export const contact: RouteDef = {
   ),
 };
 
+/** Review themes — counts are computed from the verified reviews at build time, so they stay accurate. */
+const reviewThemes: { label: string; re: RegExp; href: string; link: string }[] = [
+  { label: 'Praise the host by name', re: /dakota|host/i, href: '/game-show-experience/', link: 'How the live-hosted show works' },
+  { label: 'Celebrated a birthday or party', re: /birthday|party/i, href: '/birthday-parties/', link: 'Birthday party package' },
+  { label: 'Came as a group of friends or family', re: /friends|family|group/i, href: '/group-events/', link: 'Group events' },
+  { label: 'Mention fun for all ages / kids', re: /all ages|kids|children/i, href: '/birthday-parties/kids/', link: 'Kids parties (6+)' },
+  { label: 'Mention custom trivia', re: /custom/i, href: '/birthday-parties/', link: 'Custom birthday trivia' },
+];
+
 export const reviews: RouteDef = {
-  path: '/reviews/', template: 'utility', pageType: 'utility',
+  path: '/reviews/', template: 'utility', pageType: 'utility', trackView: 'view_reviews',
   breadcrumb: crumb('Reviews', '/reviews/'),
   seo: {
-    title: 'Game Show Room Rockaway Reviews',
-    description: 'What groups say about the live Game Show Room at Rockaway Townsquare — verified guest reviews for birthday parties, team building and family nights.',
+    title: 'Game Show Room Rockaway Reviews | 5.0 on Google',
+    description: 'Read verified Google reviews of the live Game Show Room at Rockaway Townsquare, NJ: kids birthday parties, family parties and friend groups. Rated 5.0.',
     primaryTopic: 'game show room rockaway reviews',
     // Auto-indexable once enough verified reviews exist (never fake ones).
     noindex: testimonials.filter((t) => t.verified).length < REVIEWS_INDEX_THRESHOLD,
   },
-  sitemap: { priority: 0.5, changefreq: 'monthly' },
+  sitemap: { priority: 0.6, changefreq: 'monthly' },
+  lastModified: reviewProfiles[0].capturedAt,
   render: () => {
     const verified = testimonials.filter((t) => t.verified);
+    const g = reviewProfiles[0];
     return (
       <Shell breadcrumb={crumb('Reviews', '/reviews/')}>
         <Section tone="light">
-          <Eyebrow>Reviews</Eyebrow>
-          <h1 className="text-[2rem] font-black sm:text-5xl">Game Show Room Rockaway reviews</h1>
-          {verified.length ? (
-            <ul className="mt-8 grid gap-4 md:grid-cols-2">
-              {verified.map((t) => (
-                <li key={t.id}><Card><blockquote className="text-lg">&ldquo;{t.text}&rdquo;</blockquote><p className="mt-3 font-bold">{t.author}{t.occasion ? ` · ${t.occasion}` : ''}</p><p className="text-sm text-muted">Source: {t.sourceUrl ? <a href={t.sourceUrl} rel="noopener">{t.source}</a> : t.source}</p></Card></li>
-              ))}
-            </ul>
-          ) : (
-            <div className="mt-6 max-w-2xl space-y-4 text-lg">
-              <p>We only publish reviews we can link back to a real, verifiable source. Our guest reviews are collected on our public profiles — read them there, and if you&rsquo;ve played, we&rsquo;d love to hear from you.</p>
-              {config.googleBusinessProfileUrl && (
-                <p><a href={config.googleBusinessProfileUrl} rel="noopener" className="font-bold text-flash-dark underline">Read Game Show Room Rockaway reviews on Google</a></p>
-              )}
-              <p>Planning a party and want to talk to a real person first? Call <PhoneLink label="reviews_page" className="font-bold text-flash-dark underline" />.</p>
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+            <div>
+              <Eyebrow>Reviews</Eyebrow>
+              <h1 className="text-[2rem] font-black leading-tight sm:text-5xl">Game Show Room Rockaway reviews</h1>
+              <p className="mt-4 max-w-xl text-lg">
+                Every review on this page is copied word-for-word from our public <strong>Google Business Profile</strong> and links back to the original.
+                We don&rsquo;t edit, select or invent reviews — {g.count === verified.length ? 'these are all of them' : 'see Google for the full list'}.
+              </p>
             </div>
+            <RatingSummary />
+          </div>
+          {verified.length > 0 && (
+            <>
+              <h2 className="mt-12 text-2xl font-black sm:text-3xl">What guests mention most</h2>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {reviewThemes
+                  .map((th) => ({ ...th, n: verified.filter((t) => th.re.test(t.text)).length }))
+                  .filter((th) => th.n > 0)
+                  .sort((a, b) => b.n - a.n)
+                  .map((th) => (
+                    <li key={th.label} className="rounded-2xl border-2 border-ink bg-paper p-4">
+                      <p className="font-[family-name:var(--font-display)] text-3xl">{th.n} of {verified.length}</p>
+                      <p className="font-bold">{th.label}</p>
+                      <a href={th.href} className="mt-1 inline-block text-sm font-bold text-flash-dark underline">{th.link}</a>
+                    </li>
+                  ))}
+              </ul>
+              <h2 className="mt-12 text-2xl font-black sm:text-3xl">All Google reviews</h2>
+              <ReviewWall />
+            </>
           )}
+          <div className="mt-10 rounded-2xl border-2 border-dashed border-ink/40 p-5 text-lg">
+            <p><strong>Played with us?</strong> Reviews help other Morris County families and teams find us. <a href={g.url} rel="noopener" target="_blank" className="font-bold text-flash-dark underline" data-track="review_write_click" data-track-label="reviews_footer">Leave a Google review</a> — it takes about a minute.</p>
+            <p className="mt-2 text-base text-muted">Questions before you book? Call <PhoneLink label="reviews_page" className="font-bold text-flash-dark underline" />.</p>
+          </div>
         </Section>
+        <CtaBand label="reviews" title="Ready to be the next 5-star game show?" body="Book a private 60-minute show, or get a quote for your birthday or group event." />
       </Shell>
     );
   },

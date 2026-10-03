@@ -25,7 +25,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1554,
+    "words": 1625,
     "trackView": "view_service"
   },
   {
@@ -55,7 +55,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1496,
+    "words": 1558,
     "trackView": "view_game_show"
   },
   {
@@ -85,7 +85,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1459,
+    "words": 1535,
     "trackView": "view_birthday_party"
   },
   {
@@ -116,7 +116,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1317,
+    "words": 1363,
     "trackView": "view_birthday_party"
   },
   {
@@ -177,7 +177,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1237,
+    "words": 1279,
     "trackView": "view_birthday_party"
   },
   {
@@ -207,7 +207,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1042,
+    "words": 1105,
     "trackView": "view_service"
   },
   {
@@ -571,8 +571,8 @@
   },
   {
     "path": "/reviews/",
-    "title": "Game Show Room Rockaway Reviews",
-    "description": "What groups say about the live Game Show Room at Rockaway Townsquare — verified guest reviews for birthday parties, team building and family nights.",
+    "title": "Game Show Room Rockaway Reviews | 5.0 on Google",
+    "description": "Read verified Google reviews of the live Game Show Room at Rockaway Townsquare, NJ: kids birthday parties, family parties and friend groups. Rated 5.0.",
     "canonical": "https://gameshowroomrockaway.com/reviews/",
     "robots": "noindex, nofollow",
     "h1": "Game Show Room Rockaway reviews",
@@ -580,7 +580,7 @@
     "secondaryTopics": [],
     "pageType": "utility",
     "template": "utility",
-    "indexable": false,
+    "indexable": true,
     "schemaTypes": [
       "Organization",
       "EntertainmentBusiness",
@@ -589,8 +589,8 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 306,
-    "trackView": null
+    "words": 664,
+    "trackView": "view_reviews"
   },
   {
     "path": "/lp/game-show-room/",
@@ -612,7 +612,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 635,
+    "words": 683,
     "trackView": "view_game_show"
   },
   {
@@ -635,7 +635,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 647,
+    "words": 700,
     "trackView": "view_game_show"
   },
   {
@@ -658,7 +658,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 834,
+    "words": 881,
     "trackView": "view_birthday_party"
   },
   {
@@ -681,7 +681,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 843,
+    "words": 917,
     "trackView": "view_birthday_party"
   },
   {
@@ -704,7 +704,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 752,
+    "words": 753,
     "trackView": "view_service"
   },
   {

@@ -164,3 +164,19 @@ test('search-intelligence: every recommended URL / PPC landing page is a built r
     if (k.ppc_landing_page) assert.ok(built.has(k.ppc_landing_page), `${k.cluster} → ${k.ppc_landing_page}`);
   }
 });
+
+test('reviews: only verified, sourced reviews render; /reviews/ indexable; no rating schema', async () => {
+  const { testimonials, reviewProfiles } = await import('../src/data/content');
+  const h = html('/reviews/');
+  for (const t of testimonials) {
+    assert.ok(t.verified && t.sourceUrl && t.source, `${t.id} must be verified + sourced`);
+    const first = t.text.slice(0, 30).replace(/'/g, '&#x27;');
+    assert.ok(h.includes(first), `${t.id} text visible on /reviews/`);
+  }
+  assert.equal(reviewProfiles[0].count >= testimonials.length, true);
+  assert.ok(routes.find((r) => r.path === '/reviews/')!.seo.noindex === false);
+  assert.ok(!/aggregateRating/i.test(h));
+  assert.match(h, /data-track="review_write_click"/);
+  // old unsourced WordPress testimonials must never appear
+  for (const fake of ['Michelle T.', 'Mr. Delgado', 'Ms. Chen']) assert.ok(!h.includes(fake));
+});

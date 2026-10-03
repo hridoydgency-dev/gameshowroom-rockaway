@@ -3,6 +3,7 @@ import type { RouteDef, FAQ } from '../lib/types';
 import { Shell } from '../components/Layout';
 import { Hero, QuickAnswer, Steps, FAQSection, PackageCard, VisitBlock, CtaBand, Related, QuoteForm, TrustRow } from '../components/sections';
 import { Section, Eyebrow, H2, Button, CheckList, Card } from '../components/ui';
+import { ReviewSnippets, GoogleRatingLine } from '../components/reviews';
 import { faqsByIds } from '../data/faqs';
 import { faqPage, service, ids } from '../lib/schema';
 
@@ -33,6 +34,7 @@ function BirthdayTemplate({
         </div>
         {hub && <div className="mt-10"><TrustRow /></div>}
       </Section>
+      <ReviewSnippets path={path} tone="paper" title="What parents say on Google" />
       <Section tone="dark" labelledBy={`${label}-how`}>
         <Eyebrow dark>How the party works</Eyebrow>
         <H2 id={`${label}-how`}>{stepsTitle}</H2>
@@ -85,7 +87,7 @@ export const birthdayHub: RouteDef = {
         lead: <>The birthday guest gets the spotlight, everyone gets a buzzer. <strong>One hour of live game show</strong> + <strong>one hour in a private Party Room</strong> for cake and food — at Rockaway Townsquare.</>,
         primary: <Button href="#quote" size="lg" track={{ event: 'click_book_now', label: 'bday_hub_hero' }}>Get my party quote</Button>,
         secondary: <Button href="#package" size="lg" variant="ghost-light">What&rsquo;s included</Button>,
-        note: 'Indoor · private to your group · free parking',
+        note: <span className="flex flex-wrap items-center gap-x-3 gap-y-1"><GoogleRatingLine dark label="bday_hub_hero" /><span>Indoor · private · free parking</span></span>,
         chips: [{ k: 'Ages', v: '6 and up' }, { k: 'Party time', v: '~90 min–2 hrs' }, { k: 'Price', v: 'From $33/guest' }, { k: 'Cake', v: 'Bring your own' }],
       }}
       intro={<>

@@ -16,7 +16,7 @@ export const config = {
     consentAnalyticsDefault: env('PUBLIC_CONSENT_ANALYTICS_DEFAULT', 'granted') === 'denied' ? 'denied' : 'granted',
     consentAdsDefault: env('PUBLIC_CONSENT_ADS_DEFAULT', 'granted') === 'denied' ? 'denied' : 'granted',
   },
-  googleBusinessProfileUrl: env('PUBLIC_GOOGLE_BUSINESS_PROFILE_URL'),
+  googleBusinessProfileUrl: env('PUBLIC_GOOGLE_BUSINESS_PROFILE_URL', 'https://share.google/pjcBtcrmgphIDwWXv'),
   buildDate: new Date().toISOString().slice(0, 10),
 };
 
