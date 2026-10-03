@@ -27,16 +27,16 @@ export function Header({ minimal }: { minimal?: boolean }) {
       <div className="container-x flex h-16 items-center justify-between gap-3">
         <Logo />
         {minimal ? (
-          <PhoneLink label="header_minimal" className="inline-flex min-h-11 items-center rounded-full border-2 border-paper/60 px-4 text-sm font-bold text-paper no-underline">
-            Call {business.phone.display}
+          <PhoneLink label="header_minimal" className="inline-flex min-h-11 items-center whitespace-nowrap rounded-full border-2 border-paper/60 px-4 text-sm font-bold text-paper no-underline">
+            <span className="sm:hidden">Call us</span><span className="hidden sm:inline">Call {business.phone.display}</span>
           </PhoneLink>
         ) : (
           <>
             <nav aria-label="Primary" className="hidden lg:block">
-              <ul className="flex items-center gap-1 text-[0.95rem] font-semibold">
+              <ul className="flex items-center gap-0.5 text-[0.95rem] font-semibold">
                 {nav.map((item) => (
                   <li key={item.href} className="group relative">
-                    <a href={item.href} className="inline-flex min-h-11 items-center rounded-lg px-3 text-paper no-underline hover:bg-paper/10">
+                    <a href={item.href} className="inline-flex min-h-11 items-center whitespace-nowrap rounded-lg px-2.5 text-paper no-underline hover:bg-paper/10 xl:px-3">
                       {item.label}
                     </a>
                     {item.children && (
@@ -53,7 +53,7 @@ export function Header({ minimal }: { minimal?: boolean }) {
               </ul>
             </nav>
             <div className="flex items-center gap-2">
-              <PhoneLink label="header" className="hidden min-h-11 items-center whitespace-nowrap px-2 text-sm font-bold text-paper no-underline md:inline-flex">
+              <PhoneLink label="header" className="hidden min-h-11 items-center whitespace-nowrap px-2 text-sm font-bold text-paper no-underline md:inline-flex lg:hidden xl:inline-flex">
                 {business.phone.display}
               </PhoneLink>
               <span className="hidden sm:block">

@@ -8,10 +8,10 @@ import { fmtTime } from '../lib/format';
 
 /* ---------------- HERO ---------------- */
 export function Hero({
-  eyebrow, title, lead, chips, primary, secondary, art = true, note, id = 'hero-title',
+  eyebrow, title, lead, chips, primary, secondary, art = true, artOnMobile = false, note, id = 'hero-title',
 }: {
   eyebrow: string; title: ReactNode; lead: ReactNode; chips: { k: string; v: string }[];
-  primary: ReactNode; secondary?: ReactNode; art?: boolean; note?: ReactNode; id?: string;
+  primary: ReactNode; secondary?: ReactNode; art?: boolean; artOnMobile?: boolean; note?: ReactNode; id?: string;
 }) {
   return (
     <section aria-labelledby={id} className="stage-glow on-dark relative overflow-hidden text-paper">
@@ -25,7 +25,7 @@ export function Hero({
           <FactChips items={chips} dark />
         </div>
         {art && (
-          <div className="mx-auto w-full max-w-md lg:max-w-none">
+          <div className={cx('mx-auto w-full max-w-md lg:max-w-none', !artOnMobile && 'hidden sm:block')}>
             <StageArt className="w-full drop-shadow-[0_18px_40px_rgba(0,0,0,.45)]" />
           </div>
         )}
@@ -103,7 +103,7 @@ export function PackageCard({ trackLabel }: { trackLabel: string }) {
   return (
     <Card className="relative" >
       <div data-track-view="package_view" data-track-label={p.id}>
-        <p className="inline-block rounded-full bg-flash px-3 py-1 text-xs font-bold uppercase tracking-wider text-paper">Party package</p>
+        <p className="inline-block rounded-full bg-flash-dark px-3 py-1 text-xs font-bold uppercase tracking-wider text-paper">Party package</p>
         <h3 className="mt-3 text-2xl font-black">{p.name}</h3>
         <ul className="mt-3 flex flex-wrap gap-2 text-sm font-bold">
           {p.format.map((f) => <li key={f} className="rounded-lg bg-cream px-3 py-1.5">{f}</li>)}
@@ -243,7 +243,7 @@ export function VisitBlock({ id = 'visit' }: { id?: string }) {
               </div>
             ))}
           </dl>
-          <p className="mt-3 text-sm text-muted">Easy to reach from Denville, Dover, Randolph, Parsippany, Wharton and the rest of Morris County via Route 80 and Route 46.</p>
+          <p className="mt-3 text-sm text-muted">Easy to reach from Denville, Dover, Randolph, Parsippany, Wharton and the rest of Morris County via Route 80.</p>
           <p className="mt-4"><PhoneLink label={`${id}_hours`} className="text-lg font-black text-flash-dark underline" /></p>
         </Card>
       </div>
@@ -297,7 +297,7 @@ export function PromoSlot({ path }: { path: string }) {
   const promos = activePromotions(path);
   if (!promos.length) return null;
   return (
-    <div className="bg-flash text-paper">
+    <div className="bg-flash-dark text-paper">
       <div className="container-x py-2 text-center text-sm font-bold">
         {promos.map((p) => <p key={p.id}>{p.title} — {p.detail}{p.code ? ` Code: ${p.code}` : ''}</p>)}
       </div>

@@ -64,6 +64,7 @@ export const home: RouteDef = {
         primary={<Button href="/book/" size="lg" track={{ event: 'click_book_now', label: 'home_hero' }}>Book your game show</Button>}
         secondary={<Button href="/birthday-parties/" size="lg" variant="ghost-light" track={{ event: 'click_book_now', label: 'home_hero_birthday' }}>Plan a birthday party</Button>}
         note="Book at least 48 hours ahead · Free parking"
+        artOnMobile
         chips={[
           { k: 'Price', v: 'From $33/guest' },
           { k: 'Length', v: '60 minutes' },

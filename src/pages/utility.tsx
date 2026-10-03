@@ -112,7 +112,7 @@ export const contact: RouteDef = {
             <h2 className="text-2xl font-black">Talk to the Rockaway team</h2>
             <dl className="mt-4 space-y-3 text-lg">
               <div><dt className="text-sm font-bold uppercase tracking-wider text-flash-dark">Phone</dt><dd><PhoneLink label="contact_page" className="font-black text-ink underline" /></dd></div>
-              <div><dt className="text-sm font-bold uppercase tracking-wider text-flash-dark">Email</dt><dd><EmailLink label="contact_page" className="font-bold text-ink underline" /></dd></div>
+              <div><dt className="text-sm font-bold uppercase tracking-wider text-flash-dark">Email</dt><dd className="[overflow-wrap:anywhere]"><EmailLink label="contact_page" className="font-bold text-ink underline" /></dd></div>
               <div><dt className="text-sm font-bold uppercase tracking-wider text-flash-dark">Address</dt><dd>{business.address.street}, {business.address.city}, {business.address.region} {business.address.postalCode}<br /><span className="text-muted">Inside Rockaway Townsquare, first floor by JCPenney</span></dd></div>
             </dl>
             <MapLink label="contact_page" className="mt-5 inline-flex min-h-12 items-center rounded-full border-2 border-ink bg-gold px-6 font-bold text-ink no-underline">Get directions</MapLink>

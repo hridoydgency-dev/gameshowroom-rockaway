@@ -7,9 +7,9 @@
   --color-ink: #15102f;        /* primary text on light, base for dark sections */
   --color-stage: #231a57;      /* dark section background */
   --color-stage-2: #30247a;
-  --color-gold: #ffc53d;       /* primary CTA — 12.9:1 on ink */
+  --color-gold: #ffc53d;       /* primary CTA — ink text on gold 11.6:1 */
   --color-gold-2: #ffd873;
-  --color-flash: #e5336b;      /* accent (badges, highlights) */
+  --color-flash: #e5336b;      /* decorative accent only (white text on it fails AA) */
   --color-flash-dark: #b8174c; /* accent text on light bg — AA */
   --color-aqua: #3fd8d4;
   --color-cream: #fbf7ef;      /* page background */
