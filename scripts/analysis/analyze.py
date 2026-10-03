@@ -199,33 +199,43 @@ def cluster(t, c):
         return 'local:rockaway-townsquare-mall'
     return 'other:noise'
 
-CLUSTER_TO_URL = {
+CLUSTER_TO_URL = {  # must match src/routes.ts (verified by tests/data.test.ts)
     'brand:game-show-room': '/',
-    'brand:sister-escape-rooms': '/escape-rooms-rockaway/',
-    'game-show-birthday-party': '/birthday-parties/game-show-birthday-party/',
+    'brand:sister-escape-rooms': '/game-show-vs-escape-room/',
+    'game-show-birthday-party': '/birthday-parties/',
     'game-show:local': '/game-show-experience/',
     'game-show:generic-experience': '/game-show-experience/',
     'game-show:family-kids-school': '/group-events/school-and-youth-groups/',
     'game-show:corporate': '/group-events/corporate-team-building/',
     'events:corporate-team-building': '/group-events/corporate-team-building/',
-    'escape-room:local': '/escape-rooms-rockaway/',
-    'escape-room:generic': '/escape-rooms-rockaway/',
+    'escape-room:local': '/game-show-vs-escape-room/',
+    'escape-room:generic': '/game-show-vs-escape-room/',
     'birthday-venue:kids': '/birthday-parties/kids/',
     'birthday-venue:indoor': '/birthday-parties/',
     'birthday-venue:general': '/birthday-parties/',
     'birthday-venue:teen': '/birthday-parties/teen-and-sweet-16/',
     'birthday-venue:adult': '/birthday-parties/adult/',
-    'birthday-ideas:kids': '/blog/kids-birthday-party-ideas-morris-county/',
-    'birthday-ideas:teen': '/blog/teen-birthday-party-ideas/',
+    'birthday-ideas:kids': '/blog/birthday-party-ideas-by-age/',
+    'birthday-ideas:teen': '/blog/birthday-party-ideas-by-age/',
     'birthday-ideas:adult': '/birthday-parties/adult/',
-    'birthday-ideas:general': '/blog/kids-birthday-party-ideas-morris-county/',
+    'birthday-ideas:general': '/blog/birthday-party-ideas-by-age/',
     'things-to-do:adults-groups': '/things-to-do-rockaway-nj/',
     'things-to-do:kids-family': '/things-to-do-rockaway-nj/',
     'things-to-do:general-local': '/things-to-do-rockaway-nj/',
-    'local:rockaway-townsquare-mall': '/visit/rockaway-townsquare/',
-    'competitor:great big game show / american dream': '/compare/game-show-experiences-nj/',
+    'local:rockaway-townsquare-mall': '/location/rockaway-nj/',
+    'competitor:great big game show / american dream': '/game-show-experiences-new-jersey/',
     'competitor:game show battle rooms': '/game-show-experience/',
-    'competitor:game show challenge (freehold)': '/compare/game-show-experiences-nj/',
+    'competitor:game show challenge (freehold)': '/game-show-experiences-new-jersey/',
+}
+# PPC landing page per cluster (paid traffic) — noindex /lp/ pages
+CLUSTER_TO_LP = {
+    'brand:game-show-room': '/lp/game-show-room/',
+    'game-show:local': '/lp/game-show-experience/', 'game-show:generic-experience': '/lp/game-show-experience/',
+    'competitor:great big game show / american dream': '/lp/game-show-experience/',
+    'birthday-venue:kids': '/lp/kids-birthday-party/', 'birthday-venue:indoor': '/lp/kids-birthday-party/',
+    'birthday-venue:general': '/lp/birthday-party/', 'birthday-venue:teen': '/lp/birthday-party/', 'birthday-venue:adult': '/lp/birthday-party/',
+    'game-show-birthday-party': '/lp/birthday-party/',
+    'events:corporate-team-building': '/lp/team-building/', 'game-show:corporate': '/lp/team-building/',
 }
 
 rows = {}
@@ -269,7 +279,7 @@ for t, r in rows.items():
         'competitor': c['competitor'], 'commercial_intent': c['commercial'],
         'ppc': {'clicks': p['clicks'], 'cost': round(p['cost'], 2), 'impressions': p['impressions'], 'conversions': p['conversions'],
                 'campaigns': sorted(p['campaigns']), 'excluded_in_account': p['excluded']} if 'ppc' in r['sources'] else None,
-        'gsc': r['gsc'], 'recommended_url': url, 'page_status': 'built' if url else 'not targeted',
+        'gsc': r['gsc'], 'recommended_url': url, 'ppc_landing_page': CLUSTER_TO_LP.get(cl), 'page_status': 'built' if url else 'not targeted',
         'priority_score': priority, 'notes': notes,
     })
 out.sort(key=lambda x: -x['priority_score'])
@@ -366,3 +376,28 @@ print('neg spend', summary['negative_candidate_spend'])
 print('overlap', summary['ppc_gsc_overlap'][:20])
 print('ngrams', summary['ppc_ngrams_by_cost'][:40])
 print('hictr', summary['high_ctr_terms'][:20])
+
+# ---------- Public-repo exports (aggregated; no account IDs / PII) ----------
+keep = [r for r in out if r['gsc'] or (r['ppc'] and (r['ppc']['clicks'] > 0 or r['ppc']['impressions'] >= 5))]
+export = {
+    'meta': {
+        'generated': summary['generated'], 'ppc_date_range': summary['ppc_date_range'], 'gsc_date_range': summary['gsc_date_range'],
+        'rows': len(keep), 'rows_total_analyzed': len(out),
+        'filter': 'all GSC queries + PPC terms with >=1 click or >=5 impressions',
+        'fields': 'query, sources, intent, topic, cluster, occasions, activities, location, competitor, commercial_intent(0-100), ppc{clicks,cost,impressions,conversions,campaigns,excluded_in_account}, gsc{clicks,impressions,ctr,position}, recommended_url, ppc_landing_page, page_status, priority_score, notes',
+        'confidential': 'Contains campaign cost data. Keep this repository PRIVATE.',
+    },
+    'queries': keep,
+}
+json.dump(export, open(os.path.join(OUT, 'search-intelligence.json'), 'w'), indent=0, default=list)
+clusters = []
+for c in summary['by_cluster']:
+    clusters.append({**c, 'recommended_url': CLUSTER_TO_URL.get(c['cluster']), 'ppc_landing_page': CLUSTER_TO_LP.get(c['cluster'])})
+json.dump({'meta': export['meta'] | {'note': 'cluster-level rollup'}, 'by_intent': summary['by_intent'], 'by_topic': summary['by_topic'], 'by_cluster': clusters,
+           'occasions': summary['occasions'], 'age_mentions_by_impressions': summary['age_mentions_by_impressions'],
+           'geo_modifiers_by_impressions': summary['geo_modifiers_by_impressions'], 'negative_candidates': summary['negative_candidates'],
+           'negative_candidate_spend': summary['negative_candidate_spend'], 'ppc_gsc_overlap': summary['ppc_gsc_overlap'][:40],
+           'gsc_ctr_opportunities': summary['gsc_ctr_opportunities'], 'top_spend_terms': summary['top_spend_terms'], 'high_ctr_terms': summary['high_ctr_terms'],
+           'high_impr_low_ctr': summary['high_impr_low_ctr'], 'ppc_ngrams_by_cost': summary['ppc_ngrams_by_cost'][:40]},
+          open(os.path.join(OUT, 'search-clusters.json'), 'w'), indent=1, default=list)
+print('exported', len(keep), 'rows')
