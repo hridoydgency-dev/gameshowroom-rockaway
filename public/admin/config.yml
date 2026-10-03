@@ -1,0 +1,312 @@
+# Decap CMS — WordPress-style admin for Game Show Room Rockaway
+# Every "Publish" commits to GitHub (main) and Netlify rebuilds the site (~1–2 min).
+# If an edit breaks the build, Netlify keeps the previous version live.
+backend:
+  name: github
+  repo: hridoydgency-dev/gameshowroom-rockaway
+  branch: main
+  base_url: https://api.netlify.com   # Netlify's GitHub OAuth provider (set up once — see docs/admin.md)
+  commit_messages:
+    create: "[CMS] Create {{collection}} “{{slug}}”"
+    update: "[CMS] Update {{collection}} “{{slug}}”"
+    delete: "[CMS] Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[CMS] Upload “{{path}}”"
+    deleteMedia: "[CMS] Delete “{{path}}”"
+
+site_url: https://gameshowroom-rockaway.netlify.app
+display_url: https://gameshowroom-rockaway.netlify.app
+logo_url: /images/logo.png
+locale: en
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+collections:
+  # ───────────────────────── Settings ─────────────────────────
+  - name: settings
+    label: Settings
+    label_singular: Setting
+    icon: settings
+    editor: { preview: false }
+    files:
+      - name: business
+        label: Business info & hours
+        file: content/business.json
+        description: Name, phone, address, opening hours and starting price. These appear on every page, in the footer and in Google's structured data.
+        fields:
+          - { name: name, label: Business name, widget: string }
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: description, label: Short description (used by Google & AI search), widget: text }
+          - name: phone
+            label: Phone
+            widget: object
+            fields:
+              - { name: display, label: "Shown on site, e.g. (862) 200-7134", widget: string }
+              - { name: e164, label: "For tap-to-call, e.g. +18622007134", widget: string, pattern: ['^\+1\d{10}$', 'Use +1 followed by 10 digits'] }
+          - { name: email, label: Email, widget: string }
+          - name: address
+            label: Address
+            widget: object
+            fields:
+              - { name: street, label: Street & suite, widget: string }
+              - { name: venue, label: Where in the mall, widget: string }
+              - { name: city, label: City, widget: string }
+              - { name: region, label: State (2 letters), widget: string }
+              - { name: regionName, label: State name, widget: string }
+              - { name: postalCode, label: ZIP, widget: string }
+              - { name: country, label: Country code, widget: string, default: US }
+              - { name: county, label: County, widget: string }
+          - name: hours
+            label: Opening hours
+            label_singular: Hours row
+            widget: list
+            summary: "{{fields.label}}: {{fields.opens}}–{{fields.closes}}"
+            fields:
+              - { name: label, label: "Label shown, e.g. Mon–Thu", widget: string }
+              - name: days
+                label: Days
+                widget: select
+                multiple: true
+                options: [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]
+              - { name: opens, label: "Opens (24h, e.g. 11:00)", widget: string, pattern: ['^([01]\d|2[0-3]):[0-5]\d$', 'Use HH:MM, 24-hour'] }
+              - { name: closes, label: "Closes (24h, e.g. 20:00)", widget: string, pattern: ['^([01]\d|2[0-3]):[0-5]\d$', 'Use HH:MM, 24-hour'] }
+          - { name: pricePerGuestFrom, label: Game show price from ($ per guest), widget: number, value_type: int, min: 1 }
+          - name: booking
+            label: Booking links (FareHarbor)
+            widget: object
+            fields:
+              - { name: provider, label: Provider, widget: string, default: FareHarbor }
+              - { name: smallGroupUrl, label: Small group (6–8) booking URL, widget: string }
+              - { name: largeGroupUrl, label: Party / large group calendar URL, widget: string }
+          - { name: mapsUrl, label: Google Maps link, widget: string }
+          - { name: googleBusinessProfileUrl, label: Google Business Profile share link, widget: string, required: false }
+          - { name: nearbyAreas, label: Nearby towns served (location page), widget: list, field: { name: town, label: Town, widget: string } }
+
+      - name: site
+        label: Site settings
+        file: content/settings.json
+        description: Announcement bar, homepage headline and analytics.
+        fields:
+          - name: announcement
+            label: Announcement bar (top of every page)
+            widget: object
+            fields:
+              - { name: enabled, label: Show announcement, widget: boolean, default: false }
+              - { name: text, label: Message, widget: string, required: false, hint: "Keep it under ~90 characters, e.g. Holiday game shows now booking for December" }
+              - { name: link, label: Link (optional), widget: string, required: false, hint: "A page like /book/ or a full URL" }
+          - name: homeHero
+            label: Homepage headline
+            widget: object
+            fields:
+              - { name: title, label: Headline (H1), widget: string, hint: "Keep 'Rockaway, NJ' in it — it is the main search phrase" }
+              - { name: lead, label: Intro sentence, widget: text }
+          - { name: gtmId, label: Google Tag Manager ID, widget: string, required: false, hint: "Format GTM-XXXXXXX. Turns on GA4 / Google Ads tracking after the next publish.", pattern: ['^$|^GTM-[A-Z0-9]+$', 'Must look like GTM-XXXXXXX'] }
+
+  # ───────────────────────── Content ─────────────────────────
+  - name: faqs
+    label: FAQs
+    icon: help
+    editor: { preview: false }
+    files:
+      - name: faqs
+        label: All FAQs
+        file: content/faqs.json
+        description: Each FAQ appears on every page whose topic you tick, and on the FAQ page. Only write answers that are true for the business.
+        fields:
+          - name: faqs
+            label: FAQs
+            label_singular: FAQ
+            widget: list
+            summary: "{{fields.q}}"
+            fields:
+              - { name: id, label: "ID (short, unique, no spaces)", widget: string, pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and dashes only'] }
+              - { name: q, label: Question, widget: string }
+              - { name: a, label: Answer, widget: text, hint: "Write %PRICE% for the current price per guest (set in Business info), e.g. starts at $%PRICE% per guest." }
+              - name: topics
+                label: Show on pages about
+                widget: select
+                multiple: true
+                options:
+                  - { label: Homepage, value: home }
+                  - { label: General, value: general }
+                  - { label: The game show, value: game-show }
+                  - { label: Pricing, value: pricing }
+                  - { label: Birthday parties, value: birthday }
+                  - { label: Kids parties, value: kids }
+                  - { label: Teen parties, value: teen }
+                  - { label: Adult parties, value: adult }
+                  - { label: Groups, value: groups }
+                  - { label: Corporate, value: corporate }
+                  - { label: Schools, value: school }
+                  - { label: Booking, value: booking }
+                  - { label: Visiting / directions, value: visit }
+                  - { label: Escape room comparison, value: escape }
+              - { name: source, label: Source of the answer, widget: select, options: [business-site, derived-from-business-facts], default: business-site }
+              - { name: searchEvidence, label: Why this question matters (internal note), widget: string, required: false }
+
+  - name: reviews
+    label: Reviews
+    icon: star
+    editor: { preview: false }
+    files:
+      - name: reviews
+        label: Google reviews
+        file: content/reviews.json
+        description: Copy reviews word-for-word from Google. Only reviews marked Verified are shown. Update the rating and count whenever new reviews arrive.
+        fields:
+          - name: profile
+            label: Google rating
+            widget: object
+            fields:
+              - { name: platform, label: Platform, widget: hidden, default: google }
+              - { name: name, label: Name, widget: hidden, default: Google }
+              - { name: rating, label: Average rating, widget: number, value_type: float, min: 1, max: 5, step: 0.1 }
+              - { name: count, label: Number of reviews, widget: number, value_type: int, min: 0 }
+              - { name: capturedAt, label: Checked on, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+              - { name: url, label: Link to reviews on Google, widget: string }
+          - name: reviews
+            label: Reviews
+            label_singular: Review
+            widget: list
+            summary: "{{fields.author}} — {{fields.rating}}★"
+            fields:
+              - { name: id, label: "ID (unique)", widget: string }
+              - { name: author, label: "Name as shown (first name + initial)", widget: string }
+              - { name: rating, label: Stars, widget: number, value_type: int, min: 1, max: 5, default: 5 }
+              - { name: text, label: Review text (verbatim), widget: text }
+              - { name: highlight, label: Short excerpt for page snippets (verbatim), widget: string, required: false }
+              - { name: occasion, label: "Occasion, e.g. 10th birthday party", widget: string, required: false }
+              - { name: date, label: "Posted (YYYY-MM)", widget: string, required: false }
+              - { name: source, label: Source, widget: select, options: [google, tripadvisor, yelp, facebook, direct], default: google }
+              - { name: sourceUrl, label: Link to the review, widget: string }
+              - { name: verified, label: Verified (shown on site), widget: boolean, default: true }
+              - name: pages
+                label: Also show on
+                widget: select
+                multiple: true
+                required: false
+                options: ['/', '/game-show-experience/', '/birthday-parties/', '/birthday-parties/kids/', '/birthday-parties/teen-and-sweet-16/', '/birthday-parties/adult/', '/group-events/', '/lp/game-show-room/', '/lp/game-show-experience/', '/lp/kids-birthday-party/', '/lp/birthday-party/', '/lp/team-building/']
+
+  - name: promotions
+    label: Promotions
+    icon: megaphone
+    editor: { preview: false }
+    files:
+      - name: promotions
+        label: Promotions & offers
+        file: content/promotions.json
+        description: A promotion shows as a banner on the chosen pages between its start and end dates. Only add offers the business actually honors.
+        fields:
+          - name: promotions
+            label: Promotions
+            label_singular: Promotion
+            widget: list
+            summary: "{{fields.title}} ({{fields.startDate}} → {{fields.endDate}})"
+            fields:
+              - { name: id, label: "ID (unique)", widget: string }
+              - { name: title, label: Headline, widget: string }
+              - { name: detail, label: Detail, widget: string }
+              - { name: code, label: Promo code, widget: string, required: false }
+              - { name: startDate, label: Starts, widget: datetime, time_format: false, date_format: YYYY-MM-DD, format: YYYY-MM-DD }
+              - { name: endDate, label: Ends, widget: datetime, time_format: false, date_format: YYYY-MM-DD, format: YYYY-MM-DD }
+              - name: pages
+                label: Show on
+                widget: select
+                multiple: true
+                options: ['/', '/game-show-experience/', '/birthday-parties/', '/birthday-parties/kids/', '/birthday-parties/teen-and-sweet-16/', '/birthday-parties/adult/', '/group-events/', '/pricing/', '/book/']
+              - { name: terms, label: Terms, widget: text }
+
+  - name: packages
+    label: Party packages
+    icon: gift
+    editor: { preview: false }
+    files:
+      - name: packages
+        label: Birthday party packages
+        file: content/packages.json
+        description: Leave Price empty to show "from $X per guest — ask for a quote".
+        fields:
+          - name: packages
+            label: Packages
+            label_singular: Package
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: id, label: "ID (unique)", widget: string }
+              - { name: name, label: Package name, widget: string }
+              - { name: format, label: Format lines, widget: list, field: { name: line, label: Line, widget: string } }
+              - { name: includes, label: "What's included", widget: list, field: { name: item, label: Item, widget: string } }
+              - { name: price, label: Total price ($, optional), widget: number, value_type: int, required: false }
+              - { name: priceNote, label: Price note, widget: string }
+              - { name: totalTime, label: Total time, widget: string }
+              - { name: ages, label: Ages, widget: string }
+
+  - name: gallery
+    label: Photos
+    icon: image
+    editor: { preview: false }
+    files:
+      - name: gallery
+        label: Photo gallery
+        file: content/gallery.json
+        description: Real photos of the set, podiums and Party Room. They appear on the game show page ("Inside the room"). Upload JPG/PNG/WebP, ideally 1600px wide.
+        fields:
+          - name: photos
+            label: Photos
+            label_singular: Photo
+            widget: list
+            summary: "{{fields.alt}}"
+            fields:
+              - { name: image, label: Photo, widget: image }
+              - { name: alt, label: "Describe the photo (for Google & screen readers)", widget: string }
+              - { name: caption, label: Caption, widget: string, required: false }
+
+  - name: blog
+    label: Blog posts
+    label_singular: Blog post
+    icon: edit
+    folder: content/blog
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    summary: "{{title}} — {{modified}}"
+    fields:
+      - { name: title, label: Title (H1), widget: string }
+      - { name: seoTitle, label: Google title (≤ 60 characters), widget: string }
+      - { name: description, label: Google description (120–160 characters), widget: text }
+      - { name: published, label: Published, widget: datetime, time_format: false, date_format: YYYY-MM-DD, format: YYYY-MM-DD }
+      - { name: modified, label: Last updated, widget: datetime, time_format: false, date_format: YYYY-MM-DD, format: YYYY-MM-DD }
+      - { name: primaryTopic, label: "Main search phrase (unique per page)", widget: string }
+      - { name: secondaryTopics, label: Related search phrases, widget: list, required: false }
+      - { name: excerpt, label: Excerpt (blog list), widget: text }
+      - name: related
+        label: Related links
+        widget: list
+        required: false
+        fields:
+          - { name: href, label: "Page path, e.g. /pricing/", widget: string }
+          - { name: label, label: Link text, widget: string }
+          - { name: blurb, label: Short description, widget: string }
+      - { name: body, label: Article, widget: markdown, hint: "Use ## for section headings. A line starting with > becomes a highlighted quick-answer box." }
+
+  - name: seo
+    label: SEO titles
+    icon: search
+    editor: { preview: false }
+    files:
+      - name: seo
+        label: Page titles & descriptions
+        file: content/seo.json
+        description: The title and description Google shows for each page. Don't change the Path. Titles ≤ 60 characters, descriptions 120–160.
+        fields:
+          - name: pages
+            label: Pages
+            label_singular: Page
+            widget: list
+            allow_add: false
+            summary: "{{fields.path}} — {{fields.title}}"
+            fields:
+              - { name: path, label: Path (don't change), widget: string }
+              - { name: title, label: Google title, widget: string }
+              - { name: description, label: Google description, widget: text, hint: "You can write %PRICE% for the current price per guest." }

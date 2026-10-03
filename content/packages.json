@@ -1,0 +1,23 @@
+{
+  "packages": [
+    {
+      "id": "game-show-party-package",
+      "name": "Game Show Room Party Package",
+      "format": [
+        "60 minutes playing the live game show",
+        "+1 hour in a private Party Room"
+      ],
+      "includes": [
+        "Live host running the show — buzzers, lights and music",
+        "Private session for your group only",
+        "Personalized trivia, themed rounds or spotlight moments for the birthday guest",
+        "Private Party Room for cake, pizza or catering",
+        "Bring your own cake, cupcakes or decorations (tell us in advance)"
+      ],
+      "price": null,
+      "priceNote": "Game show pricing starts at $%PRICE% per guest. Ask for a free quote for your party’s exact total.",
+      "totalTime": "About 90 minutes to 2 hours",
+      "ages": "6+ to play; younger siblings welcome to watch"
+    }
+  ]
+}

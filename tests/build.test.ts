@@ -180,3 +180,29 @@ test('reviews: only verified, sourced reviews render; /reviews/ indexable; no ra
   // old unsourced WordPress testimonials must never appear
   for (const fake of ['Michelle T.', 'Mr. Delgado', 'Ms. Chen']) assert.ok(!h.includes(fake));
 });
+
+test('admin (Decap CMS) ships, is noindex and points at the GitHub repo', () => {
+  const idx = readFileSync(join(DIST, 'admin/index.html'), 'utf8');
+  const cfg = readFileSync(join(DIST, 'admin/config.yml'), 'utf8');
+  assert.match(idx, /decap-cms/);
+  assert.match(idx, /noindex/);
+  assert.match(cfg, /repo: hridoydgency-dev\/gameshowroom-rockaway/);
+  for (const f of ['business.json', 'settings.json', 'faqs.json', 'reviews.json', 'promotions.json', 'packages.json', 'gallery.json', 'seo.json']) assert.match(cfg, new RegExp(`content/${f}`));
+  assert.match(readFileSync(join(DIST, '_headers'), 'utf8'), /\/admin\/\*\n  X-Robots-Tag: noindex/);
+});
+
+test('content tokens are resolved and CSP is set per page (not for /admin)', () => {
+  for (const r of routes) {
+    const h = html(r.path);
+    assert.ok(!/%PRICE%|%HOURS%|%PHONE%/.test(h), `${r.path} has an unresolved token`);
+    assert.match(h, /http-equiv="Content-Security-Policy"/);
+  }
+  assert.ok(!/Content-Security-Policy/.test(readFileSync(join(DIST, '_headers'), 'utf8')));
+});
+
+test('blog posts render from Markdown with quick-answer boxes and tables', () => {
+  const h = html('/blog/how-much-does-a-kids-birthday-party-cost-nj/');
+  assert.match(h, /<blockquote>/);
+  assert.match(h, /<div class="overflow-x-auto"><table>/);
+  assert.match(html('/blog/'), /Birthday party ideas by age/);
+});

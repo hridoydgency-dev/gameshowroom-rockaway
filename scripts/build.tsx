@@ -18,6 +18,7 @@ import { renderDocument } from '../src/lib/document';
 import { redirects } from '../src/data/redirects';
 import { config, absUrl } from '../src/lib/config';
 import { factsToConfirm } from '../src/data/business';
+import { applyTokens } from '../src/lib/content-store';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const DIST = join(ROOT, 'dist');
@@ -77,7 +78,7 @@ for (const route of [...routes, notFound]) {
   if (seen.has(route.path)) throw new Error(`Duplicate route ${route.path}`);
   seen.add(route.path);
   const body = renderToStaticMarkup(route.render() as any);
-  const html = renderDocument(route, body, assets);
+  const html = applyTokens(renderDocument(route, body, assets));
   const file = route.path === '/404/' ? join(DIST, '404.html') : join(DIST, route.path, 'index.html');
   mkdirSync(dirname(file), { recursive: true });
   writeFileSync(file, html);
@@ -93,7 +94,7 @@ writeFileSync(join(DIST, 'sitemap.xml'), sitemap);
 writeFileSync(
   join(DIST, 'robots.txt'),
   config.allowIndexing
-    ? `User-agent: *\nAllow: /\nDisallow: /lp/\nDisallow: /thank-you/\n\nSitemap: ${absUrl('/sitemap.xml')}\n`
+    ? `User-agent: *\nAllow: /\nDisallow: /lp/\nDisallow: /thank-you/\nDisallow: /admin/\n\nSitemap: ${absUrl('/sitemap.xml')}\n`
     : `# Staging build — indexing disabled (set ALLOW_INDEXING=true at launch)\nUser-agent: *\nDisallow: /\n`,
 );
 writeFileSync(join(DIST, '_redirects'), redirects.map((r) => `${r.from}  ${r.to}  ${r.status}`).join('\n') + '\n');
@@ -110,25 +111,17 @@ writeFileSync(join(qa, 'build-report.json'), JSON.stringify({
 console.log(`Built ${report.length} pages in ${Date.now() - t0}ms · css ${(css.length / 1024).toFixed(1)}KB${assets.cssInline ? ' (inlined)' : ''} · js ${(js.length / 1024).toFixed(1)}KB · indexing ${config.allowIndexing ? 'ON' : 'OFF'}`);
 
 function headersFile() {
-  const csp = [
-    "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://connect.facebook.net https://bat.bing.com",
-    "img-src 'self' data: https:",
-    "style-src 'self' 'unsafe-inline'",
-    "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.doubleclick.net https://www.google.com https://www.facebook.com https://bat.bing.com",
-    "frame-src https://www.googletagmanager.com https://fareharbor.com https://td.doubleclick.net",
-    "form-action 'self'", "base-uri 'self'", "object-src 'none'",
-  ].join('; ');
   const block = (path: string, h: Record<string, string>) => `${path}\n${Object.entries(h).map(([k, v]) => `  ${k}: ${v}`).join('\n')}\n`;
   return [
     block('/*', {
       'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'Referrer-Policy': 'strict-origin-when-cross-origin',
-      'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()', 'Content-Security-Policy': csp,
+      'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()',
       ...(config.allowIndexing ? {} : { 'X-Robots-Tag': 'noindex, nofollow' }),
     }),
     block('/assets/*', { 'Cache-Control': 'public, max-age=31536000, immutable' }),
     block('/images/*', { 'Cache-Control': 'public, max-age=2592000' }),
     block('/lp/*', { 'X-Robots-Tag': 'noindex, follow' }),
+    block('/admin/*', { 'X-Robots-Tag': 'noindex, nofollow', 'Cache-Control': 'no-cache' }),
     block('/thank-you/*', { 'X-Robots-Tag': 'noindex, follow' }),
   ].join('\n');
 }

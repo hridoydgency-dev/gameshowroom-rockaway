@@ -4,6 +4,17 @@ import { config, absUrl } from './config';
 import { sitewideSchema, webPage, breadcrumbList, graph } from './schema';
 import { business } from '../data/business';
 
+/** CSP as a <meta> (not a header) so the /admin CMS can run with its own needs. */
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://connect.facebook.net https://bat.bing.com",
+  "img-src 'self' data: https:",
+  "style-src 'self' 'unsafe-inline'",
+  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.doubleclick.net https://www.google.com https://www.facebook.com https://bat.bing.com",
+  "frame-src https://www.googletagmanager.com https://fareharbor.com https://td.doubleclick.net",
+  "form-action 'self'", "base-uri 'self'", "object-src 'none'",
+].join('; ');
+
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 /** JSON for <script> blocks: escape "<" so content can never close the tag. */
 const safeJson = (o: unknown) => JSON.stringify(o).replace(/</g, '\\u003c');
@@ -47,6 +58,7 @@ export function renderDocument(route: RouteDef, body: string, assets: { css: str
   const head = [
     '<meta charset="utf-8">',
     '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">',
+    `<meta http-equiv="Content-Security-Policy" content="${CSP}">`,
     `<title>${esc(s.title)}</title>`,
     `<meta name="description" content="${esc(s.description)}">`,
     `<link rel="canonical" href="${canonical}">`,

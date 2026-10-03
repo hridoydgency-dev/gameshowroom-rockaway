@@ -16,14 +16,14 @@ export const pricing: RouteDef = {
   path: '/pricing/', template: 'service', pageType: 'service', trackView: 'pricing_view',
   breadcrumb: bc('Pricing', '/pricing/'),
   seo: {
-    title: 'Game Show Room Prices | From $33 per Guest | Rockaway NJ',
-    description: 'How much is the Game Show Room in Rockaway, NJ? From $33 per guest for a private 60-minute live game show. Party, large-group & corporate pricing by quote.',
+    title: 'Game Show Room Prices | From $%PRICE% per Guest | Rockaway NJ',
+    description: 'How much is the Game Show Room in Rockaway, NJ? From $%PRICE% per guest for a private 60-minute live game show. Party, large-group & corporate pricing by quote.',
     primaryTopic: 'game show room price',
     secondaryTopics: ['how much is the game show', 'birthday party packages', 'affordable birthday party places'],
   },
   sitemap: { priority: 0.85, changefreq: 'monthly' },
   schema: () => [
-    service({ id: ids.gameShow, name: 'Live Game Show Room experience', serviceType: 'Interactive live game show experience', description: 'Private 60-minute live game show. Pricing from $33 per guest, depending on group size and package.', url: '/game-show-experience/', priceFrom: 33 }),
+    service({ id: ids.gameShow, name: 'Live Game Show Room experience', serviceType: 'Interactive live game show experience', description: 'Private 60-minute live game show. Pricing from $%PRICE% per guest, depending on group size and package.', url: '/game-show-experience/', priceFrom: 33 }),
     faqPage('/pricing/', priceFaqs),
   ],
   render: () => (
@@ -33,7 +33,7 @@ export const pricing: RouteDef = {
         <h1 className="text-[2rem] font-black leading-tight sm:text-5xl">Game Show Room pricing</h1>
         <div className="mt-6 grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-start">
           <div className="text-lg">
-            <QuickAnswer q="How much does it cost?">Pricing starts at <strong>$33 per guest</strong> for a private, 60-minute live game show. The total depends on your group size and package — parties, large groups and corporate events get an exact quote.</QuickAnswer>
+            <QuickAnswer q="How much does it cost?">Pricing starts at <strong>$%PRICE% per guest</strong> for a private, 60-minute live game show. The total depends on your group size and package — parties, large groups and corporate events get an exact quote.</QuickAnswer>
             <div className="mt-6"><PriceStrip trackLabel="pricing_page" /></div>
             <h2 className="mt-8 text-2xl font-black">What every booking includes</h2>
             <CheckList items={['A private session — your group only', 'A live host running the full show', 'Buzzers, lights, music and all equipment', 'Family, kid-focused or adult-level questions', 'Free parking at Rockaway Townsquare']} />
@@ -216,7 +216,7 @@ export const thingsToDo: RouteDef = {
           <div className="prose-x mt-4 text-lg">
             <p>Rockaway sits right on Route 80 in Morris County, which makes it an easy meeting point for groups from Denville, Dover, Randolph, Parsippany and the Lake Hopatcong area. When the weather turns — or you just want something more interesting than a movie — here&rsquo;s how to plan an indoor outing.</p>
             <QuickAnswer q="Best indoor group activity in Rockaway?">
-              For a group of 6 or more, a <a href="/game-show-experience/">live game show at Rockaway Townsquare</a> is one of the most social options: 60 minutes, a live host, private to your group, ages 6+, from $33 per guest.
+              For a group of 6 or more, a <a href="/game-show-experience/">live game show at Rockaway Townsquare</a> is one of the most social options: 60 minutes, a live host, private to your group, ages 6+, from $%PRICE% per guest.
             </QuickAnswer>
             <h2>Ideas by who&rsquo;s coming</h2>
             <h3>Families with kids 6+</h3>
@@ -234,7 +234,7 @@ export const thingsToDo: RouteDef = {
               <li>Book at least 48 hours ahead; weekends and evenings fill first.</li>
               <li>Parking at Rockaway Townsquare is free.</li>
               <li>Enter by JCPenney — the Game Show Room entrance is on the first floor beside it.</li>
-              <li>Hours: Mon–Thu 11am–8pm, Fri–Sat 11am–9pm, Sun 11am–7pm.</li>
+              <li>Hours: %HOURS%.</li>
             </ul>
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">

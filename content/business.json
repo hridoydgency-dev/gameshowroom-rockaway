@@ -1,0 +1,76 @@
+{
+  "name": "Game Show Room Rockaway",
+  "tagline": "Live Game Show Experience in Rockaway — just like on TV",
+  "description": "Game Show Room Rockaway is a live, host-led game show experience inside Rockaway Townsquare in Rockaway, New Jersey. Private groups play 60 minutes of trivia, puzzles and light physical challenges with buzzers, lights, music and a live host. Popular for kids birthday parties (ages 6+), teen and adult celebrations, family outings, school groups and corporate team building.",
+  "phone": {
+    "display": "(862) 200-7134",
+    "e164": "+18622007134"
+  },
+  "email": "support@allinadventures.com",
+  "address": {
+    "street": "301 Mt Hope Ave, Suite 1001c",
+    "venue": "Rockaway Townsquare (mall), first floor next to the JCPenney entrance",
+    "city": "Rockaway",
+    "region": "NJ",
+    "regionName": "New Jersey",
+    "postalCode": "07866",
+    "country": "US",
+    "county": "Morris County"
+  },
+  "hours": [
+    {
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "label": "Mon–Thu",
+      "opens": "11:00",
+      "closes": "20:00"
+    },
+    {
+      "days": [
+        "Friday",
+        "Saturday"
+      ],
+      "label": "Fri–Sat",
+      "opens": "11:00",
+      "closes": "21:00"
+    },
+    {
+      "days": [
+        "Sunday"
+      ],
+      "label": "Sun",
+      "opens": "11:00",
+      "closes": "19:00"
+    }
+  ],
+  "pricePerGuestFrom": 33,
+  "booking": {
+    "provider": "FareHarbor",
+    "smallGroupUrl": "https://fareharbor.com/embeds/book/mysteryroom-rockaway/items/294163/?full-items=yes&flow=no",
+    "largeGroupUrl": "https://fareharbor.com/embeds/book/mysteryroom-rockaway/items/634281/calendar/"
+  },
+  "mapsUrl": "https://www.google.com/maps?cid=3671476271624143588",
+  "googleBusinessProfileUrl": "https://share.google/pjcBtcrmgphIDwWXv",
+  "nearbyAreas": [
+    "Rockaway Township",
+    "Rockaway Borough",
+    "Denville",
+    "Dover",
+    "Randolph",
+    "Wharton",
+    "Mine Hill",
+    "Parsippany",
+    "Mountain Lakes",
+    "Boonton",
+    "Kinnelon",
+    "Jefferson",
+    "Roxbury",
+    "Mount Arlington",
+    "Morristown",
+    "Wayne"
+  ]
+}

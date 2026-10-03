@@ -50,7 +50,7 @@ export const book: RouteDef = {
           <Card>
             <p className="text-sm font-bold uppercase tracking-wider text-flash-dark">Small group · 6–8 players</p>
             <h2 className="mt-1 text-2xl font-black">Book online now</h2>
-            <p className="mt-2 text-muted">Friends, family, date night with another couple or two. Pick a date and time, pay online. From $33 per guest.</p>
+            <p className="mt-2 text-muted">Friends, family, date night with another couple or two. Pick a date and time, pay online. From $%PRICE% per guest.</p>
             <BookingLink kind="small" label="book_page_small" size="lg" className="mt-5 w-full">See available times</BookingLink>
           </Card>
           <Card>

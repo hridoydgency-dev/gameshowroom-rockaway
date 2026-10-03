@@ -33,7 +33,7 @@ export const groupsHub: RouteDef = {
         lead={<>Turn a group outing into a tournament. Teams rotate through host-led rounds of trivia, puzzles and challenges — with one overall champion — at Rockaway Townsquare.</>}
         primary={<Button href="#quote" size="lg" track={{ event: 'click_book_now', label: 'groups_hero' }}>Get a free event quote</Button>}
         secondary={<Button href="/group-events/corporate-team-building/" size="lg" variant="ghost-light">Corporate team building</Button>}
-        chips={[{ k: 'Group size', v: '8 – 60' }, { k: 'Format', v: 'Team rotations' }, { k: 'Trivia', v: 'Customizable' }, { k: 'Price', v: 'From $33/guest' }]}
+        chips={[{ k: 'Group size', v: '8 – 60' }, { k: 'Format', v: 'Team rotations' }, { k: 'Trivia', v: 'Customizable' }, { k: 'Price', v: 'From $%PRICE%/guest' }]}
       />
       <Section tone="light" labelledBy="g-what">
         <div className="grid gap-8 lg:grid-cols-[1.25fr_1fr]">
@@ -141,7 +141,7 @@ export const corporate: RouteDef = {
       <Related links={[
         { href: '/group-events/', label: 'All group events', blurb: 'How we run shows for 8–60 players.' },
         { href: '/location/rockaway-nj/', label: 'Directions & parking', blurb: 'Route 80, mall entrances, transit.' },
-        { href: '/pricing/', label: 'Pricing', blurb: 'From $33 per guest.' },
+        { href: '/pricing/', label: 'Pricing', blurb: 'From $%PRICE% per guest.' },
       ]} />
       <CtaBand label="corporate" primaryHref="#quote" primaryText="Get a team-building quote" title="Give your team a story to tell Monday" body="Send headcount and dates — we'll reply with options and pricing." />
     </Shell>

@@ -130,7 +130,7 @@ export function PriceStrip({ trackLabel }: { trackLabel: string }) {
   return (
     <div className="grid gap-3 sm:grid-cols-3" data-track-view="pricing_view" data-track-label={trackLabel}>
       {[
-        { k: 'Game show', v: 'From $33', s: 'per guest · 60 minutes' },
+        { k: 'Game show', v: 'From $%PRICE%', s: 'per guest · 60 minutes' },
         { k: 'Standard group', v: '6–8 players', s: 'private to your group' },
         { k: 'Big groups', v: '40–60 players', s: 'back-to-back or extended shows' },
       ].map((x) => (

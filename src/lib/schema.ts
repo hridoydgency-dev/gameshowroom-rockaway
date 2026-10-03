@@ -43,7 +43,7 @@ export function sitewideSchema() {
     email: business.email,
     image: absUrl('/images/og-default.png'),
     logo: absUrl('/images/logo.png'),
-    priceRange: '$33+ per guest',
+    priceRange: '$%PRICE%+ per guest',
     currenciesAccepted: 'USD',
     address: postalAddress(),
     containedInPlace: { '@type': 'ShoppingCenter', name: 'Rockaway Townsquare', address: postalAddress() },
@@ -136,7 +136,7 @@ export function service(opts: {
     s.offers = {
       '@type': 'Offer',
       priceCurrency: 'USD',
-      priceSpecification: { '@type': 'UnitPriceSpecification', minPrice: opts.priceFrom, priceCurrency: 'USD', unitText: 'per guest' },
+      priceSpecification: { '@type': 'UnitPriceSpecification', minPrice: Number(business.facts.pricePerGuestFrom.value), priceCurrency: 'USD', unitText: 'per guest' },
       url: absUrl('/book/'),
       availability: 'https://schema.org/InStock',
     };

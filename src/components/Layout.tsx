@@ -3,6 +3,7 @@ import { business } from '../data/business';
 import { nav, footerNav } from '../data/navigation';
 import { Button, PhoneLink, MapLink, cx } from './ui';
 import { fmtTime } from '../lib/format';
+import { settingsContent } from '../lib/content-store';
 
 function Logo({ dark = true }: { dark?: boolean }) {
   return (
@@ -194,6 +195,7 @@ export function Shell({ children, minimal, breadcrumb, sticky }: { children: Rea
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded-lg focus:bg-gold focus:px-4 focus:py-2 focus:font-bold focus:text-ink">
         Skip to content
       </a>
+      <Announcement />
       <Header minimal={minimal} />
       {breadcrumb && breadcrumb.length > 1 && <Breadcrumbs items={breadcrumb} />}
       <main id="main">{children}</main>
@@ -220,6 +222,19 @@ function ConsentBanner() {
       <div className="flex gap-2">
         <button type="button" data-consent="accept" className="min-h-10 rounded-full border-2 border-ink bg-gold px-4 font-bold">Accept</button>
         <button type="button" data-consent="decline" className="min-h-10 rounded-full border-2 border-ink bg-paper px-4 font-bold">Decline</button>
+      </div>
+    </div>
+  );
+}
+
+/** Site-wide announcement bar — edited in /admin → Settings → Site settings. */
+function Announcement() {
+  const a = settingsContent.announcement;
+  if (!a?.enabled || !a.text?.trim()) return null;
+  return (
+    <div className="bg-gold text-ink" data-announcement>
+      <div className="container-x py-2 text-center text-sm font-bold">
+        {a.link ? <a href={a.link} className="text-ink underline" data-track="click_announcement" data-track-label="announcement">{a.text}</a> : a.text}
       </div>
     </div>
   );

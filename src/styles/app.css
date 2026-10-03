@@ -41,12 +41,16 @@
   .container-x { width: 100%; max-width: 72rem; margin-inline: auto; padding-inline: 1rem; }
   @media (min-width: 640px) { .container-x { padding-inline: 1.5rem; } }
   .prose-x p { margin-block: 0.85rem; }
-  .prose-x h2 { font-size: 1.6rem; margin-top: 2.25rem; margin-bottom: 0.5rem; }
-  .prose-x h3 { font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: 0.35rem; }
+  .prose-x h2 { font-weight: 900; font-size: 1.6rem; margin-top: 2.25rem; margin-bottom: 0.5rem; }
+  .prose-x h3 { font-weight: 800; font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: 0.35rem; }
   .prose-x ul { list-style: disc; padding-left: 1.25rem; margin-block: 0.75rem; }
   .prose-x ol { list-style: decimal; padding-left: 1.25rem; margin-block: 0.75rem; }
   .prose-x li { margin-block: 0.3rem; }
   .prose-x a { color: var(--color-flash-dark); font-weight: 600; text-decoration: underline; }
+  .prose-x blockquote { margin-block: 1.25rem; border: 2px solid var(--color-ink); border-radius: 1rem; background: var(--color-paper); padding: 0.9rem 1.25rem; box-shadow: var(--shadow-pop); }
+  .prose-x blockquote p:first-child { margin-top: 0; }
+  .prose-x blockquote > p:first-child > strong:only-child { display: block; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-flash-dark); }
+  .prose-x hr { margin-block: 2rem; border-color: var(--color-line); }
   .prose-x table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
   .prose-x th, .prose-x td { border-bottom: 1px solid var(--color-line); padding: 0.6rem 0.5rem; text-align: left; vertical-align: top; }
   .bulb-row { background-image: radial-gradient(circle, var(--color-gold) 0 3px, transparent 4px); background-size: 22px 12px; background-repeat: repeat-x; background-position: center; height: 12px; }

@@ -6,6 +6,7 @@ import { ReviewSnippets, GoogleRatingLine } from '../components/reviews';
 import { faqsByIds } from '../data/faqs';
 import { faqPage, service, ids, article } from '../lib/schema';
 import { business } from '../data/business';
+import { gallery } from '../data/content';
 
 const bc = (name: string, path: string) => [{ name: 'Home', path: '/' }, { name, path }];
 
@@ -17,7 +18,7 @@ export const gameShow: RouteDef = {
   breadcrumb: bc('The Game Show', '/game-show-experience/'),
   seo: {
     title: 'Live Game Show Experience in NJ | How It Works & Prices',
-    description: 'A 60-minute live game show with a host, buzzers, trivia, puzzles & challenges at Rockaway Townsquare, NJ. Private groups of 6–8 (up to 60). Ages 6+. From $33.',
+    description: 'A 60-minute live game show with a host, buzzers, trivia, puzzles & challenges at Rockaway Townsquare, NJ. Private groups of 6–8 (up to 60). Ages 6+. From $%PRICE%.',
     primaryTopic: 'live game show experience nj',
     secondaryTopics: ['interactive game show experience', 'game show near me', 'game show battle rooms', 'family game show near me'],
   },
@@ -38,7 +39,7 @@ export const gameShow: RouteDef = {
         lead={<>One hour. One live host. Buzzers, lights, music and rounds of trivia, puzzles and challenges — in a private room at Rockaway Townsquare, NJ.</>}
         primary={<BookingLink kind="small" label="gs_hero" size="lg">Book 6–8 players online</BookingLink>}
         secondary={<Button href="/book/#quote" size="lg" variant="ghost-light" track={{ event: 'click_book_now', label: 'gs_hero_quote' }}>Bigger group? Get a quote</Button>}
-        chips={[{ k: 'Length', v: '60 minutes' }, { k: 'Ages', v: '6 and up' }, { k: 'Group', v: '6–8 players' }, { k: 'Price', v: 'From $33/guest' }]}
+        chips={[{ k: 'Length', v: '60 minutes' }, { k: 'Ages', v: '6 and up' }, { k: 'Group', v: '6–8 players' }, { k: 'Price', v: 'From $%PRICE%/guest' }]}
       />
       <Section tone="light" labelledBy="gs-what">
         <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
@@ -61,7 +62,7 @@ export const gameShow: RouteDef = {
               <dt className="font-bold">Duration</dt><dd>About 60 minutes</dd>
               <dt className="font-bold">Players</dt><dd>6–8 per standard session; 40–60 with back-to-back or extended shows</dd>
               <dt className="font-bold">Ages</dt><dd>6 and up (family, kid-focused &amp; adult-level versions)</dd>
-              <dt className="font-bold">Price</dt><dd>From $33 per guest</dd>
+              <dt className="font-bold">Price</dt><dd>From $%PRICE% per guest</dd>
               <dt className="font-bold">Book ahead</dt><dd>At least 48 hours</dd>
               <dt className="font-bold">Where</dt><dd>Rockaway Townsquare, Rockaway NJ 07866</dd>
             </dl>
@@ -106,7 +107,7 @@ export const gameShow: RouteDef = {
           </div>
           <div>
             <Eyebrow>Pricing</Eyebrow>
-            <H2>From $33 per guest</H2>
+            <H2>From $%PRICE% per guest</H2>
             <p className="mt-3 text-lg">Pricing depends on group size and package. See <a className="font-bold text-flash-dark underline" href="/pricing/">full pricing</a>.</p>
             <div className="mt-5"><PriceStrip trackLabel="game_show" /></div>
           </div>
@@ -116,7 +117,20 @@ export const gameShow: RouteDef = {
       <Section tone="light" id="photos" labelledBy="gs-photos">
         <Eyebrow>Inside the room</Eyebrow>
         <H2 id="gs-photos">See the set before you book</H2>
-        <p className="mt-3 max-w-2xl text-lg text-muted">Real photos of the Rockaway set — podiums, buzzers and the Party Room — are being added here. In the meantime, call {business.phone.display} and the team can describe the room for your group.</p>
+        {gallery.length ? (
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {gallery.map((g) => (
+              <li key={g.image}>
+                <figure className="overflow-hidden rounded-2xl border-2 border-ink bg-paper">
+                  <img src={g.image} alt={g.alt} loading="lazy" decoding="async" width={800} height={600} className="aspect-[4/3] w-full object-cover" />
+                  {g.caption && <figcaption className="px-4 py-3 text-sm text-muted">{g.caption}</figcaption>}
+                </figure>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="mt-3 max-w-2xl text-lg text-muted">Real photos of the Rockaway set — podiums, buzzers and the Party Room — are being added here. In the meantime, call {business.phone.display} and the team can describe the room for your group.</p>
+        )}
       </Section>
       <ReviewSnippets path="/game-show-experience/" title="Reviews from real players" />
       <VisitBlock />
@@ -240,7 +254,7 @@ export const njGuide: RouteDef = {
             <QuickAnswer q="Quick answer for Morris County">
               If you&rsquo;re in or near Rockaway, Denville, Dover, Randolph or Parsippany, the closest option is the{' '}
               <a href="/game-show-experience/">Game Show Room at Rockaway Townsquare</a>: private sessions for 6–8 players (40–60 for
-              events), 60 minutes, from $33 per guest, ages 6+.
+              events), 60 minutes, from $%PRICE% per guest, ages 6+.
             </QuickAnswer>
             <h2>The options at a glance</h2>
             <div className="overflow-x-auto">
@@ -248,7 +262,7 @@ export const njGuide: RouteDef = {
                 <caption className="sr-only">New Jersey live game show venues compared</caption>
                 <thead><tr><th scope="col">Venue</th><th scope="col">Where</th><th scope="col">Format</th><th scope="col">Published price</th></tr></thead>
                 <tbody>
-                  <tr><th scope="row">Game Show Room</th><td>Rockaway Townsquare, Rockaway (Morris County)</td><td>Private, host-led show; 6–8 players per session, 40–60 for events; 60 min; ages 6+</td><td>From $33/guest</td></tr>
+                  <tr><th scope="row">Game Show Room</th><td>Rockaway Townsquare, Rockaway (Morris County)</td><td>Private, host-led show; 6–8 players per session, 40–60 for events; 60 min; ages 6+</td><td>From $%PRICE%/guest</td></tr>
                   <tr><th scope="row">Great Big Game Show</th><td>American Dream, East Rutherford (Bergen County)</td><td>Two teams on a studio-style set with a live host; up to 14 players per show</td><td>About $45/person (press reports)*</td></tr>
                   <tr><th scope="row">Game Show Challenge</th><td>Freehold (Monmouth County)</td><td>Trivia, survey, physical and puzzle challenges</td><td>Not listed on homepage*</td></tr>
                 </tbody>

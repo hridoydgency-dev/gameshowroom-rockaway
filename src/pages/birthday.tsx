@@ -72,7 +72,7 @@ export const birthdayHub: RouteDef = {
   breadcrumb: crumbs(),
   seo: {
     title: 'Game Show Birthday Parties in Rockaway, NJ | Party Room',
-    description: 'Host a game show birthday party at Rockaway Townsquare: 1 hour of live game show + 1 hour in a private Party Room. Ages 6+. Bring your own cake. From $33/guest.',
+    description: 'Host a game show birthday party at Rockaway Townsquare: 1 hour of live game show + 1 hour in a private Party Room. Ages 6+. Bring your own cake. From $%PRICE%/guest.',
     primaryTopic: 'birthday party rockaway nj',
     secondaryTopics: ['game show birthday party', 'birthday party places near me', 'indoor birthday party nj', 'birthday party venues morris county'],
   },
@@ -88,7 +88,7 @@ export const birthdayHub: RouteDef = {
         primary: <Button href="#quote" size="lg" track={{ event: 'click_book_now', label: 'bday_hub_hero' }}>Get my party quote</Button>,
         secondary: <Button href="#package" size="lg" variant="ghost-light">What&rsquo;s included</Button>,
         note: <span className="flex flex-wrap items-center gap-x-3 gap-y-1"><GoogleRatingLine dark label="bday_hub_hero" /><span>Indoor · private · free parking</span></span>,
-        chips: [{ k: 'Ages', v: '6 and up' }, { k: 'Party time', v: '~90 min–2 hrs' }, { k: 'Price', v: 'From $33/guest' }, { k: 'Cake', v: 'Bring your own' }],
+        chips: [{ k: 'Ages', v: '6 and up' }, { k: 'Party time', v: '~90 min–2 hrs' }, { k: 'Price', v: 'From $%PRICE%/guest' }, { k: 'Cake', v: 'Bring your own' }],
       }}
       intro={<>
         <Eyebrow>An indoor party they&rsquo;ll actually talk about</Eyebrow>
@@ -106,7 +106,7 @@ export const birthdayHub: RouteDef = {
         <ul className="mt-1 space-y-1.5">
           <li><strong>Format:</strong> 1 hr game show + 1 hr private Party Room</li>
           <li><strong>Ages:</strong> 6+ to play; little ones can watch</li>
-          <li><strong>Price:</strong> game show from $33 per guest — get a quote for your total</li>
+          <li><strong>Price:</strong> game show from $%PRICE% per guest — get a quote for your total</li>
           <li><strong>Food:</strong> bring your own cake, pizza or catering</li>
           <li><strong>Book:</strong> at least 48 hours ahead</li>
           <li><strong>Where:</strong> Rockaway Townsquare, free parking</li>
@@ -155,7 +155,7 @@ export const kidsBirthday: RouteDef = {
         primary: <Button href="#quote" size="lg" track={{ event: 'click_book_now', label: 'bday_kids_hero' }}>Get my party quote</Button>,
         secondary: <Button href="#package" size="lg" variant="ghost-light">See the package</Button>,
         note: 'Parents watch free from the sidelines · younger siblings welcome to cheer',
-        chips: [{ k: 'Best for', v: 'Ages 6–12' }, { k: 'Party time', v: '~2 hours' }, { k: 'Price', v: 'From $33/guest' }, { k: 'Room', v: 'Private' }],
+        chips: [{ k: 'Best for', v: 'Ages 6–12' }, { k: 'Party time', v: '~2 hours' }, { k: 'Price', v: 'From $%PRICE%/guest' }, { k: 'Room', v: 'Private' }],
       }}
       intro={<>
         <Eyebrow>Why parents pick it</Eyebrow>
@@ -228,7 +228,7 @@ export const teenBirthday: RouteDef = {
         lead: <>A private, host-led game show with trivia written around the guest of honor — then the Party Room for cake. Competitive, loud and very group-chat-worthy. At Rockaway Townsquare, NJ.</>,
         primary: <Button href="#quote" size="lg" track={{ event: 'click_book_now', label: 'bday_teen_hero' }}>Get my party quote</Button>,
         secondary: <Button href="#package" size="lg" variant="ghost-light">What&rsquo;s included</Button>,
-        chips: [{ k: 'Best for', v: '13–19' }, { k: 'Party time', v: '~2 hours' }, { k: 'Group', v: '6–8 · up to 60' }, { k: 'Price', v: 'From $33/guest' }],
+        chips: [{ k: 'Best for', v: '13–19' }, { k: 'Party time', v: '~2 hours' }, { k: 'Group', v: '6–8 · up to 60' }, { k: 'Price', v: 'From $%PRICE%/guest' }],
       }}
       intro={<>
         <Eyebrow>Why it works for teens</Eyebrow>
@@ -282,7 +282,7 @@ export const adultBirthday: RouteDef = {
         lead: <>For a 30th, 40th, 50th or 60th: a private live game show with adult-level questions and a custom round about the birthday person. In Rockaway, NJ — dinner nearby after.</>,
         primary: <Button href="#quote" size="lg" track={{ event: 'click_book_now', label: 'bday_adult_hero' }}>Get my party quote</Button>,
         secondary: <Button href="/book/" size="lg" variant="ghost-light" track={{ event: 'click_book_now', label: 'bday_adult_hero_book' }}>Book 6–8 online</Button>,
-        chips: [{ k: 'Version', v: 'Adult-level' }, { k: 'Length', v: '60 min show' }, { k: 'Group', v: '6–8 · up to 60' }, { k: 'Price', v: 'From $33/guest' }],
+        chips: [{ k: 'Version', v: 'Adult-level' }, { k: 'Length', v: '60 min show' }, { k: 'Group', v: '6–8 · up to 60' }, { k: 'Price', v: 'From $%PRICE%/guest' }],
       }}
       intro={<>
         <Eyebrow>An adult birthday idea that isn&rsquo;t a bar</Eyebrow>

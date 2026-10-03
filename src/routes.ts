@@ -9,7 +9,7 @@ import { blogIndex, blogRoutes } from './pages/blog';
 import { ppcRoutes } from './pages/ppc';
 import { book, thankYou, contact, reviews, privacy, terms } from './pages/utility';
 
-export const routes: RouteDef[] = [
+const baseRoutes: RouteDef[] = [
   home,
   gameShow,
   birthdayHub, kidsBirthday, teenBirthday, adultBirthday,
@@ -21,3 +21,11 @@ export const routes: RouteDef[] = [
   ...ppcRoutes,
   thankYou, privacy, terms,
 ];
+
+/** Titles & descriptions edited in /admin → SEO titles (content/seo.json) override the page defaults. */
+import { seoContent } from './lib/content-store';
+const seoByPath = new Map(seoContent.map((s) => [s.path, s]));
+export const routes: RouteDef[] = baseRoutes.map((r) => {
+  const o = seoByPath.get(r.path);
+  return o ? { ...r, seo: { ...r.seo, title: o.title, description: o.description } } : r;
+});

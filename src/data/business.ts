@@ -7,41 +7,29 @@
  */
 import type { Business } from '../lib/types';
 
+import { businessContent as c } from '../lib/content-store';
+
+/** Editable fields come from content/business.json (managed in /admin). Code-only fields stay here. */
 export const business: Business = {
-  name: 'Game Show Room Rockaway',
+  name: c.name,
   legalBrand: 'Game Show Room — an All In Adventures experience',
   parentOrganization: { name: 'All In Adventures', url: 'https://allinadventures.com/' },
-  tagline: 'Live Game Show Experience in Rockaway — just like on TV',
-  description:
-    'Game Show Room Rockaway is a live, host-led game show experience inside Rockaway Townsquare in Rockaway, New Jersey. Private groups play 60 minutes of trivia, puzzles and light physical challenges with buzzers, lights, music and a live host. Popular for kids birthday parties (ages 6+), teen and adult celebrations, family outings, school groups and corporate team building.',
-  phone: { display: '(862) 200-7134', e164: '+18622007134' },
-  email: 'support@allinadventures.com',
-  address: {
-    street: '301 Mt Hope Ave, Suite 1001c',
-    venue: 'Rockaway Townsquare (mall), first floor next to the JCPenney entrance',
-    city: 'Rockaway',
-    region: 'NJ',
-    regionName: 'New Jersey',
-    postalCode: '07866',
-    country: 'US',
-    county: 'Morris County',
-  },
-  // Source: gameshowroomrockaway.com footer + room page (Oct 2026)
-  hours: [
-    { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'], label: 'Mon–Thu', opens: '11:00', closes: '20:00' },
-    { days: ['Friday', 'Saturday'], label: 'Fri–Sat', opens: '11:00', closes: '21:00' },
-    { days: ['Sunday'], label: 'Sun', opens: '11:00', closes: '19:00' },
-  ],
-  mapsUrl: 'https://www.google.com/maps?cid=3671476271624143588',
+  tagline: c.tagline,
+  description: c.description,
+  phone: c.phone,
+  email: c.email,
+  address: c.address,
+  hours: c.hours,
+  mapsUrl: c.mapsUrl,
   sameAs: [
     // Social profiles listed on the current site are All In Adventures brand profiles.
     'https://allinadventures.com/',
     // Google Business Profile (knowledge-graph id /g/11yjpxzm89), supplied by owner 2026-10-03
     'https://www.google.com/maps?cid=3671476271624143588',
   ],
-  googleBusinessProfileUrl: 'https://share.google/pjcBtcrmgphIDwWXv',
+  googleBusinessProfileUrl: c.googleBusinessProfileUrl,
   facts: {
-    pricePerGuestFrom: { value: 33, currency: 'USD', source: 'site: "starting at $33 per guest"' },
+    pricePerGuestFrom: { value: c.pricePerGuestFrom, currency: 'USD', source: 'content/business.json (owner-editable in /admin); originally site: "starting at $%PRICE% per guest"' },
     sessionMinutes: { value: 60, source: 'site FAQ' },
     minAge: { value: 6, source: 'site FAQ: "perfect for ages 6 and up"' },
     standardGroup: {
@@ -74,11 +62,7 @@ export const business: Business = {
       confirm: true,
     },
   },
-  booking: {
-    provider: 'FareHarbor',
-    smallGroupUrl: 'https://fareharbor.com/embeds/book/mysteryroom-rockaway/items/294163/?full-items=yes&flow=no',
-    largeGroupUrl: 'https://fareharbor.com/embeds/book/mysteryroom-rockaway/items/634281/calendar/',
-  },
+  booking: c.booking,
   sisterLocations: [
     { name: 'Game Show Room West Nyack, NY', url: 'https://gameshowroomwestnyack.com/' },
   ],

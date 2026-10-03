@@ -23,7 +23,9 @@
   },
   "dependencies": {
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "marked": "18.0.10",
+    "gray-matter": "4.0.3"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

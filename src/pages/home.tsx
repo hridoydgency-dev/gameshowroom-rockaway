@@ -4,6 +4,14 @@ import { Hero, QuickAnswer, Steps, Features, FAQSection, PriceStrip, PackageCard
 import { Section, Eyebrow, H2, Button, BookingLink } from '../components/ui';
 import { ReviewSnippets, GoogleRatingLine } from '../components/reviews';
 import { faqsByIds } from '../data/faqs';
+import { settingsContent } from '../lib/content-store';
+
+/** Highlight the place name in gold when the editor's headline contains it. */
+const heroTitle = (t: string) => {
+  const m = t.match(/(Rockaway,? NJ|Rockaway)/);
+  if (!m || m.index === undefined) return <>{t}</>;
+  return <>{t.slice(0, m.index)}<span className="text-gold">{m[0]}</span>{t.slice(m.index + m[0].length)}</>;
+};
 import { faqPage, service, ids } from '../lib/schema';
 
 const homeFaqs = faqsByIds(['what-is', 'price', 'ages', 'players', 'how-long', 'bday-how', 'where', 'parking', 'book-how']);
@@ -42,7 +50,7 @@ export const home: RouteDef = {
   trackView: 'view_service',
   seo: {
     title: 'Live Game Show Room in Rockaway, NJ | Parties & Groups',
-    description: 'Be the contestants on a live, host-led game show at Rockaway Townsquare. Birthday parties (ages 6+), team building & groups. From $33/guest. Book online.',
+    description: 'Be the contestants on a live, host-led game show at Rockaway Townsquare. Birthday parties (ages 6+), team building & groups. From $%PRICE%/guest. Book online.',
     primaryTopic: 'game show room rockaway nj',
     secondaryTopics: ['live game show experience', 'birthday party rockaway nj', 'things to do rockaway nj'],
   },
@@ -60,14 +68,14 @@ export const home: RouteDef = {
       <PromoSlot path="/" />
       <Hero
         eyebrow="Inside Rockaway Townsquare · Morris County, NJ"
-        title={<>Live Game Show Room in <span className="text-gold">Rockaway, NJ</span></>}
-        lead={<>Your group becomes the contestants: <strong>60 minutes</strong> of buzzers, trivia, puzzles and challenges run by a <strong>live host</strong>. Always private to your group — made for birthdays, team building and nights out.</>}
+        title={heroTitle(settingsContent.homeHero.title)}
+        lead={settingsContent.homeHero.lead}
         primary={<Button href="/book/" size="lg" track={{ event: 'click_book_now', label: 'home_hero' }}>Book your game show</Button>}
         secondary={<Button href="/birthday-parties/" size="lg" variant="ghost-light" track={{ event: 'click_book_now', label: 'home_hero_birthday' }}>Plan a birthday party</Button>}
         note={<span className="flex flex-wrap items-center gap-x-3 gap-y-1"><GoogleRatingLine dark label="home_hero" /><span>Book 48+ hours ahead · Free parking</span></span>}
         artOnMobile
         chips={[
-          { k: 'Price', v: 'From $33/guest' },
+          { k: 'Price', v: 'From $%PRICE%/guest' },
           { k: 'Length', v: '60 minutes' },
           { k: 'Ages', v: '6 and up' },
           { k: 'Group', v: '6–8 · up to 60' },
@@ -95,7 +103,7 @@ export const home: RouteDef = {
               <li><strong>Where:</strong> Rockaway Townsquare, 301 Mt Hope Ave, Rockaway NJ — by the JCPenney entrance</li>
               <li><strong>How long:</strong> 60 minutes (parties ~90 min–2 hrs with the Party Room)</li>
               <li><strong>Who:</strong> ages 6+, private groups of 6–8; events up to 40–60</li>
-              <li><strong>Cost:</strong> from $33 per guest</li>
+              <li><strong>Cost:</strong> from $%PRICE% per guest</li>
             </ul>
           </QuickAnswer>
         </div>
@@ -155,7 +163,7 @@ export const home: RouteDef = {
           <div>
             <Eyebrow>Pricing</Eyebrow>
             <H2 id="price-title">Simple pricing, no strangers on your team</H2>
-            <p className="mt-3 text-lg">Game show pricing starts at <strong>$33 per guest</strong> and depends on group size and package. Every session is private to your group.</p>
+            <p className="mt-3 text-lg">Game show pricing starts at <strong>$%PRICE% per guest</strong> and depends on group size and package. Every session is private to your group.</p>
             <div className="mt-6"><PriceStrip trackLabel="home" /></div>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <BookingLink kind="small" label="home_pricing" size="lg">Book 6–8 players online</BookingLink>
