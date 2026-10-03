@@ -1,0 +1,67 @@
+# Netlify configuration — static output in dist/ (no server runtime needed)
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  SITE_URL = "https://gameshowroomrockaway.com"
+
+# Indexing is OFF unless explicitly enabled. Flip ALLOW_INDEXING to "true" for the
+# production context ONLY when the custom domain is live (see docs/deployment.md).
+[context.production.environment]
+  ALLOW_INDEXING = "false"
+
+[context.deploy-preview.environment]
+  ALLOW_INDEXING = "false"
+
+[context.branch-deploy.environment]
+  ALLOW_INDEXING = "false"
+
+# Pre-deploy gate: build + SEO audit must pass (tests run in CI; see README)
+[context.production]
+  command = "npm run build && npm run seo:audit"
+
+# ---------- Headers ----------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://connect.facebook.net https://bat.bing.com; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.doubleclick.net https://www.google.com https://www.facebook.com https://bat.bing.com https://*.clarity.ms; frame-src https://www.googletagmanager.com https://fareharbor.com https://td.doubleclick.net; form-action 'self'; base-uri 'self'; object-src 'none'"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# PPC & utility pages: belt-and-braces noindex at the HTTP layer
+[[headers]]
+  for = "/lp/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, follow"
+[[headers]]
+  for = "/thank-you/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, follow"
+
+# Redirects live in dist/_redirects (generated from src/data/redirects.ts).
+# Force a single host — uncomment after the custom domain is attached:
+# [[redirects]]
+#   from = "https://www.gameshowroomrockaway.com/*"
+#   to = "https://gameshowroomrockaway.com/:splat"
+#   status = 301
+#   force = true
