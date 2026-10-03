@@ -1,0 +1,2645 @@
+{
+ "meta": {
+  "generated": "2026-10-03",
+  "ppc_date_range": "Feb 1 2026 - Sep 30 2026 (8 months, per report header)",
+  "gsc_date_range": "not included in export (no date column); assumed ~6 months per brief",
+  "rows": 2206,
+  "rows_total_analyzed": 9933,
+  "filter": "all GSC queries + PPC terms with >=1 click or >=5 impressions",
+  "fields": "query, sources, intent, topic, cluster, occasions, activities, location, competitor, commercial_intent(0-100), ppc{clicks,cost,impressions,conversions,campaigns,excluded_in_account}, gsc{clicks,impressions,ctr,position}, recommended_url, ppc_landing_page, page_status, priority_score, notes",
+  "confidential": "Contains campaign cost data. Keep this repository PRIVATE.",
+  "note": "cluster-level rollup"
+ },
+ "by_intent": [
+  {
+   "intent": "local_transactional",
+   "queries": 2596,
+   "ppc_clicks": 605,
+   "ppc_cost": 822.32,
+   "ppc_impr": 12587,
+   "gsc_clicks": 21,
+   "gsc_impr": 2235,
+   "conv": 0.0,
+   "ppc_ctr": 4.81,
+   "ppc_cpc": 1.36
+  },
+  {
+   "intent": "informational",
+   "queries": 4045,
+   "ppc_clicks": 539,
+   "ppc_cost": 759.09,
+   "ppc_impr": 10995,
+   "gsc_clicks": 4,
+   "gsc_impr": 232,
+   "conv": 0.0,
+   "ppc_ctr": 4.9,
+   "ppc_cpc": 1.41
+  },
+  {
+   "intent": "commercial_investigation",
+   "queries": 2731,
+   "ppc_clicks": 281,
+   "ppc_cost": 395.11,
+   "ppc_impr": 7381,
+   "gsc_clicks": 6,
+   "gsc_impr": 604,
+   "conv": 0.0,
+   "ppc_ctr": 3.81,
+   "ppc_cpc": 1.41
+  },
+  {
+   "intent": "competitor",
+   "queries": 425,
+   "ppc_clicks": 121,
+   "ppc_cost": 175.25,
+   "ppc_impr": 2702,
+   "gsc_clicks": 7,
+   "gsc_impr": 453,
+   "conv": 0.0,
+   "ppc_ctr": 4.48,
+   "ppc_cpc": 1.45
+  },
+  {
+   "intent": "brand",
+   "queries": 23,
+   "ppc_clicks": 42,
+   "ppc_cost": 37.77,
+   "ppc_impr": 162,
+   "gsc_clicks": 16,
+   "gsc_impr": 639,
+   "conv": 0.0,
+   "ppc_ctr": 25.93,
+   "ppc_cpc": 0.9
+  },
+  {
+   "intent": "transactional",
+   "queries": 113,
+   "ppc_clicks": 16,
+   "ppc_cost": 22.93,
+   "ppc_impr": 273,
+   "gsc_clicks": 1,
+   "gsc_impr": 10,
+   "conv": 0.0,
+   "ppc_ctr": 5.86,
+   "ppc_cpc": 1.43
+  }
+ ],
+ "by_topic": [
+  {
+   "topic": "birthday",
+   "queries": 7861,
+   "ppc_clicks": 1295,
+   "ppc_cost": 1800.01,
+   "ppc_impr": 27557,
+   "gsc_clicks": 11,
+   "gsc_impr": 119,
+   "conv": 0.0,
+   "ppc_ctr": 4.7,
+   "ppc_cpc": 1.39
+  },
+  {
+   "topic": "game_show",
+   "queries": 197,
+   "ppc_clicks": 116,
+   "ppc_cost": 142.24,
+   "ppc_impr": 1068,
+   "gsc_clicks": 28,
+   "gsc_impr": 1389,
+   "conv": 0.0,
+   "ppc_ctr": 10.86,
+   "ppc_cpc": 1.23
+  },
+  {
+   "topic": "party_event",
+   "queries": 1383,
+   "ppc_clicks": 155,
+   "ppc_cost": 216.58,
+   "ppc_impr": 4206,
+   "gsc_clicks": 2,
+   "gsc_impr": 264,
+   "conv": 0.0,
+   "ppc_ctr": 3.69,
+   "ppc_cpc": 1.4
+  },
+  {
+   "topic": "escape_room",
+   "queries": 38,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 12,
+   "gsc_clicks": 5,
+   "gsc_impr": 1582,
+   "conv": 0.0,
+   "ppc_ctr": 0.0,
+   "ppc_cpc": null
+  },
+  {
+   "topic": "things_to_do",
+   "queries": 203,
+   "ppc_clicks": 16,
+   "ppc_cost": 21.38,
+   "ppc_impr": 722,
+   "gsc_clicks": 5,
+   "gsc_impr": 390,
+   "conv": 0.0,
+   "ppc_ctr": 2.22,
+   "ppc_cpc": 1.34
+  },
+  {
+   "topic": "other",
+   "queries": 232,
+   "ppc_clicks": 15,
+   "ppc_cost": 21.38,
+   "ppc_impr": 509,
+   "gsc_clicks": 1,
+   "gsc_impr": 358,
+   "conv": 0.0,
+   "ppc_ctr": 2.95,
+   "ppc_cpc": 1.43
+  },
+  {
+   "topic": "game_show_party",
+   "queries": 8,
+   "ppc_clicks": 7,
+   "ppc_cost": 10.88,
+   "ppc_impr": 26,
+   "gsc_clicks": 0,
+   "gsc_impr": 17,
+   "conv": 0.0,
+   "ppc_ctr": 26.92,
+   "ppc_cpc": 1.55
+  },
+  {
+   "topic": "mall_navigational",
+   "queries": 11,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 0,
+   "gsc_clicks": 3,
+   "gsc_impr": 54,
+   "conv": 0,
+   "ppc_ctr": null,
+   "ppc_cpc": null
+  }
+ ],
+ "by_cluster": [
+  {
+   "cluster": "birthday-venue:kids",
+   "queries": 1839,
+   "ppc_clicks": 398,
+   "ppc_cost": 547.6,
+   "ppc_impr": 8125,
+   "gsc_clicks": 6,
+   "gsc_impr": 44,
+   "conv": 0.0,
+   "ppc_ctr": 4.9,
+   "ppc_cpc": 1.38,
+   "recommended_url": "/birthday-parties/kids/",
+   "ppc_landing_page": "/lp/kids-birthday-party/"
+  },
+  {
+   "cluster": "birthday-venue:general",
+   "queries": 2388,
+   "ppc_clicks": 334,
+   "ppc_cost": 457.26,
+   "ppc_impr": 8993,
+   "gsc_clicks": 4,
+   "gsc_impr": 294,
+   "conv": 0.0,
+   "ppc_ctr": 3.71,
+   "ppc_cpc": 1.37,
+   "recommended_url": "/birthday-parties/",
+   "ppc_landing_page": "/lp/birthday-party/"
+  },
+  {
+   "cluster": "birthday-ideas:adult",
+   "queries": 930,
+   "ppc_clicks": 162,
+   "ppc_cost": 233.71,
+   "ppc_impr": 2742,
+   "gsc_clicks": 0,
+   "gsc_impr": 4,
+   "conv": 0.0,
+   "ppc_ctr": 5.91,
+   "ppc_cpc": 1.44,
+   "recommended_url": "/birthday-parties/adult/",
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "birthday-ideas:kids",
+   "queries": 1343,
+   "ppc_clicks": 167,
+   "ppc_cost": 229.73,
+   "ppc_impr": 3343,
+   "gsc_clicks": 0,
+   "gsc_impr": 26,
+   "conv": 0.0,
+   "ppc_ctr": 5.0,
+   "ppc_cpc": 1.38,
+   "recommended_url": "/blog/birthday-party-ideas-by-age/",
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "escape-room:local",
+   "queries": 29,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 0,
+   "gsc_clicks": 4,
+   "gsc_impr": 1483,
+   "conv": 0,
+   "ppc_ctr": null,
+   "ppc_cpc": null,
+   "recommended_url": "/game-show-vs-escape-room/",
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "birthday-ideas:general",
+   "queries": 867,
+   "ppc_clicks": 103,
+   "ppc_cost": 146.21,
+   "ppc_impr": 2647,
+   "gsc_clicks": 2,
+   "gsc_impr": 4,
+   "conv": 0.0,
+   "ppc_ctr": 3.89,
+   "ppc_cpc": 1.42,
+   "recommended_url": "/blog/birthday-party-ideas-by-age/",
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "birthday-ideas:teen",
+   "queries": 686,
+   "ppc_clicks": 102,
+   "ppc_cost": 141.88,
+   "ppc_impr": 1853,
+   "gsc_clicks": 0,
+   "gsc_impr": 1,
+   "conv": 0.0,
+   "ppc_ctr": 5.5,
+   "ppc_cpc": 1.39,
+   "recommended_url": "/blog/birthday-party-ideas-by-age/",
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "competitor:great big game show / american dream",
+   "queries": 68,
+   "ppc_clicks": 71,
+   "ppc_cost": 101.69,
+   "ppc_impr": 816,
+   "gsc_clicks": 0,
+   "gsc_impr": 16,
+   "conv": 0.0,
+   "ppc_ctr": 8.7,
+   "ppc_cpc": 1.43,
+   "recommended_url": "/game-show-experiences-new-jersey/",
+   "ppc_landing_page": "/lp/game-show-experience/"
+  },
+  {
+   "cluster": "brand:game-show-room",
+   "queries": 20,
+   "ppc_clicks": 42,
+   "ppc_cost": 37.77,
+   "ppc_impr": 150,
+   "gsc_clicks": 15,
+   "gsc_impr": 560,
+   "conv": 0.0,
+   "ppc_ctr": 28.0,
+   "ppc_cpc": 0.9,
+   "recommended_url": "/",
+   "ppc_landing_page": "/lp/game-show-room/"
+  },
+  {
+   "cluster": "birthday-venue:teen",
+   "queries": 402,
+   "ppc_clicks": 63,
+   "ppc_cost": 88.7,
+   "ppc_impr": 1206,
+   "gsc_clicks": 1,
+   "gsc_impr": 3,
+   "conv": 0.0,
+   "ppc_ctr": 5.22,
+   "ppc_cpc": 1.41,
+   "recommended_url": "/birthday-parties/teen-and-sweet-16/",
+   "ppc_landing_page": "/lp/birthday-party/"
+  },
+  {
+   "cluster": "birthday-venue:adult",
+   "queries": 362,
+   "ppc_clicks": 51,
+   "ppc_cost": 67.61,
+   "ppc_impr": 919,
+   "gsc_clicks": 0,
+   "gsc_impr": 4,
+   "conv": 0.0,
+   "ppc_ctr": 5.55,
+   "ppc_cpc": 1.33,
+   "recommended_url": "/birthday-parties/adult/",
+   "ppc_landing_page": "/lp/birthday-party/"
+  },
+  {
+   "cluster": "birthday-venue:indoor",
+   "queries": 153,
+   "ppc_clicks": 32,
+   "ppc_cost": 45.25,
+   "ppc_impr": 621,
+   "gsc_clicks": 0,
+   "gsc_impr": 2,
+   "conv": 0.0,
+   "ppc_ctr": 5.15,
+   "ppc_cpc": 1.41,
+   "recommended_url": "/birthday-parties/",
+   "ppc_landing_page": "/lp/kids-birthday-party/"
+  },
+  {
+   "cluster": "competitor:game show battle rooms",
+   "queries": 20,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 2,
+   "gsc_clicks": 7,
+   "gsc_impr": 350,
+   "conv": 0.0,
+   "ppc_ctr": 0.0,
+   "ppc_cpc": null,
+   "recommended_url": "/game-show-experience/",
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "game-show:local",
+   "queries": 16,
+   "ppc_clicks": 2,
+   "ppc_cost": 2.09,
+   "ppc_impr": 14,
+   "gsc_clicks": 2,
+   "gsc_impr": 306,
+   "conv": 0.0,
+   "ppc_ctr": 14.29,
+   "ppc_cpc": 1.04,
+   "recommended_url": "/game-show-experience/",
+   "ppc_landing_page": "/lp/game-show-experience/"
+  },
+  {
+   "cluster": "game-show:generic-experience",
+   "queries": 75,
+   "ppc_clicks": 7,
+   "ppc_cost": 9.16,
+   "ppc_impr": 158,
+   "gsc_clicks": 4,
+   "gsc_impr": 211,
+   "conv": 0.0,
+   "ppc_ctr": 4.43,
+   "ppc_cpc": 1.31,
+   "recommended_url": "/game-show-experience/",
+   "ppc_landing_page": "/lp/game-show-experience/"
+  },
+  {
+   "cluster": "other:noise",
+   "queries": 195,
+   "ppc_clicks": 11,
+   "ppc_cost": 16.03,
+   "ppc_impr": 420,
+   "gsc_clicks": 1,
+   "gsc_impr": 128,
+   "conv": 0.0,
+   "ppc_ctr": 2.62,
+   "ppc_cpc": 1.46,
+   "recommended_url": null,
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "things-to-do:general-local",
+   "queries": 74,
+   "ppc_clicks": 1,
+   "ppc_cost": 1.83,
+   "ppc_impr": 30,
+   "gsc_clicks": 5,
+   "gsc_impr": 266,
+   "conv": 0.0,
+   "ppc_ctr": 3.33,
+   "ppc_cpc": 1.83,
+   "recommended_url": "/things-to-do-rockaway-nj/",
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "competitor:kids empire",
+   "queries": 65,
+   "ppc_clicks": 14,
+   "ppc_cost": 18.56,
+   "ppc_impr": 615,
+   "gsc_clicks": 0,
+   "gsc_impr": 0,
+   "conv": 0.0,
+   "ppc_ctr": 2.28,
+   "ppc_cpc": 1.33,
+   "recommended_url": null,
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "competitor:dave & busters",
+   "queries": 43,
+   "ppc_clicks": 9,
+   "ppc_cost": 13.36,
+   "ppc_impr": 195,
+   "gsc_clicks": 0,
+   "gsc_impr": 0,
+   "conv": 0.0,
+   "ppc_ctr": 4.62,
+   "ppc_cpc": 1.48,
+   "recommended_url": null,
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "game-show-birthday-party",
+   "queries": 8,
+   "ppc_clicks": 7,
+   "ppc_cost": 10.88,
+   "ppc_impr": 26,
+   "gsc_clicks": 0,
+   "gsc_impr": 17,
+   "conv": 0.0,
+   "ppc_ctr": 26.92,
+   "ppc_cpc": 1.55,
+   "recommended_url": "/birthday-parties/",
+   "ppc_landing_page": "/lp/birthday-party/"
+  },
+  {
+   "cluster": "competitor:funplex",
+   "queries": 11,
+   "ppc_clicks": 8,
+   "ppc_cost": 11.65,
+   "ppc_impr": 146,
+   "gsc_clicks": 0,
+   "gsc_impr": 0,
+   "conv": 0.0,
+   "ppc_ctr": 5.48,
+   "ppc_cpc": 1.46,
+   "recommended_url": null,
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "competitor:sky zone",
+   "queries": 37,
+   "ppc_clicks": 6,
+   "ppc_cost": 10.95,
+   "ppc_impr": 267,
+   "gsc_clicks": 0,
+   "gsc_impr": 0,
+   "conv": 0.0,
+   "ppc_ctr": 2.25,
+   "ppc_cpc": 1.82,
+   "recommended_url": null,
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "game-show:irrelevant-or-out-of-area",
+   "queries": 17,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 3,
+   "gsc_clicks": 0,
+   "gsc_impr": 109,
+   "conv": 0.0,
+   "ppc_ctr": 0.0,
+   "ppc_cpc": null,
+   "recommended_url": null,
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "competitor:bowlero / bowling",
+   "queries": 62,
+   "ppc_clicks": 6,
+   "ppc_cost": 8.49,
+   "ppc_impr": 288,
+   "gsc_clicks": 0,
+   "gsc_impr": 0,
+   "conv": 0.0,
+   "ppc_ctr": 2.08,
+   "ppc_cpc": 1.42,
+   "recommended_url": null,
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "brand:sister-escape-rooms",
+   "queries": 3,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 12,
+   "gsc_clicks": 1,
+   "gsc_impr": 79,
+   "conv": 0.0,
+   "ppc_ctr": 0.0,
+   "ppc_cpc": null,
+   "recommended_url": "/game-show-vs-escape-room/",
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "competitor:xtreme energy",
+   "queries": 9,
+   "ppc_clicks": 3,
+   "ppc_cost": 5.37,
+   "ppc_impr": 18,
+   "gsc_clicks": 0,
+   "gsc_impr": 17,
+   "conv": 0.0,
+   "ppc_ctr": 16.67,
+   "ppc_cpc": 1.79,
+   "recommended_url": null,
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "things-to-do:kids-family",
+   "queries": 53,
+   "ppc_clicks": 1,
+   "ppc_cost": 1.51,
+   "ppc_impr": 122,
+   "gsc_clicks": 0,
+   "gsc_impr": 48,
+   "conv": 0.0,
+   "ppc_ctr": 0.82,
+   "ppc_cpc": 1.51,
+   "recommended_url": "/things-to-do-rockaway-nj/",
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "competitor:other venue brand",
+   "queries": 98,
+   "ppc_clicks": 4,
+   "ppc_cost": 5.18,
+   "ppc_impr": 352,
+   "gsc_clicks": 0,
+   "gsc_impr": 0,
+   "conv": 0.0,
+   "ppc_ctr": 1.14,
+   "ppc_cpc": 1.29,
+   "recommended_url": null,
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "game-show:family-kids-school",
+   "queries": 7,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 8,
+   "gsc_clicks": 0,
+   "gsc_impr": 44,
+   "conv": 0.0,
+   "ppc_ctr": 0.0,
+   "ppc_cpc": null,
+   "recommended_url": "/group-events/school-and-youth-groups/",
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "local:rockaway-townsquare-mall",
+   "queries": 8,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 0,
+   "gsc_clicks": 3,
+   "gsc_impr": 42,
+   "conv": 0,
+   "ppc_ctr": null,
+   "ppc_cpc": null,
+   "recommended_url": "/location/rockaway-nj/",
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "competitor:giggles playstation",
+   "queries": 3,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 0,
+   "gsc_clicks": 0,
+   "gsc_impr": 38,
+   "conv": 0,
+   "ppc_ctr": null,
+   "ppc_cpc": null,
+   "recommended_url": null,
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "things-to-do:adults-groups",
+   "queries": 19,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 0,
+   "gsc_clicks": 0,
+   "gsc_impr": 22,
+   "conv": 0,
+   "ppc_ctr": null,
+   "ppc_cpc": null,
+   "recommended_url": "/things-to-do-rockaway-nj/",
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "escape-room:generic",
+   "queries": 6,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 0,
+   "gsc_clicks": 0,
+   "gsc_impr": 20,
+   "conv": 0,
+   "ppc_ctr": null,
+   "ppc_cpc": null,
+   "recommended_url": "/game-show-vs-escape-room/",
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "competitor:game show challenge (freehold)",
+   "queries": 3,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 0,
+   "gsc_clicks": 0,
+   "gsc_impr": 18,
+   "conv": 0,
+   "ppc_ctr": null,
+   "ppc_cpc": null,
+   "recommended_url": "/game-show-experiences-new-jersey/",
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "competitor:sunshine village",
+   "queries": 3,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 0,
+   "gsc_clicks": 0,
+   "gsc_impr": 14,
+   "conv": 0,
+   "ppc_ctr": null,
+   "ppc_cpc": null,
+   "recommended_url": null,
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "events:corporate-team-building",
+   "queries": 5,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 2,
+   "gsc_clicks": 0,
+   "gsc_impr": 3,
+   "conv": 0.0,
+   "ppc_ctr": 0.0,
+   "ppc_cpc": null,
+   "recommended_url": "/group-events/corporate-team-building/",
+   "ppc_landing_page": "/lp/team-building/"
+  },
+  {
+   "cluster": "game-show:corporate",
+   "queries": 3,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 4,
+   "gsc_clicks": 0,
+   "gsc_impr": 0,
+   "conv": 0.0,
+   "ppc_ctr": 0.0,
+   "ppc_cpc": null,
+   "recommended_url": "/group-events/corporate-team-building/",
+   "ppc_landing_page": "/lp/team-building/"
+  },
+  {
+   "cluster": "competitor:chuck e cheese",
+   "queries": 2,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 2,
+   "gsc_clicks": 0,
+   "gsc_impr": 0,
+   "conv": 0.0,
+   "ppc_ctr": 0.0,
+   "ppc_cpc": null,
+   "recommended_url": null,
+   "ppc_landing_page": null
+  },
+  {
+   "cluster": "competitor:urban air",
+   "queries": 1,
+   "ppc_clicks": 0,
+   "ppc_cost": 0.0,
+   "ppc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_impr": 0,
+   "conv": 0.0,
+   "ppc_ctr": 0.0,
+   "ppc_cpc": null,
+   "recommended_url": null,
+   "ppc_landing_page": null
+  }
+ ],
+ "occasions": [
+  {
+   "occasion": "kids_birthday",
+   "queries": 3959,
+   "ppc_cost": 922.13
+  },
+  {
+   "occasion": "birthday_general",
+   "queries": 3132,
+   "ppc_cost": 648.4
+  },
+  {
+   "occasion": "adult_milestone_birthday",
+   "queries": 1560,
+   "ppc_cost": 327.2
+  },
+  {
+   "occasion": "teen_birthday",
+   "queries": 1093,
+   "ppc_cost": 230.58
+  },
+  {
+   "occasion": "party_general",
+   "queries": 392,
+   "ppc_cost": 45.86
+  },
+  {
+   "occasion": "family_outing",
+   "queries": 34,
+   "ppc_cost": 1.14
+  },
+  {
+   "occasion": "school_youth_group",
+   "queries": 18,
+   "ppc_cost": 0.0
+  },
+  {
+   "occasion": "holiday_party",
+   "queries": 15,
+   "ppc_cost": 1.35
+  },
+  {
+   "occasion": "corporate_team_building",
+   "queries": 9,
+   "ppc_cost": 0.0
+  },
+  {
+   "occasion": "date_night",
+   "queries": 2,
+   "ppc_cost": 0
+  }
+ ],
+ "age_mentions_by_impressions": [
+  {
+   "age": 10,
+   "impressions": 865
+  },
+  {
+   "age": 13,
+   "impressions": 593
+  },
+  {
+   "age": 40,
+   "impressions": 569
+  },
+  {
+   "age": 50,
+   "impressions": 484
+  },
+  {
+   "age": 11,
+   "impressions": 432
+  },
+  {
+   "age": 12,
+   "impressions": 409
+  },
+  {
+   "age": 8,
+   "impressions": 359
+  },
+  {
+   "age": 30,
+   "impressions": 352
+  },
+  {
+   "age": 6,
+   "impressions": 331
+  },
+  {
+   "age": 9,
+   "impressions": 316
+  },
+  {
+   "age": 7,
+   "impressions": 304
+  },
+  {
+   "age": 16,
+   "impressions": 298
+  },
+  {
+   "age": 60,
+   "impressions": 287
+  },
+  {
+   "age": 21,
+   "impressions": 265
+  },
+  {
+   "age": 18,
+   "impressions": 263
+  },
+  {
+   "age": 14,
+   "impressions": 170
+  },
+  {
+   "age": 15,
+   "impressions": 161
+  },
+  {
+   "age": 70,
+   "impressions": 155
+  },
+  {
+   "age": 17,
+   "impressions": 122
+  },
+  {
+   "age": 80,
+   "impressions": 116
+  },
+  {
+   "age": 20,
+   "impressions": 79
+  },
+  {
+   "age": 25,
+   "impressions": 72
+  },
+  {
+   "age": 19,
+   "impressions": 46
+  },
+  {
+   "age": 65,
+   "impressions": 39
+  },
+  {
+   "age": 22,
+   "impressions": 35
+  }
+ ],
+ "geo_modifiers_by_impressions": [
+  [
+   "near me",
+   9390
+  ],
+  [
+   "rockaway",
+   2360
+  ],
+  [
+   "wayne",
+   121
+  ],
+  [
+   "morris county",
+   77
+  ],
+  [
+   "randolph",
+   43
+  ],
+  [
+   "morristown",
+   12
+  ],
+  [
+   "hackettstown",
+   7
+  ],
+  [
+   "denville",
+   6
+  ],
+  [
+   "parsippany",
+   5
+  ],
+  [
+   "sparta",
+   3
+  ],
+  [
+   "montville",
+   3
+  ],
+  [
+   "ledgewood",
+   2
+  ],
+  [
+   "lake hopatcong",
+   1
+  ],
+  [
+   "hopatcong",
+   1
+  ]
+ ],
+ "negative_candidates": [
+  {
+   "query": "birthday party ideas",
+   "cost": 20.71,
+   "clicks": 14,
+   "reason": "spend with 0 recorded conversions (tracking gap - see ppc-strategy.md)"
+  },
+  {
+   "query": "adult birthday party ideas",
+   "cost": 18.14,
+   "clicks": 12,
+   "reason": "spend with 0 recorded conversions (tracking gap - see ppc-strategy.md); low commercial intent / possible negative"
+  },
+  {
+   "query": "birthday ideas",
+   "cost": 11.56,
+   "clicks": 8,
+   "reason": "spend with 0 recorded conversions (tracking gap - see ppc-strategy.md)"
+  },
+  {
+   "query": "13th birthday party ideas",
+   "cost": 9.44,
+   "clicks": 6,
+   "reason": "spend with 0 recorded conversions (tracking gap - see ppc-strategy.md)"
+  },
+  {
+   "query": "birthday ideas for adults",
+   "cost": 9.23,
+   "clicks": 6,
+   "reason": "spend with 0 recorded conversions (tracking gap - see ppc-strategy.md); low commercial intent / possible negative"
+  },
+  {
+   "query": "70th birthday ideas",
+   "cost": 7.93,
+   "clicks": 5,
+   "reason": "spend with 0 recorded conversions (tracking gap - see ppc-strategy.md); low commercial intent / possible negative"
+  },
+  {
+   "query": "40th birthday ideas",
+   "cost": 6.85,
+   "clicks": 5,
+   "reason": "spend with 0 recorded conversions (tracking gap - see ppc-strategy.md); low commercial intent / possible negative"
+  },
+  {
+   "query": "50th birthday ideas",
+   "cost": 6.65,
+   "clicks": 4,
+   "reason": "spend with 0 recorded conversions (tracking gap - see ppc-strategy.md); low commercial intent / possible negative"
+  },
+  {
+   "query": "80th birthday party ideas",
+   "cost": 6.01,
+   "clicks": 4,
+   "reason": "spend with 0 recorded conversions (tracking gap - see ppc-strategy.md); low commercial intent / possible negative"
+  },
+  {
+   "query": "sweet 16 party ideas",
+   "cost": 5.95,
+   "clicks": 4,
+   "reason": "spend with 0 recorded conversions (tracking gap - see ppc-strategy.md)"
+  },
+  {
+   "query": "ideas for 12 year old boy birthday party",
+   "cost": 5.59,
+   "clicks": 4,
+   "reason": "spend with 0 recorded conversions (tracking gap - see ppc-strategy.md)"
+  },
+  {
+   "query": "10 year old birthday party ideas",
+   "cost": 5.34,
+   "clicks": 3,
+   "reason": "spend with 0 recorded conversions (tracking gap - see ppc-strategy.md)"
+  },
+  {
+   "query": "birthday activities for adults",
+   "cost": 5.17,
+   "clicks": 4,
+   "reason": "spend with 0 recorded conversions (tracking gap - see ppc-strategy.md); low commercial intent / possible negative"
+  },
+  {
+   "query": "40th birthday party ideas",
+   "cost": 5.03,
+   "clicks": 4,
+   "reason": "spend with 0 recorded conversions (tracking gap - see ppc-strategy.md); low commercial intent / possible negative"
+  },
+  {
+   "query": "teen birthday party ideas",
+   "cost": 4.85,
+   "clicks": 4,
+   "reason": "informational / birthday-ideas:teen"
+  },
+  {
+   "query": "13 year old girl birthday party ideas",
+   "cost": 4.5,
+   "clicks": 3,
+   "reason": "informational / birthday-ideas:teen"
+  },
+  {
+   "query": "7 year old birthday party ideas",
+   "cost": 4.39,
+   "clicks": 3,
+   "reason": "informational / birthday-ideas:kids"
+  },
+  {
+   "query": "12 year old birthday party ideas",
+   "cost": 4.09,
+   "clicks": 3,
+   "reason": "informational / birthday-ideas:kids"
+  },
+  {
+   "query": "30th birthday party ideas",
+   "cost": 3.98,
+   "clicks": 3,
+   "reason": "low commercial intent / possible negative"
+  },
+  {
+   "query": "boys birthday party ideas",
+   "cost": 3.92,
+   "clicks": 3,
+   "reason": "informational / birthday-ideas:kids"
+  },
+  {
+   "query": "25th birthday party ideas",
+   "cost": 3.89,
+   "clicks": 2,
+   "reason": "low commercial intent / possible negative"
+  },
+  {
+   "query": "what is a good theme for a birthday party",
+   "cost": 3.66,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:general"
+  },
+  {
+   "query": "10 year old birthday ideas",
+   "cost": 3.47,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:kids"
+  },
+  {
+   "query": "sweet 16 small party ideas",
+   "cost": 3.42,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:teen"
+  },
+  {
+   "query": "unique birthday party ideas for kids",
+   "cost": 3.39,
+   "clicks": 3,
+   "reason": "informational / birthday-ideas:kids"
+  },
+  {
+   "query": "60th birthday party ideas for a man",
+   "cost": 3.37,
+   "clicks": 2,
+   "reason": "low commercial intent / possible negative"
+  },
+  {
+   "query": "50th birthday party ideas",
+   "cost": 3.26,
+   "clicks": 2,
+   "reason": "low commercial intent / possible negative"
+  },
+  {
+   "query": "60th birthday ideas",
+   "cost": 3.26,
+   "clicks": 2,
+   "reason": "low commercial intent / possible negative"
+  },
+  {
+   "query": "fun activities for adult birthday",
+   "cost": 3.2,
+   "clicks": 2,
+   "reason": "low commercial intent / possible negative"
+  },
+  {
+   "query": "12 year old girl birthday party ideas",
+   "cost": 3.06,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:kids"
+  },
+  {
+   "query": "birthday party games for adults",
+   "cost": 3.02,
+   "clicks": 2,
+   "reason": "low commercial intent / possible negative"
+  },
+  {
+   "query": "fun birthday ideas",
+   "cost": 2.95,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:general"
+  },
+  {
+   "query": "fun things to do for 14 year old boy birthday",
+   "cost": 2.88,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:teen"
+  },
+  {
+   "query": "8 year old birthday party ideas",
+   "cost": 2.86,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:kids"
+  },
+  {
+   "query": "12 year old boy birthday party ideas",
+   "cost": 2.86,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:kids"
+  },
+  {
+   "query": "fun birthday ideas nj",
+   "cost": 2.85,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:general"
+  },
+  {
+   "query": "birthday party ideas for 11 year old",
+   "cost": 2.78,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:kids"
+  },
+  {
+   "query": "unique birthday party ideas",
+   "cost": 2.76,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:general"
+  },
+  {
+   "query": "birthday party themes for kids",
+   "cost": 2.76,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:kids"
+  },
+  {
+   "query": "what to do for 50th birthday woman",
+   "cost": 2.72,
+   "clicks": 2,
+   "reason": "low commercial intent / possible negative"
+  },
+  {
+   "query": "birthday games ideas for adults",
+   "cost": 2.72,
+   "clicks": 2,
+   "reason": "low commercial intent / possible negative"
+  },
+  {
+   "query": "adult group birthday ideas",
+   "cost": 2.71,
+   "clicks": 2,
+   "reason": "low commercial intent / possible negative"
+  },
+  {
+   "query": "how to celebrate 50th birthday",
+   "cost": 2.71,
+   "clicks": 2,
+   "reason": "low commercial intent / possible negative"
+  },
+  {
+   "query": "best sweet 16 ideas",
+   "cost": 2.7,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:teen"
+  },
+  {
+   "query": "adult birthday party ideas nj",
+   "cost": 2.7,
+   "clicks": 2,
+   "reason": "low commercial intent / possible negative"
+  },
+  {
+   "query": "ideas for a 70th birthday party",
+   "cost": 2.69,
+   "clicks": 2,
+   "reason": "low commercial intent / possible negative"
+  },
+  {
+   "query": "birthday ideas nj adults",
+   "cost": 2.68,
+   "clicks": 2,
+   "reason": "low commercial intent / possible negative"
+  },
+  {
+   "query": "fun party ideas for 12 year old girls",
+   "cost": 2.66,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:kids"
+  },
+  {
+   "query": "fun adult activities for birthday",
+   "cost": 2.66,
+   "clicks": 2,
+   "reason": "low commercial intent / possible negative"
+  },
+  {
+   "query": "birthday party ideas for 11 year old girl",
+   "cost": 2.64,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:kids"
+  },
+  {
+   "query": "birthday party ideas for teens",
+   "cost": 2.63,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:teen"
+  },
+  {
+   "query": "birthday ideas for 13 year old boy",
+   "cost": 2.62,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:teen"
+  },
+  {
+   "query": "13 year old birthday party ideas",
+   "cost": 2.59,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:teen"
+  },
+  {
+   "query": "13th birthday party ideas girl",
+   "cost": 2.57,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:teen"
+  },
+  {
+   "query": "11 year old birthday party ideas boy",
+   "cost": 2.55,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:kids"
+  },
+  {
+   "query": "unique birthday themes for 11 year olds girl",
+   "cost": 2.55,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:kids"
+  },
+  {
+   "query": "10 year old girl birthday party ideas",
+   "cost": 2.51,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:kids"
+  },
+  {
+   "query": "birthday ideas for 16 year old girl",
+   "cost": 2.51,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:teen"
+  },
+  {
+   "query": "birthday party ideas for a 9 year old girl",
+   "cost": 2.51,
+   "clicks": 2,
+   "reason": "informational / birthday-ideas:kids"
+  },
+  {
+   "query": "ideas for 60th birthday party female",
+   "cost": 2.51,
+   "clicks": 2,
+   "reason": "low commercial intent / possible negative"
+  }
+ ],
+ "negative_candidate_spend": 759.09,
+ "ppc_gsc_overlap": [
+  {
+   "query": "kids birthday party places near me",
+   "ppc_cost": 63.93,
+   "ppc_clicks": 48,
+   "gsc_impr": 10,
+   "gsc_clicks": 2,
+   "gsc_pos": 4.8
+  },
+  {
+   "query": "birthday party places near me",
+   "ppc_cost": 40.6,
+   "ppc_clicks": 31,
+   "gsc_impr": 3,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "game show room rockaway nj",
+   "ppc_cost": 25.6,
+   "ppc_clicks": 32,
+   "gsc_impr": 20,
+   "gsc_clicks": 2,
+   "gsc_pos": 1.25
+  },
+  {
+   "query": "birthday party ideas",
+   "ppc_cost": 20.71,
+   "ppc_clicks": 14,
+   "gsc_impr": 2,
+   "gsc_clicks": 1,
+   "gsc_pos": 1.5
+  },
+  {
+   "query": "american dream mall game show",
+   "ppc_cost": 10.05,
+   "ppc_clicks": 6,
+   "gsc_impr": 2,
+   "gsc_clicks": 0,
+   "gsc_pos": 58.0
+  },
+  {
+   "query": "game show room",
+   "ppc_cost": 10.03,
+   "ppc_clicks": 8,
+   "gsc_impr": 215,
+   "gsc_clicks": 8,
+   "gsc_pos": 5.27
+  },
+  {
+   "query": "birthday party",
+   "ppc_cost": 9.84,
+   "ppc_clicks": 7,
+   "gsc_impr": 4,
+   "gsc_clicks": 0,
+   "gsc_pos": 12.0
+  },
+  {
+   "query": "game show birthday party",
+   "ppc_cost": 9.73,
+   "ppc_clicks": 6,
+   "gsc_impr": 9,
+   "gsc_clicks": 0,
+   "gsc_pos": 12.11
+  },
+  {
+   "query": "birthday parties near me",
+   "ppc_cost": 9.29,
+   "ppc_clicks": 6,
+   "gsc_impr": 5,
+   "gsc_clicks": 0,
+   "gsc_pos": 4.8
+  },
+  {
+   "query": "birthday party places",
+   "ppc_cost": 9.26,
+   "ppc_clicks": 7,
+   "gsc_impr": 2,
+   "gsc_clicks": 0,
+   "gsc_pos": 2.5
+  },
+  {
+   "query": "laser tag birthday party",
+   "ppc_cost": 7.78,
+   "ppc_clicks": 6,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "kids birthday party venues near me",
+   "ppc_cost": 6.53,
+   "ppc_clicks": 5,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "kids birthday parties near me",
+   "ppc_cost": 5.95,
+   "ppc_clicks": 5,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "game room birthday party",
+   "ppc_cost": 5.53,
+   "ppc_clicks": 3,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 3.0
+  },
+  {
+   "query": "birthday activities for adults",
+   "ppc_cost": 5.17,
+   "ppc_clicks": 4,
+   "gsc_impr": 3,
+   "gsc_clicks": 0,
+   "gsc_pos": 8.67
+  },
+  {
+   "query": "birthday activities",
+   "ppc_cost": 4.48,
+   "ppc_clicks": 3,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "kids birthday parties",
+   "ppc_cost": 4.21,
+   "ppc_clicks": 3,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 9.0
+  },
+  {
+   "query": "gameshow",
+   "ppc_cost": 4.18,
+   "ppc_clicks": 3,
+   "gsc_impr": 3,
+   "gsc_clicks": 1,
+   "gsc_pos": 10.0
+  },
+  {
+   "query": "kids birthday party",
+   "ppc_cost": 4.16,
+   "ppc_clicks": 3,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "teen birthday party places near me",
+   "ppc_cost": 4.11,
+   "ppc_clicks": 3,
+   "gsc_impr": 2,
+   "gsc_clicks": 0,
+   "gsc_pos": 6.0
+  },
+  {
+   "query": "birthday party venues for kids near me",
+   "ppc_cost": 3.36,
+   "ppc_clicks": 2,
+   "gsc_impr": 1,
+   "gsc_clicks": 1,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "archery birthday party",
+   "ppc_cost": 3.0,
+   "ppc_clicks": 2,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "birthday party for kids near me",
+   "ppc_cost": 2.9,
+   "ppc_clicks": 2,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 25.0
+  },
+  {
+   "query": "party places for kids",
+   "ppc_cost": 2.85,
+   "ppc_clicks": 2,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "girls birthday parties near me",
+   "ppc_cost": 2.77,
+   "ppc_clicks": 2,
+   "gsc_impr": 2,
+   "gsc_clicks": 1,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "places for kids birthday party",
+   "ppc_cost": 2.73,
+   "ppc_clicks": 2,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "soccer field birthday party",
+   "ppc_cost": 2.65,
+   "ppc_clicks": 2,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "birthday party ideas for teens",
+   "ppc_cost": 2.63,
+   "ppc_clicks": 2,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "birthday party venues near me",
+   "ppc_cost": 2.55,
+   "ppc_clicks": 2,
+   "gsc_impr": 2,
+   "gsc_clicks": 0,
+   "gsc_pos": 32.5
+  },
+  {
+   "query": "kids party",
+   "ppc_cost": 2.51,
+   "ppc_clicks": 2,
+   "gsc_impr": 2,
+   "gsc_clicks": 0,
+   "gsc_pos": 51.0
+  },
+  {
+   "query": "birthday parties for kids",
+   "ppc_cost": 1.99,
+   "ppc_clicks": 1,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 66.0
+  },
+  {
+   "query": "places to have a baby birthday party",
+   "ppc_cost": 1.91,
+   "ppc_clicks": 1,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "kids birthday party idea",
+   "ppc_cost": 1.77,
+   "ppc_clicks": 1,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "mobile kids party",
+   "ppc_cost": 1.66,
+   "ppc_clicks": 1,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "birthday party places for 11 year old girls",
+   "ppc_cost": 1.6,
+   "ppc_clicks": 1,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "boys birthday parties",
+   "ppc_cost": 1.6,
+   "ppc_clicks": 1,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 41.0
+  },
+  {
+   "query": "good places to go for birthday",
+   "ppc_cost": 1.52,
+   "ppc_clicks": 1,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "paint party for kids",
+   "ppc_cost": 1.52,
+   "ppc_clicks": 1,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "places to have an adult birthday party",
+   "ppc_cost": 1.51,
+   "ppc_clicks": 1,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  },
+  {
+   "query": "birthday party basketball court",
+   "ppc_cost": 1.47,
+   "ppc_clicks": 1,
+   "gsc_impr": 1,
+   "gsc_clicks": 0,
+   "gsc_pos": 1.0
+  }
+ ],
+ "gsc_ctr_opportunities": [
+  {
+   "query": "escape room rockaway nj",
+   "clicks": 2,
+   "impressions": 453,
+   "ctr": "0.44%",
+   "position": 9.45,
+   "cluster": "escape-room:local"
+  },
+  {
+   "query": "rockaway mall escape room",
+   "clicks": 0,
+   "impressions": 324,
+   "ctr": "0%",
+   "position": 10.81,
+   "cluster": "escape-room:local"
+  },
+  {
+   "query": "game show battle rooms",
+   "clicks": 4,
+   "impressions": 254,
+   "ctr": "1.57%",
+   "position": 4.08,
+   "cluster": "competitor:game show battle rooms"
+  },
+  {
+   "query": "escape room rockaway mall",
+   "clicks": 0,
+   "impressions": 229,
+   "ctr": "0%",
+   "position": 11.49,
+   "cluster": "escape-room:local"
+  },
+  {
+   "query": "rockaway nj event space",
+   "clicks": 0,
+   "impressions": 201,
+   "ctr": "0%",
+   "position": 31.03,
+   "cluster": "birthday-venue:general"
+  },
+  {
+   "query": "in the spotlight rockaway nj",
+   "clicks": 0,
+   "impressions": 189,
+   "ctr": "0%",
+   "position": 12.04,
+   "cluster": "brand:game-show-room"
+  },
+  {
+   "query": "unique game show new jersey",
+   "clicks": 0,
+   "impressions": 151,
+   "ctr": "0%",
+   "position": 26.07,
+   "cluster": "game-show:local"
+  },
+  {
+   "query": "rockaway escape room",
+   "clicks": 0,
+   "impressions": 112,
+   "ctr": "0%",
+   "position": 15.88,
+   "cluster": "escape-room:local"
+  },
+  {
+   "query": "escape room rockaway",
+   "clicks": 0,
+   "impressions": 99,
+   "ctr": "0%",
+   "position": 14.84,
+   "cluster": "escape-room:local"
+  },
+  {
+   "query": "game shows near me",
+   "clicks": 0,
+   "impressions": 61,
+   "ctr": "0%",
+   "position": 25.79,
+   "cluster": "game-show:local"
+  },
+  {
+   "query": "escape room in rockaway mall",
+   "clicks": 0,
+   "impressions": 60,
+   "ctr": "0%",
+   "position": 15.32,
+   "cluster": "escape-room:local"
+  },
+  {
+   "query": "escape room rockaway mall nj",
+   "clicks": 0,
+   "impressions": 56,
+   "ctr": "0%",
+   "position": 19.41,
+   "cluster": "escape-room:local"
+  },
+  {
+   "query": "escape rooms near me",
+   "clicks": 0,
+   "impressions": 54,
+   "ctr": "0%",
+   "position": 9.43,
+   "cluster": "escape-room:local"
+  },
+  {
+   "query": "rockaway mall activities",
+   "clicks": 1,
+   "impressions": 47,
+   "ctr": "2.13%",
+   "position": 8.89,
+   "cluster": "things-to-do:general-local"
+  },
+  {
+   "query": "things to do near rockaway nj",
+   "clicks": 1,
+   "impressions": 45,
+   "ctr": "2.22%",
+   "position": 8.51,
+   "cluster": "things-to-do:general-local"
+  },
+  {
+   "query": "escape the mystery room rockaway",
+   "clicks": 0,
+   "impressions": 41,
+   "ctr": "0%",
+   "position": 13.56,
+   "cluster": "brand:sister-escape-rooms"
+  },
+  {
+   "query": "new mexico town game show",
+   "clicks": 0,
+   "impressions": 41,
+   "ctr": "0%",
+   "position": 67.41,
+   "cluster": "game-show:irrelevant-or-out-of-area"
+  },
+  {
+   "query": "game show battle room",
+   "clicks": 0,
+   "impressions": 39,
+   "ctr": "0%",
+   "position": 4.79,
+   "cluster": "competitor:game show battle rooms"
+  },
+  {
+   "query": "school game shows new jersey",
+   "clicks": 0,
+   "impressions": 37,
+   "ctr": "0%",
+   "position": 13.43,
+   "cluster": "game-show:family-kids-school"
+  },
+  {
+   "query": "rockaway mall events",
+   "clicks": 1,
+   "impressions": 34,
+   "ctr": "2.94%",
+   "position": 7.15,
+   "cluster": "birthday-venue:general"
+  },
+  {
+   "query": "escape the mystery room rockaway reviews",
+   "clicks": 0,
+   "impressions": 33,
+   "ctr": "0%",
+   "position": 10.36,
+   "cluster": "brand:sister-escape-rooms"
+  },
+  {
+   "query": "the game show room",
+   "clicks": 0,
+   "impressions": 30,
+   "ctr": "0%",
+   "position": 8.8,
+   "cluster": "brand:game-show-room"
+  },
+  {
+   "query": "game show experience",
+   "clicks": 0,
+   "impressions": 26,
+   "ctr": "0%",
+   "position": 9.23,
+   "cluster": "game-show:generic-experience"
+  },
+  {
+   "query": "rockaway mall kids activities",
+   "clicks": 0,
+   "impressions": 25,
+   "ctr": "0%",
+   "position": 7.84,
+   "cluster": "things-to-do:kids-family"
+  },
+  {
+   "query": "escape room near me",
+   "clicks": 0,
+   "impressions": 25,
+   "ctr": "0%",
+   "position": 11.68,
+   "cluster": "escape-room:local"
+  },
+  {
+   "query": "games for boys birthday parties",
+   "clicks": 0,
+   "impressions": 24,
+   "ctr": "0%",
+   "position": 78.42,
+   "cluster": "birthday-ideas:kids"
+  },
+  {
+   "query": "game shows new york",
+   "clicks": 0,
+   "impressions": 22,
+   "ctr": "0%",
+   "position": 68.36,
+   "cluster": "game-show:irrelevant-or-out-of-area"
+  },
+  {
+   "query": "escape room game show",
+   "clicks": 0,
+   "impressions": 21,
+   "ctr": "0%",
+   "position": 20.1,
+   "cluster": "game-show:generic-experience"
+  },
+  {
+   "query": "brain challenge game show new jersey",
+   "clicks": 0,
+   "impressions": 20,
+   "ctr": "0%",
+   "position": 9.9,
+   "cluster": "game-show:local"
+  },
+  {
+   "query": "game show escape room",
+   "clicks": 0,
+   "impressions": 20,
+   "ctr": "0%",
+   "position": 20.75,
+   "cluster": "game-show:generic-experience"
+  }
+ ],
+ "top_spend_terms": [
+  {
+   "query": "kids birthday party places near me",
+   "cost": 63.93,
+   "clicks": 48,
+   "impr": 816,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:kids"
+  },
+  {
+   "query": "birthday party places near me",
+   "cost": 40.6,
+   "clicks": 31,
+   "impr": 768,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:general"
+  },
+  {
+   "query": "game show room rockaway nj",
+   "cost": 25.6,
+   "clicks": 32,
+   "impr": 111,
+   "intent": "brand",
+   "cluster": "brand:game-show-room"
+  },
+  {
+   "query": "birthday party ideas",
+   "cost": 20.71,
+   "clicks": 14,
+   "impr": 336,
+   "intent": "informational",
+   "cluster": "birthday-ideas:general"
+  },
+  {
+   "query": "game show american dream",
+   "cost": 20.22,
+   "clicks": 15,
+   "impr": 116,
+   "intent": "competitor",
+   "cluster": "competitor:great big game show / american dream"
+  },
+  {
+   "query": "adult birthday party ideas",
+   "cost": 18.14,
+   "clicks": 12,
+   "impr": 84,
+   "intent": "informational",
+   "cluster": "birthday-ideas:adult"
+  },
+  {
+   "query": "birthday party near me",
+   "cost": 16.3,
+   "clicks": 13,
+   "impr": 241,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:general"
+  },
+  {
+   "query": "kids party places near me",
+   "cost": 16.23,
+   "clicks": 12,
+   "impr": 289,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:kids"
+  },
+  {
+   "query": "kids birthday party near me",
+   "cost": 15.1,
+   "clicks": 12,
+   "impr": 227,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:kids"
+  },
+  {
+   "query": "birthday ideas",
+   "cost": 11.56,
+   "clicks": 8,
+   "impr": 180,
+   "intent": "informational",
+   "cluster": "birthday-ideas:general"
+  },
+  {
+   "query": "the big game show american dream",
+   "cost": 11.22,
+   "clicks": 7,
+   "impr": 28,
+   "intent": "competitor",
+   "cluster": "competitor:great big game show / american dream"
+  },
+  {
+   "query": "kid birthday party places near me",
+   "cost": 10.28,
+   "clicks": 7,
+   "impr": 102,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:kids"
+  },
+  {
+   "query": "american dream mall game show",
+   "cost": 10.05,
+   "clicks": 6,
+   "impr": 59,
+   "intent": "competitor",
+   "cluster": "competitor:great big game show / american dream"
+  },
+  {
+   "query": "game show room",
+   "cost": 10.03,
+   "clicks": 8,
+   "impr": 21,
+   "intent": "brand",
+   "cluster": "brand:game-show-room"
+  },
+  {
+   "query": "birthday party",
+   "cost": 9.84,
+   "clicks": 7,
+   "impr": 216,
+   "intent": "commercial_investigation",
+   "cluster": "birthday-venue:general"
+  },
+  {
+   "query": "game show birthday party",
+   "cost": 9.73,
+   "clicks": 6,
+   "impr": 18,
+   "intent": "commercial_investigation",
+   "cluster": "game-show-birthday-party"
+  },
+  {
+   "query": "the great big game show",
+   "cost": 9.52,
+   "clicks": 7,
+   "impr": 109,
+   "intent": "competitor",
+   "cluster": "competitor:great big game show / american dream"
+  },
+  {
+   "query": "american dream game show",
+   "cost": 9.46,
+   "clicks": 8,
+   "impr": 104,
+   "intent": "competitor",
+   "cluster": "competitor:great big game show / american dream"
+  },
+  {
+   "query": "13th birthday party ideas",
+   "cost": 9.44,
+   "clicks": 6,
+   "impr": 38,
+   "intent": "informational",
+   "cluster": "birthday-ideas:teen"
+  },
+  {
+   "query": "birthday parties near me",
+   "cost": 9.29,
+   "clicks": 6,
+   "impr": 145,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:general"
+  },
+  {
+   "query": "birthday party places",
+   "cost": 9.26,
+   "clicks": 7,
+   "impr": 169,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:general"
+  },
+  {
+   "query": "birthday ideas for adults",
+   "cost": 9.23,
+   "clicks": 6,
+   "impr": 85,
+   "intent": "informational",
+   "cluster": "birthday-ideas:adult"
+  },
+  {
+   "query": "birthday celebration places near me",
+   "cost": 8.93,
+   "clicks": 6,
+   "impr": 48,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:general"
+  },
+  {
+   "query": "funplex birthday party",
+   "cost": 8.93,
+   "clicks": 6,
+   "impr": 54,
+   "intent": "competitor",
+   "cluster": "competitor:funplex"
+  },
+  {
+   "query": "birthday near me",
+   "cost": 8.14,
+   "clicks": 7,
+   "impr": 62,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:general"
+  },
+  {
+   "query": "birthday party places for kids near me",
+   "cost": 8.12,
+   "clicks": 6,
+   "impr": 50,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:kids"
+  },
+  {
+   "query": "70th birthday ideas",
+   "cost": 7.93,
+   "clicks": 5,
+   "impr": 34,
+   "intent": "informational",
+   "cluster": "birthday-ideas:adult"
+  },
+  {
+   "query": "places for kids birthday parties near me",
+   "cost": 7.84,
+   "clicks": 5,
+   "impr": 31,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:kids"
+  },
+  {
+   "query": "kids empire near me",
+   "cost": 7.8,
+   "clicks": 6,
+   "impr": 258,
+   "intent": "competitor",
+   "cluster": "competitor:kids empire"
+  },
+  {
+   "query": "laser tag birthday party",
+   "cost": 7.78,
+   "clicks": 6,
+   "impr": 119,
+   "intent": "commercial_investigation",
+   "cluster": "birthday-venue:general"
+  },
+  {
+   "query": "indoor birthday party places nj",
+   "cost": 7.49,
+   "clicks": 5,
+   "impr": 134,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:indoor"
+  },
+  {
+   "query": "birthday party places near me for kids",
+   "cost": 7.4,
+   "clicks": 5,
+   "impr": 25,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:kids"
+  },
+  {
+   "query": "teen birthday party ideas near me",
+   "cost": 7.38,
+   "clicks": 5,
+   "impr": 22,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:teen"
+  },
+  {
+   "query": "affordable birthday party places",
+   "cost": 7.08,
+   "clicks": 4,
+   "impr": 20,
+   "intent": "transactional",
+   "cluster": "birthday-venue:general"
+  },
+  {
+   "query": "40th birthday ideas",
+   "cost": 6.85,
+   "clicks": 5,
+   "impr": 109,
+   "intent": "informational",
+   "cluster": "birthday-ideas:adult"
+  },
+  {
+   "query": "kids birthday party places",
+   "cost": 6.83,
+   "clicks": 5,
+   "impr": 132,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:kids"
+  },
+  {
+   "query": "kids party places",
+   "cost": 6.79,
+   "clicks": 5,
+   "impr": 67,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:kids"
+  },
+  {
+   "query": "50th birthday ideas",
+   "cost": 6.65,
+   "clicks": 4,
+   "impr": 41,
+   "intent": "informational",
+   "cluster": "birthday-ideas:adult"
+  },
+  {
+   "query": "kids birthday party venues near me",
+   "cost": 6.53,
+   "clicks": 5,
+   "impr": 38,
+   "intent": "local_transactional",
+   "cluster": "birthday-venue:kids"
+  },
+  {
+   "query": "game show american dream mall",
+   "cost": 6.52,
+   "clicks": 5,
+   "impr": 56,
+   "intent": "competitor",
+   "cluster": "competitor:great big game show / american dream"
+  }
+ ],
+ "high_ctr_terms": [
+  {
+   "query": "game show room rockaway nj",
+   "impr": 111,
+   "clicks": 32,
+   "ctr": 28.8,
+   "cost": 25.6
+  },
+  {
+   "query": "game show american dream",
+   "impr": 116,
+   "clicks": 15,
+   "ctr": 12.9,
+   "cost": 20.22
+  },
+  {
+   "query": "adult birthday party ideas",
+   "impr": 84,
+   "clicks": 12,
+   "ctr": 14.3,
+   "cost": 18.14
+  },
+  {
+   "query": "game show room",
+   "impr": 21,
+   "clicks": 8,
+   "ctr": 38.1,
+   "cost": 10.03
+  },
+  {
+   "query": "birthday near me",
+   "impr": 62,
+   "clicks": 7,
+   "ctr": 11.3,
+   "cost": 8.14
+  },
+  {
+   "query": "the big game show american dream",
+   "impr": 28,
+   "clicks": 7,
+   "ctr": 25.0,
+   "cost": 11.22
+  },
+  {
+   "query": "american dream mall game show",
+   "impr": 59,
+   "clicks": 6,
+   "ctr": 10.2,
+   "cost": 10.05
+  },
+  {
+   "query": "game show birthday party",
+   "impr": 18,
+   "clicks": 6,
+   "ctr": 33.3,
+   "cost": 9.73
+  },
+  {
+   "query": "birthday party places for kids near me",
+   "impr": 50,
+   "clicks": 6,
+   "ctr": 12.0,
+   "cost": 8.12
+  },
+  {
+   "query": "birthday celebration places near me",
+   "impr": 48,
+   "clicks": 6,
+   "ctr": 12.5,
+   "cost": 8.93
+  },
+  {
+   "query": "funplex birthday party",
+   "impr": 54,
+   "clicks": 6,
+   "ctr": 11.1,
+   "cost": 8.93
+  },
+  {
+   "query": "13th birthday party ideas",
+   "impr": 38,
+   "clicks": 6,
+   "ctr": 15.8,
+   "cost": 9.44
+  },
+  {
+   "query": "kids birthday party venues near me",
+   "impr": 38,
+   "clicks": 5,
+   "ctr": 13.2,
+   "cost": 6.53
+  },
+  {
+   "query": "places for kids birthday parties near me",
+   "impr": 31,
+   "clicks": 5,
+   "ctr": 16.1,
+   "cost": 7.84
+  },
+  {
+   "query": "birthday party places near me for kids",
+   "impr": 25,
+   "clicks": 5,
+   "ctr": 20.0,
+   "cost": 7.4
+  },
+  {
+   "query": "teen birthday party ideas near me",
+   "impr": 22,
+   "clicks": 5,
+   "ctr": 22.7,
+   "cost": 7.38
+  },
+  {
+   "query": "70th birthday ideas",
+   "impr": 34,
+   "clicks": 5,
+   "ctr": 14.7,
+   "cost": 7.93
+  },
+  {
+   "query": "kids birthday party venue near me",
+   "impr": 16,
+   "clicks": 4,
+   "ctr": 25.0,
+   "cost": 5.89
+  },
+  {
+   "query": "kids birthday venues near me",
+   "impr": 17,
+   "clicks": 4,
+   "ctr": 23.5,
+   "cost": 5.36
+  },
+  {
+   "query": "affordable birthday party places",
+   "impr": 20,
+   "clicks": 4,
+   "ctr": 20.0,
+   "cost": 7.08
+  },
+  {
+   "query": "arcade birthday party",
+   "impr": 36,
+   "clicks": 4,
+   "ctr": 11.1,
+   "cost": 4.67
+  },
+  {
+   "query": "the great game show american dream",
+   "impr": 25,
+   "clicks": 4,
+   "ctr": 16.0,
+   "cost": 6.3
+  },
+  {
+   "query": "party for kids",
+   "impr": 26,
+   "clicks": 4,
+   "ctr": 15.4,
+   "cost": 5.66
+  },
+  {
+   "query": "gameshow",
+   "impr": 15,
+   "clicks": 3,
+   "ctr": 20.0,
+   "cost": 4.18
+  },
+  {
+   "query": "birthday party locations",
+   "impr": 26,
+   "clicks": 3,
+   "ctr": 11.5,
+   "cost": 4.72
+  },
+  {
+   "query": "best birthday party places near me",
+   "impr": 25,
+   "clicks": 3,
+   "ctr": 12.0,
+   "cost": 3.23
+  },
+  {
+   "query": "boys birthday party places near me",
+   "impr": 21,
+   "clicks": 3,
+   "ctr": 14.3,
+   "cost": 3.81
+  },
+  {
+   "query": "adult birthday ideas near me",
+   "impr": 18,
+   "clicks": 3,
+   "ctr": 16.7,
+   "cost": 3.46
+  },
+  {
+   "query": "birthday party halls near me",
+   "impr": 16,
+   "clicks": 3,
+   "ctr": 18.8,
+   "cost": 4.52
+  },
+  {
+   "query": "the great game show",
+   "impr": 18,
+   "clicks": 3,
+   "ctr": 16.7,
+   "cost": 4.27
+  }
+ ],
+ "high_impr_low_ctr": [
+  {
+   "query": "kids empire near me",
+   "impr": 258,
+   "clicks": 6,
+   "ctr": 2.33,
+   "cluster": "competitor:kids empire"
+  },
+  {
+   "query": "kids birthday party",
+   "impr": 173,
+   "clicks": 3,
+   "ctr": 1.73,
+   "cluster": "birthday-venue:kids"
+  },
+  {
+   "query": "sky zone birthday party",
+   "impr": 128,
+   "clicks": 1,
+   "ctr": 0.78,
+   "cluster": "competitor:sky zone"
+  },
+  {
+   "query": "birthday party venues near me",
+   "impr": 104,
+   "clicks": 2,
+   "ctr": 1.92,
+   "cluster": "birthday-venue:general"
+  },
+  {
+   "query": "places to go for your birthday",
+   "impr": 103,
+   "clicks": 2,
+   "ctr": 1.94,
+   "cluster": "birthday-venue:general"
+  }
+ ],
+ "ppc_ngrams_by_cost": [
+  {
+   "ngram": "birthday",
+   "cost": 1760.92,
+   "impr": 26757
+  },
+  {
+   "ngram": "party",
+   "cost": 1373.73,
+   "impr": 20103
+  },
+  {
+   "ngram": "birthday party",
+   "cost": 1147.71,
+   "impr": 15991
+  },
+  {
+   "ngram": "ideas",
+   "cost": 643.82,
+   "impr": 8559
+  },
+  {
+   "ngram": "for",
+   "cost": 628.89,
+   "impr": 9101
+  },
+  {
+   "ngram": "near",
+   "cost": 603.38,
+   "impr": 8979
+  },
+  {
+   "ngram": "me",
+   "cost": 602.35,
+   "impr": 8996
+  },
+  {
+   "ngram": "near me",
+   "cost": 602.35,
+   "impr": 8967
+  },
+  {
+   "ngram": "kids",
+   "cost": 437.28,
+   "impr": 7147
+  },
+  {
+   "ngram": "places",
+   "cost": 400.75,
+   "impr": 6250
+  },
+  {
+   "ngram": "party ideas",
+   "cost": 383.94,
+   "impr": 4750
+  },
+  {
+   "ngram": "year",
+   "cost": 321.38,
+   "impr": 3733
+  },
+  {
+   "ngram": "old",
+   "cost": 301.04,
+   "impr": 3434
+  },
+  {
+   "ngram": "year old",
+   "cost": 290.95,
+   "impr": 3326
+  },
+  {
+   "ngram": "party places",
+   "cost": 272.49,
+   "impr": 4064
+  },
+  {
+   "ngram": "kids birthday",
+   "cost": 228.03,
+   "impr": 3193
+  },
+  {
+   "ngram": "places near",
+   "cost": 204.25,
+   "impr": 2967
+  },
+  {
+   "ngram": "ideas for",
+   "cost": 200.54,
+   "impr": 2596
+  },
+  {
+   "ngram": "birthday ideas",
+   "cost": 172.83,
+   "impr": 2580
+  },
+  {
+   "ngram": "to",
+   "cost": 172.76,
+   "impr": 3134
+  },
+  {
+   "ngram": "game",
+   "cost": 163.98,
+   "impr": 1319
+  },
+  {
+   "ngram": "show",
+   "cost": 148.08,
+   "impr": 1076
+  },
+  {
+   "ngram": "game show",
+   "cost": 148.08,
+   "impr": 1014
+  },
+  {
+   "ngram": "for kids",
+   "cost": 137.73,
+   "impr": 1862
+  },
+  {
+   "ngram": "girl",
+   "cost": 136.2,
+   "impr": 1689
+  },
+  {
+   "ngram": "parties",
+   "cost": 132.5,
+   "impr": 2342
+  },
+  {
+   "ngram": "party near",
+   "cost": 116.2,
+   "impr": 1739
+  },
+  {
+   "ngram": "nj",
+   "cost": 116.16,
+   "impr": 2120
+  },
+  {
+   "ngram": "birthday parties",
+   "cost": 109.81,
+   "impr": 1842
+  },
+  {
+   "ngram": "a",
+   "cost": 95.92,
+   "impr": 1119
+  },
+  {
+   "ngram": "old girl",
+   "cost": 94.21,
+   "impr": 961
+  },
+  {
+   "ngram": "old birthday",
+   "cost": 91.77,
+   "impr": 1298
+  },
+  {
+   "ngram": "do",
+   "cost": 85.03,
+   "impr": 1626
+  },
+  {
+   "ngram": "to do",
+   "cost": 85.03,
+   "impr": 1525
+  },
+  {
+   "ngram": "boy",
+   "cost": 84.98,
+   "impr": 919
+  },
+  {
+   "ngram": "american",
+   "cost": 79.78,
+   "impr": 614
+  },
+  {
+   "ngram": "dream",
+   "cost": 79.78,
+   "impr": 607
+  },
+  {
+   "ngram": "american dream",
+   "cost": 79.78,
+   "impr": 606
+  },
+  {
+   "ngram": "party for",
+   "cost": 76.99,
+   "impr": 680
+  },
+  {
+   "ngram": "adult",
+   "cost": 73.15,
+   "impr": 594
+  }
+ ]
+}

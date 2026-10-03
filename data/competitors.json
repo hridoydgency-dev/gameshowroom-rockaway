@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "collected": "2026-10-03",
+    "method": "Public websites, press and review platforms fetched Oct 2026. Yelp search page blocked by robots.txt — not scraped. Google review text is not accessible programmatically; Google rating counts quoted only where shown on the competitor's own site. Review insights are paraphrased themes, never copied.",
+    "disclaimer": "Competitor facts change; re-verify before using in ads or copy."
+  },
+  "competitors": [
+    {
+      "name": "Great Big Game Show — New Jersey",
+      "urls": ["https://greatbiggameshow.com/new-jersey/", "https://www.americandream.com/venue/great-big-game-show"],
+      "type": "direct (live game show)",
+      "location": "American Dream, 1 American Dream Way STE G313, East Rutherford, NJ 07073 (Bergen County)",
+      "services": ["public/shared game shows", "private buyouts", "birthday parties", "corporate team building", "group events 15+"],
+      "format": "Two teams face off on a studio-style set with a live host; named mini-games (e.g. Blaster Blitz, Blockchain, Build It Up); highlight reel",
+      "pricing": { "published_on_site": false, "third_party": "≈$45/person (NJ Monthly); $44.99/player (Room Escape Artist, 2024); private bookings require buying unused seats (≈14 max)" },
+      "hours": "8am–12am daily (per site)",
+      "reviews": { "google_shown_on_site": "4,616 reviews, 5.0", "tripadvisor": "5.0 / 110", "yelp": "12 reviews (search snippet)", "groupon": "4.6" },
+      "review_themes_positive": ["named hosts praised for energy and humor", "authentic TV-studio production", "variety of mini-games", "works for team building and mixed ages"],
+      "review_themes_negative": ["cost adds up for small groups (seat buyouts)", "audio very loud (90+ dB noted)", "disorganized team assignment at start", "standing on concrete floors", "experience depends heavily on host"],
+      "ux_cta": "Primary CTA 'Book a Show' repeated; FAQ answers hidden behind accordions; GM profile as trust signal",
+      "local_seo": "City landing page per market; American Dream mall listing; heavy review volume",
+      "technical_seo": "Multi-location brand site; strong review schema/signals (not verified)",
+      "content_gaps": ["no price on page", "session length not stated", "capacity/age policy unclear", "kids 14 and under need paying guardian (Groupon terms)"],
+      "search_overlap": "Largest competitor cluster in our PPC data: ~68 query variants, 816 impressions, 71 clicks, $101.69 spend (38% of visible game-show spend), 0 recorded conversions",
+      "opportunities": ["Lead with 'always private — no strangers, no seat buyouts'", "Price transparency (from $33 vs ≈$45)", "Closer for Morris/Sussex/Passaic County; free surface parking", "Ages 6+ and kid-focused version for families", "Comparison page /game-show-experiences-new-jersey/ + dedicated PPC LP"]
+    },
+    {
+      "name": "Game Show Challenge",
+      "urls": ["https://www.gameshowchallengenj.com/"],
+      "type": "direct (live game show)",
+      "location": "916 Park Ave Building 9 Suite 2, Freehold, NJ 07728 (Monmouth County)",
+      "services": ["live game show challenges: trivia, survey predictions, physical contests, puzzles, obstacle courses"],
+      "pricing": { "published_on_site": false },
+      "reviews": { "on_site": "none visible" },
+      "ux_cta": "BOOK NOW / CONTACT US; hype-led H1 'Are you ready to claim the title of the ultimate champion?'",
+      "content_gaps": ["no price", "no duration", "no group size", "no age guidance", "no visible reviews", "no birthday/corporate package detail"],
+      "search_overlap": "GSC only: 'game show challenge nj/freehold' ~18 impressions; different market (Monmouth)",
+      "opportunities": ["Answer-first pages (price, duration, ages, group size) beat hype copy for AEO", "Not a geographic competitor for Rockaway"]
+    },
+    {
+      "name": "Game Show Battle Rooms",
+      "urls": [],
+      "type": "direct brand (not analysed in depth — no URL supplied)",
+      "search_overlap": "GSC: 'game show battle rooms' 254 impressions at avg position ~4 plus ~20 variants (350 impr total) — Google associates our site with this brand query",
+      "opportunities": ["Do not imitate the brand; clarify non-affiliation on the NJ guide", "Capture generic 'game show room near me' intent with the experience page"]
+    },
+    {
+      "name": "Rockaway Lanes",
+      "urls": ["https://www.rockawaylanes.com/birthday-parties"],
+      "type": "indirect (local birthday venue, bowling)",
+      "location": "Rockaway, NJ",
+      "pricing": { "published_on_site": true, "packages": [ { "name": "Standard", "price": "$24.00/person", "inclusions": "2 hrs (1 bowling + 1 party room), food, drink, shoes, bumpers" }, { "name": "Super Saver", "price": "$21.95/person", "note": "not after 1pm Sat" }, { "name": "Laser Light", "price": "$25.50/person", "note": "Sat afternoons" } ], "minimum": "10 children", "deposit": "$40" },
+      "reviews": { "tripadvisor": "4.1 / 18" },
+      "review_themes_positive": ["clean, modern for a bowling alley", "friendly flexible staff", "good for kids parties", "summer free-bowling promos"],
+      "review_themes_negative": ["not cheapest at peak times"],
+      "ux_cta": "Contact form + phone/email; no online booking",
+      "content_gaps": ["no cancellation policy", "no capacity max", "no adult pricing"],
+      "opportunities": ["Food-included price anchor (~$22–26/child) — explain our BYO-food model and what the hour of hosted entertainment adds", "Lower minimum (6–8) vs 10-child minimum"]
+    },
+    {
+      "name": "Xtreme Energy (Rockaway Townsquare)",
+      "urls": ["https://www.xtreme.energy/party/rockaway"],
+      "type": "indirect (active play, same mall)",
+      "pricing": { "published_on_site": true, "packages": [ { "name": "Signature 10", "price": "$590 / 10 guests", "extra": "$59/child" }, { "name": "Signature", "price": "$885 / 15 guests", "extra": "$59/child" }, { "name": "Energy", "price": "$1,185 / 15 guests", "extra": "$79/child" } ], "inclusions": "2 hrs, play areas, party room, host, pizza, juice, cake/cupcakes, VIP gift" },
+      "ux_cta": "Online reservation + timeline (book → personalize 3 wks → finalize 1 wk)",
+      "search_overlap": "PPC + GSC: 'xtreme energy rockaway' variants (17 GSC impr, $5.37 PPC)",
+      "opportunities": ["Same-mall alternative for parents; differentiate on ages 6–13+/teens and adults (active play skews younger)", "Copy their planning-timeline clarity"]
+    },
+    {
+      "name": "Sky Zone (brand + Roanoke VA example page)",
+      "urls": ["https://www.skyzone.com/parties/", "https://www.skyzone.com/roanoke-va/parties/"],
+      "type": "indirect (trampoline park party pattern benchmark)",
+      "pricing": { "published_on_site": "location pages only", "example": "Roanoke VA: EPIC $280 / MEGA $360 for 10 jumpers, $28–36 extra" },
+      "patterns": ["'Select Park to Book Party' location gate", "stress-free messaging: staff set up, clean up, supervise", "digital invitations with RSVP", "free upgrade bundle ('Birthday Like a Boss')", "weekday promo code (25% off)", "outside food banned except dessert", "waivers required for all", "deposit $150; refundable within 72 hrs"],
+      "search_overlap": "PPC: 37 'sky zone' variants, $10.95 spend",
+      "opportunities": ["Contrast: no waivers/socks, bring-your-own food & cake", "Adopt: explicit parent-stress-removal copy, planning timeline, weekday-offer slot (promotions model ready)"]
+    },
+    {
+      "name": "Dave & Buster's",
+      "urls": ["https://www.daveandbusters.com/"],
+      "type": "indirect (eat/drink/play; adult + kids parties)",
+      "patterns": ["Celebrate menu: Events, Corporate, Birthday, Team Building, Holiday", "'Book an Event' CTA to party planner", "prices as 'starts at' with location disclaimer", "heavy promo calendar (half-price games, combos)"],
+      "search_overlap": "PPC: 43 variants, $13.36 spend ('dave and busters birthday party')",
+      "opportunities": ["Mirror the occasion-based IA (Birthday / Corporate / Team Building / Holiday)", "'From $X' price framing with clear quote path"]
+    },
+    {
+      "name": "Yelp — Kids Birthday Party, Rockaway NJ (SERP)",
+      "urls": ["https://www.yelp.com/search?find_desc=Kids+Birthday+Party&find_loc=Rockaway%2C+NJ+07866"],
+      "type": "aggregator",
+      "status": "Not fetched — disallowed by robots.txt. Recommend manual review of listings and claiming/optimizing the Game Show Room Yelp profile."
+    }
+  ],
+  "differentiation_matrix": {
+    "factors": ["Pricing clarity", "Game information", "Birthday packages", "Booking UX", "Reviews", "FAQs", "Local content", "Mobile UX", "Page speed", "Search intent coverage", "Content depth"],
+    "our_site": ["From $33 on every page + quote path", "Rounds, versions, ages, group sizes explained", "Party Package format explicit; total by quote (needs owner price)", "2 clicks to FareHarbor; quote form; sticky mobile CTA", "None shown until verified (gap)", "37 sourced FAQs, topic-filtered per page", "Directions, parking, entrance, transit, nearby towns", "Mobile-first, sticky CTA, 320px tested", "Static HTML, inlined CSS, ~4KB JS", "Brand, game show, kids/teen/adult birthday, corporate, school, escape-room, local, cost", "Hubs + segment pages + guides"],
+    "great_big_game_show": ["No price on page", "Named mini-games", "Mentioned, details hidden", "Single 'Book a Show' CTA", "Very strong (4.6k Google)", "Hidden answers", "Mall logistics, parking lot", "Good", "Not measured", "Brand + corporate + birthday", "Moderate"],
+    "game_show_challenge": ["No price", "Challenge types listed", "Not specified", "Book Now", "None visible", "Not shown", "Address only", "Not measured", "Not measured", "Thin", "Thin"],
+    "rockaway_lanes": ["Clear per-person prices", "n/a", "3 packages with inclusions", "Contact form only", "TripAdvisor 4.1", "Few", "Local by default", "Not measured", "Not measured", "Birthday only", "Thin"]
+  }
+}

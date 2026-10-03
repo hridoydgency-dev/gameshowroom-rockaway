@@ -1,0 +1,1050 @@
+[
+  {
+    "path": "/",
+    "pageType": "home",
+    "template": "home",
+    "indexable": true,
+    "h1": "Live Game Show Room in Rockaway, NJ",
+    "title": "Live Game Show Room in Rockaway, NJ | Parties & Groups",
+    "primaryTopic": "game show room rockaway nj",
+    "secondaryTopics": [
+      "live game show experience",
+      "birthday party rockaway nj",
+      "things to do rockaway nj"
+    ],
+    "organicClusters": [
+      {
+        "cluster": "brand:game-show-room",
+        "queries": 20,
+        "gsc_impr": 560,
+        "ppc_impr": 150,
+        "ppc_cost": 37.77
+      }
+    ],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": "view_service",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "words": 1554
+  },
+  {
+    "path": "/game-show-experience/",
+    "pageType": "service",
+    "template": "service",
+    "indexable": true,
+    "h1": "A live game show where your group are the contestants",
+    "title": "Live Game Show Experience in NJ | How It Works & Prices",
+    "primaryTopic": "live game show experience nj",
+    "secondaryTopics": [
+      "interactive game show experience",
+      "game show near me",
+      "game show battle rooms",
+      "family game show near me"
+    ],
+    "organicClusters": [
+      {
+        "cluster": "competitor:game show battle rooms",
+        "queries": 20,
+        "gsc_impr": 350,
+        "ppc_impr": 2,
+        "ppc_cost": 0
+      },
+      {
+        "cluster": "game-show:local",
+        "queries": 16,
+        "gsc_impr": 306,
+        "ppc_impr": 14,
+        "ppc_cost": 2.09
+      },
+      {
+        "cluster": "game-show:generic-experience",
+        "queries": 75,
+        "gsc_impr": 211,
+        "ppc_impr": 158,
+        "ppc_cost": 9.16
+      }
+    ],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": "view_game_show",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "words": 1496
+  },
+  {
+    "path": "/birthday-parties/",
+    "pageType": "service",
+    "template": "service",
+    "indexable": true,
+    "h1": "Game show birthday parties in Rockaway, NJ",
+    "title": "Game Show Birthday Parties in Rockaway, NJ | Party Room",
+    "primaryTopic": "birthday party rockaway nj",
+    "secondaryTopics": [
+      "game show birthday party",
+      "birthday party places near me",
+      "indoor birthday party nj",
+      "birthday party venues morris county"
+    ],
+    "organicClusters": [
+      {
+        "cluster": "birthday-venue:general",
+        "queries": 2388,
+        "gsc_impr": 294,
+        "ppc_impr": 8993,
+        "ppc_cost": 457.26
+      },
+      {
+        "cluster": "birthday-venue:indoor",
+        "queries": 153,
+        "gsc_impr": 2,
+        "ppc_impr": 621,
+        "ppc_cost": 45.25
+      },
+      {
+        "cluster": "game-show-birthday-party",
+        "queries": 8,
+        "gsc_impr": 17,
+        "ppc_impr": 26,
+        "ppc_cost": 10.88
+      }
+    ],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "generate_lead (quote form)",
+    "viewEvent": "view_birthday_party",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "words": 1459
+  },
+  {
+    "path": "/birthday-parties/kids/",
+    "pageType": "landing",
+    "template": "service",
+    "indexable": true,
+    "h1": "A kids birthday party starring your kid",
+    "title": "Kids Birthday Party Place in Rockaway, NJ (Ages 6–12)",
+    "primaryTopic": "kids birthday party places near me",
+    "secondaryTopics": [
+      "kids birthday party rockaway nj",
+      "birthday party places for kids near me",
+      "indoor kids birthday party nj",
+      "10 year old birthday party",
+      "girls birthday party places"
+    ],
+    "organicClusters": [
+      {
+        "cluster": "birthday-venue:kids",
+        "queries": 1839,
+        "gsc_impr": 44,
+        "ppc_impr": 8125,
+        "ppc_cost": 547.6
+      }
+    ],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "generate_lead (quote form)",
+    "viewEvent": "view_birthday_party",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "words": 1317
+  },
+  {
+    "path": "/birthday-parties/teen-and-sweet-16/",
+    "pageType": "landing",
+    "template": "service",
+    "indexable": true,
+    "h1": "The party teens won’t call babyish",
+    "title": "Teen & Sweet 16 Party Venue in Rockaway, NJ | Game Show",
+    "primaryTopic": "teen birthday party places near me",
+    "secondaryTopics": [
+      "sweet 16 venues near me",
+      "13th birthday party ideas",
+      "teen birthday party ideas near me",
+      "sweet sixteen party venues near me"
+    ],
+    "organicClusters": [
+      {
+        "cluster": "birthday-venue:teen",
+        "queries": 402,
+        "gsc_impr": 3,
+        "ppc_impr": 1206,
+        "ppc_cost": 88.7
+      }
+    ],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "generate_lead (quote form)",
+    "viewEvent": "view_birthday_party",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "words": 1188
+  },
+  {
+    "path": "/birthday-parties/adult/",
+    "pageType": "landing",
+    "template": "service",
+    "indexable": true,
+    "h1": "Skip the dinner reservation. Host a game show.",
+    "title": "Adult Birthday Party Ideas in Rockaway, NJ | Game Show",
+    "primaryTopic": "adult birthday party ideas near me",
+    "secondaryTopics": [
+      "birthday activities for adults",
+      "places to have an adult birthday party",
+      "40th birthday ideas",
+      "50th birthday ideas",
+      "fun things to do for birthday adults near me"
+    ],
+    "organicClusters": [
+      {
+        "cluster": "birthday-ideas:adult",
+        "queries": 930,
+        "gsc_impr": 4,
+        "ppc_impr": 2742,
+        "ppc_cost": 233.71
+      },
+      {
+        "cluster": "birthday-venue:adult",
+        "queries": 362,
+        "gsc_impr": 4,
+        "ppc_impr": 919,
+        "ppc_cost": 67.61
+      }
+    ],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "generate_lead (quote form)",
+    "viewEvent": "view_birthday_party",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "words": 1237
+  },
+  {
+    "path": "/group-events/",
+    "pageType": "service",
+    "template": "service",
+    "indexable": true,
+    "h1": "Private group events in Rockaway, NJ",
+    "title": "Group Events & Private Parties in Rockaway, NJ (up to 60)",
+    "primaryTopic": "rockaway nj event space",
+    "secondaryTopics": [
+      "group activities near me",
+      "game shows for private parties",
+      "private room",
+      "fun group activities for adults"
+    ],
+    "organicClusters": [],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "generate_lead (quote form)",
+    "viewEvent": "view_service",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "words": 1042
+  },
+  {
+    "path": "/group-events/corporate-team-building/",
+    "pageType": "landing",
+    "template": "service",
+    "indexable": true,
+    "h1": "Team building your team won’t groan about",
+    "title": "Corporate Team Building in Morris County, NJ | Game Show",
+    "primaryTopic": "team building activities morris county nj",
+    "secondaryTopics": [
+      "corporate game show host",
+      "team building activities near me for adults",
+      "team building events ledgewood nj",
+      "team outing",
+      "family feud corporate event"
+    ],
+    "organicClusters": [
+      {
+        "cluster": "events:corporate-team-building",
+        "queries": 5,
+        "gsc_impr": 3,
+        "ppc_impr": 2,
+        "ppc_cost": 0
+      },
+      {
+        "cluster": "game-show:corporate",
+        "queries": 3,
+        "gsc_impr": 0,
+        "ppc_impr": 4,
+        "ppc_cost": 0
+      }
+    ],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "generate_lead (quote form)",
+    "viewEvent": "view_service",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "words": 1060
+  },
+  {
+    "path": "/group-events/school-and-youth-groups/",
+    "pageType": "landing",
+    "template": "service",
+    "indexable": true,
+    "h1": "A field trip that’s secretly a quiz",
+    "title": "School Field Trips & Youth Group Game Shows in NJ",
+    "primaryTopic": "school game shows new jersey",
+    "secondaryTopics": [
+      "field trip ideas morris county",
+      "youth group activities nj",
+      "sports team party",
+      "kids events near me"
+    ],
+    "organicClusters": [
+      {
+        "cluster": "game-show:family-kids-school",
+        "queries": 7,
+        "gsc_impr": 44,
+        "ppc_impr": 8,
+        "ppc_cost": 0
+      }
+    ],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "generate_lead (quote form)",
+    "viewEvent": "view_service",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "words": 884
+  },
+  {
+    "path": "/pricing/",
+    "pageType": "service",
+    "template": "service",
+    "indexable": true,
+    "h1": "Game Show Room pricing",
+    "title": "Game Show Room Prices | From $33 per Guest | Rockaway NJ",
+    "primaryTopic": "game show room price",
+    "secondaryTopics": [
+      "how much is the game show",
+      "birthday party packages",
+      "affordable birthday party places"
+    ],
+    "organicClusters": [],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": "pricing_view",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "words": 854
+  },
+  {
+    "path": "/faq/",
+    "pageType": "hub",
+    "template": "hub",
+    "indexable": true,
+    "h1": "Frequently asked questions",
+    "title": "Game Show Room Rockaway FAQ | Ages, Prices, Parties",
+    "primaryTopic": "game show room faq",
+    "secondaryTopics": [],
+    "organicClusters": [],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": null,
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "CollectionPage",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "words": 1530
+  },
+  {
+    "path": "/location/rockaway-nj/",
+    "pageType": "service",
+    "template": "location",
+    "indexable": true,
+    "h1": "Find us inside Rockaway Townsquare",
+    "title": "Directions, Parking & Hours | Game Show Room Rockaway NJ",
+    "primaryTopic": "game show room rockaway townsquare directions",
+    "secondaryTopics": [
+      "rockaway mall activities",
+      "rockaway mall events",
+      "301 mount hope ave rockaway nj",
+      "rockaway mall kids activities"
+    ],
+    "organicClusters": [
+      {
+        "cluster": "local:rockaway-townsquare-mall",
+        "queries": 8,
+        "gsc_impr": 42,
+        "ppc_impr": 0,
+        "ppc_cost": 0
+      }
+    ],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": "view_location",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "words": 728
+  },
+  {
+    "path": "/game-show-vs-escape-room/",
+    "pageType": "guide",
+    "template": "guide",
+    "indexable": true,
+    "h1": "Game Show Room vs. escape room: which one for your group?",
+    "title": "Game Show Room vs. Escape Room in Rockaway, NJ",
+    "primaryTopic": "escape room rockaway nj",
+    "secondaryTopics": [
+      "rockaway mall escape room",
+      "escape room game show",
+      "escape the mystery room rockaway"
+    ],
+    "organicClusters": [
+      {
+        "cluster": "escape-room:local",
+        "queries": 29,
+        "gsc_impr": 1483,
+        "ppc_impr": 0,
+        "ppc_cost": 0
+      },
+      {
+        "cluster": "brand:sister-escape-rooms",
+        "queries": 3,
+        "gsc_impr": 79,
+        "ppc_impr": 12,
+        "ppc_cost": 0
+      },
+      {
+        "cluster": "escape-room:generic",
+        "queries": 6,
+        "gsc_impr": 20,
+        "ppc_impr": 0,
+        "ppc_cost": 0
+      }
+    ],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": "view_service",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "words": 874
+  },
+  {
+    "path": "/game-show-experiences-new-jersey/",
+    "pageType": "guide",
+    "template": "guide",
+    "indexable": true,
+    "h1": "Live game show experiences in New Jersey",
+    "title": "Live Game Show Experiences in New Jersey (2026 Guide)",
+    "primaryTopic": "game show experience new jersey",
+    "secondaryTopics": [
+      "unique game show new jersey",
+      "great big game show new jersey",
+      "game show nj",
+      "game show near me"
+    ],
+    "organicClusters": [
+      {
+        "cluster": "competitor:great big game show / american dream",
+        "queries": 68,
+        "gsc_impr": 16,
+        "ppc_impr": 816,
+        "ppc_cost": 101.69
+      },
+      {
+        "cluster": "competitor:game show challenge (freehold)",
+        "queries": 3,
+        "gsc_impr": 18,
+        "ppc_impr": 0,
+        "ppc_cost": 0
+      }
+    ],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": "view_service",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList",
+      "BlogPosting"
+    ],
+    "words": 798
+  },
+  {
+    "path": "/things-to-do-rockaway-nj/",
+    "pageType": "guide",
+    "template": "guide",
+    "indexable": true,
+    "h1": "Indoor things to do in Rockaway, NJ",
+    "title": "Indoor Things to Do in Rockaway, NJ for Groups & Families",
+    "primaryTopic": "things to do in rockaway nj",
+    "secondaryTopics": [
+      "things to do near rockaway nj",
+      "fun things to do rockaway nj",
+      "indoor activities near me",
+      "things to do near me for adults",
+      "kids activities rockaway"
+    ],
+    "organicClusters": [
+      {
+        "cluster": "things-to-do:general-local",
+        "queries": 74,
+        "gsc_impr": 266,
+        "ppc_impr": 30,
+        "ppc_cost": 1.83
+      },
+      {
+        "cluster": "things-to-do:kids-family",
+        "queries": 53,
+        "gsc_impr": 48,
+        "ppc_impr": 122,
+        "ppc_cost": 1.51
+      },
+      {
+        "cluster": "things-to-do:adults-groups",
+        "queries": 19,
+        "gsc_impr": 22,
+        "ppc_impr": 0,
+        "ppc_cost": 0
+      }
+    ],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": "view_service",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList",
+      "BlogPosting"
+    ],
+    "words": 615
+  },
+  {
+    "path": "/blog/",
+    "pageType": "hub",
+    "template": "hub",
+    "indexable": true,
+    "h1": "Party planning guides",
+    "title": "Party Planning Blog | Game Show Room Rockaway NJ",
+    "primaryTopic": "birthday party planning nj",
+    "secondaryTopics": [],
+    "organicClusters": [],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": null,
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "CollectionPage",
+      "BreadcrumbList"
+    ],
+    "words": 314
+  },
+  {
+    "path": "/blog/birthday-party-ideas-by-age/",
+    "pageType": "article",
+    "template": "article",
+    "indexable": true,
+    "h1": "Birthday party ideas by age: from 6th birthdays to 60ths",
+    "title": "Birthday Party Ideas by Age (6 to 60+) | NJ Parent Guide",
+    "primaryTopic": "birthday party ideas",
+    "secondaryTopics": [
+      "kids birthday party ideas",
+      "10 year old birthday party ideas",
+      "teen birthday party ideas",
+      "13th birthday party ideas",
+      "adult birthday party ideas",
+      "40th birthday ideas"
+    ],
+    "organicClusters": [
+      {
+        "cluster": "birthday-ideas:kids",
+        "queries": 1343,
+        "gsc_impr": 26,
+        "ppc_impr": 3343,
+        "ppc_cost": 229.73
+      },
+      {
+        "cluster": "birthday-ideas:general",
+        "queries": 867,
+        "gsc_impr": 4,
+        "ppc_impr": 2647,
+        "ppc_cost": 146.21
+      },
+      {
+        "cluster": "birthday-ideas:teen",
+        "queries": 686,
+        "gsc_impr": 1,
+        "ppc_impr": 1853,
+        "ppc_cost": 141.88
+      }
+    ],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": "view_article",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList",
+      "BlogPosting"
+    ],
+    "words": 862
+  },
+  {
+    "path": "/blog/how-much-does-a-kids-birthday-party-cost-nj/",
+    "pageType": "article",
+    "template": "article",
+    "indexable": true,
+    "h1": "How much does a kids birthday party cost in NJ? (Rockaway-area prices)",
+    "title": "How Much Does a Kids Birthday Party Cost in NJ? (2026)",
+    "primaryTopic": "how much does a kids birthday party cost",
+    "secondaryTopics": [
+      "affordable birthday party places",
+      "birthday party packages",
+      "kids birthday party venues near me",
+      "birthday party prices nj"
+    ],
+    "organicClusters": [],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": "view_article",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList",
+      "BlogPosting"
+    ],
+    "words": 785
+  },
+  {
+    "path": "/book/",
+    "pageType": "utility",
+    "template": "utility",
+    "indexable": true,
+    "h1": "Book the Game Show Room",
+    "title": "Book the Game Show Room in Rockaway, NJ",
+    "primaryTopic": "book game show rockaway",
+    "secondaryTopics": [],
+    "organicClusters": [],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": "view_booking",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "words": 458
+  },
+  {
+    "path": "/contact/",
+    "pageType": "utility",
+    "template": "utility",
+    "indexable": true,
+    "h1": "Contact Game Show Room Rockaway",
+    "title": "Contact Game Show Room Rockaway | (862) 200-7134",
+    "primaryTopic": "contact game show room rockaway",
+    "secondaryTopics": [],
+    "organicClusters": [],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": null,
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "ContactPage",
+      "BreadcrumbList"
+    ],
+    "words": 467
+  },
+  {
+    "path": "/reviews/",
+    "pageType": "utility",
+    "template": "utility",
+    "indexable": false,
+    "h1": "Game Show Room Rockaway reviews",
+    "title": "Game Show Room Rockaway Reviews",
+    "primaryTopic": "game show room rockaway reviews",
+    "secondaryTopics": [],
+    "organicClusters": [],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": null,
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "words": 306
+  },
+  {
+    "path": "/lp/game-show-room/",
+    "pageType": "ppc",
+    "template": "ppc",
+    "indexable": false,
+    "h1": "Game Show Room — Rockaway, NJ",
+    "title": "Game Show Room Rockaway NJ — Book Online",
+    "primaryTopic": "game show room rockaway",
+    "secondaryTopics": [],
+    "organicClusters": [],
+    "paidClusters": [
+      "brand:game-show-room"
+    ],
+    "adGroups": [
+      "\"game show room rockaway\"",
+      "\"game show room\"",
+      "\"the game show room\""
+    ],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": "view_game_show",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "words": 635
+  },
+  {
+    "path": "/lp/game-show-experience/",
+    "pageType": "ppc",
+    "template": "ppc",
+    "indexable": false,
+    "h1": "Play a live game show — right here in Morris County",
+    "title": "Live Game Show Experience in NJ — Morris County",
+    "primaryTopic": "game show",
+    "secondaryTopics": [],
+    "organicClusters": [],
+    "paidClusters": [
+      "competitor:great big game show / american dream",
+      "game-show:local",
+      "game-show:generic-experience"
+    ],
+    "adGroups": [
+      "\"game show\"",
+      "\"live game show\"",
+      "\"game show experience\"",
+      "\"unique game show\"",
+      "\"game shows in new jersey\"",
+      "competitor terms (American Dream / Great Big Game Show)"
+    ],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": "view_game_show",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "words": 647
+  },
+  {
+    "path": "/lp/kids-birthday-party/",
+    "pageType": "ppc",
+    "template": "ppc",
+    "indexable": false,
+    "h1": "Kids birthday party place in Rockaway, NJ",
+    "title": "Kids Birthday Party Place Near Rockaway NJ",
+    "primaryTopic": "kids birthday party places",
+    "secondaryTopics": [],
+    "organicClusters": [],
+    "paidClusters": [
+      "birthday-venue:kids",
+      "birthday-venue:indoor"
+    ],
+    "adGroups": [
+      "\"kids birthday party places\"",
+      "\"kids birthday parties\"",
+      "\"birthday party places kids\"",
+      "\"birthday near me kids\"",
+      "\"kid birthday party places\"",
+      "\"kids birthday party venues\""
+    ],
+    "primaryConversion": "generate_lead (quote form)",
+    "viewEvent": "view_birthday_party",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "words": 834
+  },
+  {
+    "path": "/lp/birthday-party/",
+    "pageType": "ppc",
+    "template": "ppc",
+    "indexable": false,
+    "h1": "A birthday party where the guest of honor is the star of the show",
+    "title": "Birthday Party Venue in Rockaway NJ — Game Show",
+    "primaryTopic": "birthday party places",
+    "secondaryTopics": [],
+    "organicClusters": [],
+    "paidClusters": [
+      "birthday-venue:general",
+      "birthday-venue:teen",
+      "birthday-venue:adult",
+      "game-show-birthday-party"
+    ],
+    "adGroups": [
+      "\"birthday party places\"",
+      "\"places to celebrate birthday\"",
+      "\"birthday party venue\"",
+      "\"birthday parties near me\"",
+      "\"options for birthday party\"",
+      "\"teen birthday party ideas\"",
+      "\"birthday activities for adults\""
+    ],
+    "primaryConversion": "generate_lead (quote form)",
+    "viewEvent": "view_birthday_party",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "words": 843
+  },
+  {
+    "path": "/lp/team-building/",
+    "pageType": "ppc",
+    "template": "ppc",
+    "indexable": false,
+    "h1": "Team building your team will actually enjoy",
+    "title": "Team Building Game Show — Morris County NJ",
+    "primaryTopic": "team building",
+    "secondaryTopics": [],
+    "organicClusters": [],
+    "paidClusters": [
+      "events:corporate-team-building",
+      "game-show:corporate"
+    ],
+    "adGroups": [
+      "team building",
+      "corporate game show host",
+      "group activities"
+    ],
+    "primaryConversion": "generate_lead (quote form)",
+    "viewEvent": "view_service",
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "words": 752
+  },
+  {
+    "path": "/thank-you/",
+    "pageType": "utility",
+    "template": "utility",
+    "indexable": false,
+    "h1": "Request received — you’re in the game!",
+    "title": "Thanks — we got your request | Game Show Room",
+    "primaryTopic": "lead confirmation",
+    "secondaryTopics": [],
+    "organicClusters": [],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": null,
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "words": 275
+  },
+  {
+    "path": "/privacy/",
+    "pageType": "utility",
+    "template": "legal",
+    "indexable": false,
+    "h1": "Privacy Policy",
+    "title": "Privacy Policy | Game Show Room Rockaway",
+    "primaryTopic": "legal",
+    "secondaryTopics": [],
+    "organicClusters": [],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": null,
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "words": 312
+  },
+  {
+    "path": "/terms/",
+    "pageType": "utility",
+    "template": "legal",
+    "indexable": false,
+    "h1": "Terms of Use",
+    "title": "Terms of Use | Game Show Room Rockaway",
+    "primaryTopic": "legal",
+    "secondaryTopics": [],
+    "organicClusters": [],
+    "paidClusters": [],
+    "adGroups": [],
+    "primaryConversion": "outbound_booking_click (FareHarbor)",
+    "viewEvent": null,
+    "schemaTypes": [
+      "Organization",
+      "EntertainmentBusiness",
+      "LocalBusiness",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "words": 315
+  }
+]
