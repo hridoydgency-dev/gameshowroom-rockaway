@@ -1,0 +1,12 @@
+node_modules
+dist/
+.env
+.env.*
+!.env.example
+.netlify/
+*.log
+.DS_Store
+# Confidential first-party datasets (PPC/GSC exports) — never commit raw data
+data-private/
+scripts/analysis/*.csv
+qa-artifacts/

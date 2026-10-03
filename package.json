@@ -1,0 +1,31 @@
+{
+  "name": "gameshowroom-rockaway",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Data-driven, PPC-first, SEO/AEO-optimized static site for Game Show Room — Rockaway, NJ",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsx scripts/build.tsx",
+    "dev": "tsx scripts/dev.ts",
+    "preview": "npx serve dist -l 4173",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "seo:audit": "tsx scripts/seo-audit.ts",
+    "check": "npm run build && npm run seo:audit && npm test",
+    "typecheck": "tsc --noEmit",
+    "analyze": "python3 scripts/analysis/analyze.py"
+  },
+  "dependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "esbuild": "0.28.2",
+    "tailwindcss": "4.3.3",
+    "tsx": "4.23.12",
+    "typescript": "6.0.3"
+  }
+}
