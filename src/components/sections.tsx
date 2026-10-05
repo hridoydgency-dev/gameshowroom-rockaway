@@ -16,13 +16,13 @@ export function Hero({
 }) {
   const ph = photos[image];
   return (
-    <section aria-labelledby={id} className="relative isolate overflow-hidden bg-night text-bone">
-      <picture className="absolute inset-0 -z-20">
+    <section aria-labelledby={id} className="relative overflow-hidden bg-night text-bone">
+      <picture className="absolute inset-0 block">
         {ph.mobile && <source media="(max-width: 767px)" srcSet={ph.mobile} />}
         <img src={ph.src} alt="" width={ph.w} height={ph.h} fetchPriority="high" decoding="async" className="h-full w-full object-cover" style={{ objectPosition: ph.position ?? 'center' }} />
       </picture>
-      <div className="hero-shade absolute inset-0 -z-10" aria-hidden="true" />
-      <div className="container-x pb-12 pt-12 text-center sm:pb-16 sm:pt-20 lg:pt-24">
+      <div className="hero-shade absolute inset-0" aria-hidden="true" />
+      <div className="container-x relative pb-12 pt-12 text-center sm:pb-16 sm:pt-20 lg:pt-24">
         <p className="eyebrow-x text-xs text-bone sm:text-sm">{eyebrow}</p>
         <h1 id={id} className="title-glow mx-auto mt-3 max-w-4xl text-[2.35rem] sm:text-6xl lg:text-[4.1rem]">{title}</h1>
         <div className="mx-auto mt-4 max-w-2xl text-lg text-bone/90 sm:text-xl">{lead}</div>
@@ -30,7 +30,7 @@ export function Hero({
         {note && <div className="mt-4 flex justify-center text-center text-sm text-bone/85">{note}</div>}
         <FactChips items={chips} />
       </div>
-      <WaveDivider className="-mb-px" />
+      <WaveDivider className="relative -mb-px" />
     </section>
   );
 }
@@ -375,17 +375,17 @@ export function Gallery({ id = 'gallery', title = 'Real shows, real smiles', lea
 export function PageHero({ eyebrow, title, image, id }: { eyebrow?: ReactNode; title: ReactNode; image: PhotoKey; id?: string }) {
   const ph = photos[image];
   return (
-    <section aria-labelledby={id} className="relative isolate -mt-px overflow-hidden bg-night">
-      <picture className="absolute inset-0 -z-20">
+    <section aria-labelledby={id} className="relative -mt-px overflow-hidden bg-night">
+      <picture className="absolute inset-0 block">
         {ph.mobile && <source media="(max-width: 767px)" srcSet={ph.mobile} />}
         <img src={ph.src} alt="" width={ph.w} height={ph.h} fetchPriority="high" decoding="async" className="h-full w-full object-cover" style={{ objectPosition: ph.position ?? 'center' }} />
       </picture>
-      <div className="hero-shade absolute inset-0 -z-10" aria-hidden="true" />
-      <div className="container-x py-14 text-center sm:py-20">
+      <div className="hero-shade absolute inset-0" aria-hidden="true" />
+      <div className="container-x relative py-14 text-center sm:py-20">
         {eyebrow && <p className="eyebrow-x text-xs text-bone sm:text-sm">{eyebrow}</p>}
         <h1 id={id} className="title-glow mx-auto mt-2 max-w-4xl text-[2.4rem] sm:text-6xl">{title}</h1>
       </div>
-      <WaveDivider className="-mb-px" />
+      <WaveDivider className="relative -mb-px" />
     </section>
   );
 }
