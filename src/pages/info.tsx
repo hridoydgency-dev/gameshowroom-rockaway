@@ -1,6 +1,6 @@
 import type { RouteDef } from '../lib/types';
 import { Shell } from '../components/Layout';
-import { QuickAnswer, FAQSection, PriceStrip, PackageCard, VisitBlock, CtaBand, Related, QuoteForm } from '../components/sections';
+import { QuickAnswer, FAQSection, PriceStrip, PackageCard, VisitBlock, CtaBand, Related, QuoteForm, PageHero } from '../components/sections';
 import { Section, Eyebrow, H2, Button, BookingLink, CheckList, Card, PhoneLink, MapLink } from '../components/ui';
 import { faqs, faqsFor, faqsByIds } from '../data/faqs';
 import { faqPage, service, ids, article } from '../lib/schema';
@@ -28,16 +28,15 @@ export const pricing: RouteDef = {
   ],
   render: () => (
     <Shell breadcrumb={bc('Pricing', '/pricing/')}>
-      <Section tone="light">
-        <Eyebrow>Pricing</Eyebrow>
-        <h1 className="text-[2rem] font-black leading-tight sm:text-5xl">Game Show Room pricing</h1>
+      <PageHero eyebrow="Pricing" id="pricing-h" image="contact" title={<>Game Show Room pricing</>} />
+      <Section tone="light" className="!pt-10">
         <div className="mt-6 grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-start">
           <div className="text-lg">
             <QuickAnswer q="How much does it cost?">Pricing starts at <strong>$%PRICE% per guest</strong> for a private, 60-minute live game show. The total depends on your group size and package — parties, large groups and corporate events get an exact quote.</QuickAnswer>
             <div className="mt-6"><PriceStrip trackLabel="pricing_page" /></div>
-            <h2 className="mt-8 text-2xl font-black">What every booking includes</h2>
+            <h2 className="mt-8 text-2xl font-bold">What every booking includes</h2>
             <CheckList items={['A private session — your group only', 'A live host running the full show', 'Buzzers, lights, music and all equipment', 'Family, kid-focused or adult-level questions', 'Free parking at Rockaway Townsquare']} />
-            <h2 className="mt-8 text-2xl font-black">Ways to save</h2>
+            <h2 className="mt-8 text-2xl font-bold">Ways to save</h2>
             <CheckList items={['Special rates for qualifying groups, including nonprofits and large groups', 'Seasonal promotions and returning-player perks run from time to time — ask when you book', 'Gift cards available in custom amounts']} />
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <BookingLink kind="small" label="pricing_page" size="lg">See times &amp; book online</BookingLink>
@@ -81,11 +80,10 @@ export const faqPageRoute: RouteDef = {
     const used = new Set<string>();
     return (
       <Shell breadcrumb={bc('FAQ', '/faq/')}>
-        <Section tone="light">
-          <Eyebrow>FAQ</Eyebrow>
-          <h1 className="text-[2rem] font-black sm:text-5xl">Frequently asked questions</h1>
+        <PageHero eyebrow="FAQ" id="faq-h" image="faq" title={<>Frequently asked questions</>} />
+        <Section tone="light" className="!pt-10">
           <nav aria-label="FAQ topics" className="mt-6 flex flex-wrap gap-2">
-            {groups.map((g) => <a key={g.topic} href={`#${g.topic}`} className="inline-flex min-h-11 items-center rounded-full border-2 border-ink bg-paper px-4 font-bold text-ink no-underline">{g.title}</a>)}
+            {groups.map((g) => <a key={g.topic} href={`#${g.topic}`} className="inline-flex min-h-11 items-center rounded-full border border-edge bg-panel px-4 font-bold text-bone no-underline">{g.title}</a>)}
           </nav>
           {groups.map((g) => {
             const list = faqsFor([g.topic]).filter((f) => !used.has(f.id));
@@ -93,11 +91,11 @@ export const faqPageRoute: RouteDef = {
             return (
               <section key={g.topic} id={g.topic} aria-labelledby={`h-${g.topic}`} className="mt-10 scroll-mt-20">
                 <H2 id={`h-${g.topic}`} className="text-2xl sm:text-3xl">{g.title}</H2>
-                <div className="mt-4 divide-y-2 divide-line rounded-2xl border-2 border-ink bg-paper">
+                <div className="mt-4 divide-y divide-edge rounded-2xl border border-edge bg-panel">
                   {list.map((f) => (
                     <details key={f.id} className="group" data-faq={f.id}>
-                      <summary className="flex min-h-14 items-center justify-between gap-4 px-5 py-3"><h3 className="font-sans text-[1.05rem] font-bold">{f.q}</h3><span aria-hidden="true" className="flex h-8 w-8 flex-none items-center justify-center rounded-full border-2 border-ink text-xl group-open:rotate-45">+</span></summary>
-                      <div className="px-5 pb-5 text-muted">{f.a}</div>
+                      <summary className="flex min-h-14 items-center justify-between gap-4 px-5 py-3"><h3 className="font-sans text-[1.05rem] font-bold">{f.q}</h3><span aria-hidden="true" className="flex h-8 w-8 flex-none items-center justify-center rounded-full border border-edge text-xl group-open:rotate-45">+</span></summary>
+                      <div className="px-5 pb-5 text-mist">{f.a}</div>
                     </details>
                   ))}
                 </div>
@@ -109,18 +107,18 @@ export const faqPageRoute: RouteDef = {
             return rest.length ? (
               <section id="more" aria-labelledby="h-more" className="mt-10">
                 <H2 id="h-more" className="text-2xl sm:text-3xl">More questions</H2>
-                <div className="mt-4 divide-y-2 divide-line rounded-2xl border-2 border-ink bg-paper">
+                <div className="mt-4 divide-y divide-edge rounded-2xl border border-edge bg-panel">
                   {rest.map((f) => (
                     <details key={f.id} className="group" data-faq={f.id}>
-                      <summary className="flex min-h-14 items-center justify-between gap-4 px-5 py-3"><h3 className="font-sans text-[1.05rem] font-bold">{f.q}</h3><span aria-hidden="true" className="flex h-8 w-8 flex-none items-center justify-center rounded-full border-2 border-ink text-xl group-open:rotate-45">+</span></summary>
-                      <div className="px-5 pb-5 text-muted">{f.a}</div>
+                      <summary className="flex min-h-14 items-center justify-between gap-4 px-5 py-3"><h3 className="font-sans text-[1.05rem] font-bold">{f.q}</h3><span aria-hidden="true" className="flex h-8 w-8 flex-none items-center justify-center rounded-full border border-edge text-xl group-open:rotate-45">+</span></summary>
+                      <div className="px-5 pb-5 text-mist">{f.a}</div>
                     </details>
                   ))}
                 </div>
               </section>
             ) : null;
           })()}
-          <p className="mt-8 text-lg">Still have a question? Call <PhoneLink label="faq_page" className="font-bold text-flash-dark underline" /> or <a href="/contact/" className="font-bold text-flash-dark underline">contact us</a>.</p>
+          <p className="mt-8 text-lg">Still have a question? Call <PhoneLink label="faq_page" className="font-bold text-gold underline" /> or <a href="/contact/" className="font-bold text-gold underline">contact us</a>.</p>
         </Section>
         <CtaBand label="faq" title="Ready to play?" body="Book online for 6–8 players or request a party quote." />
       </Shell>
@@ -143,20 +141,19 @@ export const location: RouteDef = {
   schema: () => [faqPage('/location/rockaway-nj/', visitFaqs)],
   render: () => (
     <Shell breadcrumb={[{ name: 'Home', path: '/' }, { name: 'Visit', path: '/location/rockaway-nj/' }]}>
-      <Section tone="light">
-        <Eyebrow>Visit · Rockaway, NJ</Eyebrow>
-        <h1 className="text-[2rem] font-black leading-tight sm:text-5xl">Find us inside Rockaway Townsquare</h1>
+      <PageHero eyebrow="Visit · Rockaway, NJ" id="visit-h" image="location" title={<>Find us inside Rockaway Townsquare</>} />
+      <Section tone="light" className="!pt-10">
         <div className="mt-6 grid gap-8 lg:grid-cols-2">
           <div className="text-lg">
             <QuickAnswer q="Address">
               <address className="not-italic"><strong>{business.name}</strong><br />{business.address.street}<br />{business.address.city}, {business.address.region} {business.address.postalCode}</address>
               <p className="mt-2">Use the <strong>mall entrance near JCPenney</strong>. Our entrance is on the <strong>first floor, next to the JCPenney entrance</strong>.</p>
               <div className="mt-4 flex flex-wrap gap-3">
-                <MapLink label="location_page" className="inline-flex min-h-12 items-center rounded-full border-2 border-ink bg-gold px-5 font-bold text-ink no-underline">Open in Google Maps</MapLink>
-                <PhoneLink label="location_page" className="inline-flex min-h-12 items-center rounded-full border-2 border-ink bg-paper px-5 font-bold text-ink no-underline" />
+                <MapLink label="location_page" className="inline-flex min-h-12 items-center btn-red px-5 font-bold text-bone no-underline">Open in Google Maps</MapLink>
+                <PhoneLink label="location_page" className="inline-flex min-h-12 items-center rounded-full border border-edge bg-panel px-5 font-bold text-bone no-underline" />
               </div>
             </QuickAnswer>
-            <h2 className="mt-8 text-2xl font-black">Getting here</h2>
+            <h2 className="mt-8 text-2xl font-bold">Getting here</h2>
             <CheckList items={[
               <><strong>By car:</strong> Rockaway Townsquare sits beside Route 80 in Rockaway, Morris County. Parking is <strong>free</strong> — no validation.</>,
               <><strong>By bus:</strong> NJ Transit bus routes serve Rockaway Townsquare — check current schedules before you travel.</>,
@@ -165,17 +162,17 @@ export const location: RouteDef = {
             ]} />
           </div>
           <Card>
-            <h2 className="text-2xl font-black">Hours</h2>
+            <h2 className="text-2xl font-bold">Hours</h2>
             <dl className="mt-3">
               {business.hours.map((h) => (
-                <div key={h.label} className="flex justify-between border-b-2 border-line py-2.5"><dt className="font-bold">{h.days.join(', ').replace('Monday, Tuesday, Wednesday, Thursday', 'Monday – Thursday').replace('Friday, Saturday', 'Friday – Saturday')}</dt><dd>{fmtTime(h.opens)} – {fmtTime(h.closes)}</dd></div>
+                <div key={h.label} className="flex justify-between border-b border-edge py-2.5"><dt className="font-bold">{h.days.join(', ').replace('Monday, Tuesday, Wednesday, Thursday', 'Monday – Thursday').replace('Friday, Saturday', 'Friday – Saturday')}</dt><dd>{fmtTime(h.opens)} – {fmtTime(h.closes)}</dd></div>
               ))}
             </dl>
-            <p className="mt-3 text-sm text-muted">Sessions are by reservation — book at least 48 hours ahead. For same-day availability, call.</p>
-            <h2 className="mt-8 text-2xl font-black">Nearby communities we serve</h2>
-            <p className="mt-2 text-muted">Groups regularly come from across Morris County and beyond, including:</p>
+            <p className="mt-3 text-sm text-mist">Sessions are by reservation — book at least 48 hours ahead. For same-day availability, call.</p>
+            <h2 className="mt-8 text-2xl font-bold">Nearby communities we serve</h2>
+            <p className="mt-2 text-mist">Groups regularly come from across Morris County and beyond, including:</p>
             <ul className="mt-3 flex flex-wrap gap-2">
-              {nearbyAreas.map((a) => <li key={a} className="rounded-full border-2 border-ink bg-cream px-3 py-1 text-sm font-bold">{a}</li>)}
+              {nearbyAreas.map((a) => <li key={a} className="rounded-full border border-edge bg-panel-2 px-3 py-1 text-sm font-bold">{a}</li>)}
             </ul>
           </Card>
         </div>
@@ -212,7 +209,7 @@ export const thingsToDo: RouteDef = {
       <Section tone="light">
         <article className="mx-auto max-w-3xl">
           <Eyebrow>Local guide · Rockaway, Morris County</Eyebrow>
-          <h1 className="text-[2rem] font-black leading-tight sm:text-5xl">Indoor things to do in Rockaway, NJ</h1>
+          <h1 className="text-[2rem] font-bold leading-tight sm:text-5xl">Indoor things to do in Rockaway, NJ</h1>
           <div className="prose-x mt-4 text-lg">
             <p>Rockaway sits right on Route 80 in Morris County, which makes it an easy meeting point for groups from Denville, Dover, Randolph, Parsippany and the Lake Hopatcong area. When the weather turns — or you just want something more interesting than a movie — here&rsquo;s how to plan an indoor outing.</p>
             <QuickAnswer q="Best indoor group activity in Rockaway?">

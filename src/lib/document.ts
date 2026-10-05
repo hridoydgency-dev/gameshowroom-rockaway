@@ -36,10 +36,20 @@ export function jsonLdFor(route: RouteDef) {
   return graph(nodes);
 }
 
+/** Preload the hero photo (desktop + mobile art direction) so it is the first image requested. */
+function heroPreload(body: string) {
+  const m = body.match(/<picture[^>]*>(?:<source media="\(max-width: 767px\)" srcSet="([^"]+)"\/>)?<img src="([^"]+)"[^>]*fetchPriority="high"/);
+  if (!m) return '';
+  const [, mobile, desktop] = m;
+  return mobile
+    ? `<link rel="preload" as="image" href="${mobile}" media="(max-width: 767px)" fetchpriority="high"><link rel="preload" as="image" href="${desktop}" media="(min-width: 768px)" fetchpriority="high">`
+    : `<link rel="preload" as="image" href="${desktop}" fetchpriority="high">`;
+}
+
 export function renderDocument(route: RouteDef, body: string, assets: { css: string; cssInline?: string; js: string }) {
   const s = route.seo;
   const canonical = s.canonical ?? absUrl(route.path);
-  const og = absUrl(s.ogImage ?? '/images/og-default.png');
+  const og = absUrl(s.ogImage ?? '/images/og-default.jpg');
   const t = config.tracking;
   const pageCfg = {
     pageType: route.pageType,
@@ -63,9 +73,9 @@ export function renderDocument(route: RouteDef, body: string, assets: { css: str
     `<meta name="description" content="${esc(s.description)}">`,
     `<link rel="canonical" href="${canonical}">`,
     `<meta name="robots" content="${robotsFor(route)}">`,
-    '<meta name="theme-color" content="#15102f">',
+    '<meta name="theme-color" content="#080709">',
     '<meta name="format-detection" content="telephone=no">',
-    '<link rel="icon" href="/favicon.svg" type="image/svg+xml">',
+    '<link rel="icon" href="/favicon.png" type="image/png" sizes="64x64">',
     '<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">',
     // Open Graph / Twitter
     '<meta property="og:type" content="' + (route.pageType === 'article' ? 'article' : 'website') + '">',
@@ -82,6 +92,10 @@ export function renderDocument(route: RouteDef, body: string, assets: { css: str
     `<meta name="twitter:image" content="${og}">`,
     // Local signals
     '<meta name="geo.region" content="US-NJ"><meta name="geo.placename" content="Rockaway">',
+    // Brand fonts (self-hosted) + hero image (LCP) preloads
+    '<link rel="preload" href="/fonts/oswald.woff2" as="font" type="font/woff2" crossorigin>',
+    '<link rel="preload" href="/fonts/source-sans-3.woff2" as="font" type="font/woff2" crossorigin>',
+    heroPreload(body),
     // Styles
     assets.cssInline ? `<style>${assets.cssInline}</style>` : `<link rel="stylesheet" href="${assets.css}">`,
     // Consent Mode v2 defaults MUST run before any tag

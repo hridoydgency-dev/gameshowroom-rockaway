@@ -14,7 +14,9 @@ backend:
     uploadMedia: "[CMS] Upload “{{path}}”"
     deleteMedia: "[CMS] Delete “{{path}}”"
 
-local_backend: true   # uses `npx decap-server` on localhost:8081 (started by start-local-dev.bat)
+# Same-origin URL: the local dev server (npm run dev) forwards /api/v1 to `npx decap-server` on :8081.
+local_backend:
+  url: http://localhost:4173/api/v1
 
 site_url: https://gameshowroom-rockaway.netlify.app
 display_url: https://gameshowroom-rockaway.netlify.app

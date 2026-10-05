@@ -2,6 +2,8 @@
 title Game Show Room - local site + admin (http://localhost:4173)
 cd /d "%~dp0"
 set PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+rem Pick up a freshly installed Node.js without needing to sign out
+set "PATH=%PATH%;%ProgramFiles%\nodejs;%APPDATA%\npm"
 where node >nul 2>nul
 if errorlevel 1 (
   echo Node.js is not installed, so the editable admin cannot run locally.

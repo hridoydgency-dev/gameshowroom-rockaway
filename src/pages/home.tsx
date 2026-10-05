@@ -1,7 +1,8 @@
 import type { RouteDef } from '../lib/types';
 import { Shell } from '../components/Layout';
-import { Hero, QuickAnswer, Steps, Features, FAQSection, PriceStrip, PackageCard, VisitBlock, CtaBand, TrustRow, PromoSlot } from '../components/sections';
-import { Section, Eyebrow, H2, Button, BookingLink } from '../components/ui';
+import { Hero, QuickAnswer, Steps, Features, FAQSection, PriceStrip, PackageCard, VisitBlock, CtaBand, TrustRow, PromoSlot, Photo, Gallery } from '../components/sections';
+import { photos, type PhotoKey } from '../data/images';
+import { Section, Eyebrow, H2, Button, BookingLink, SectionHead } from '../components/ui';
 import { ReviewSnippets, GoogleRatingLine } from '../components/reviews';
 import { faqsByIds } from '../data/faqs';
 import { settingsContent } from '../lib/content-store';
@@ -18,27 +19,27 @@ const homeFaqs = faqsByIds(['what-is', 'price', 'ages', 'players', 'how-long', '
 
 const occasions = [
   {
-    href: '/birthday-parties/kids/', tag: 'Ages 6–12', title: 'Kids birthday parties',
+    href: '/birthday-parties/kids/', photo: 'kids' as PhotoKey, tag: 'Ages 6–12', title: 'Kids birthday parties',
     body: 'Buzzers, a live host and a private Party Room for cake. The birthday kid gets custom trivia and the spotlight.',
   },
   {
-    href: '/birthday-parties/teen-and-sweet-16/', tag: 'Teens', title: 'Teen & Sweet 16 parties',
+    href: '/birthday-parties/teen-and-sweet-16/', photo: 'teen' as PhotoKey, tag: 'Teens', title: 'Teen & Sweet 16 parties',
     body: 'Competitive, loud and not a kiddie venue — a party teens actually want, with custom rounds about the guest of honor.',
   },
   {
-    href: '/birthday-parties/adult/', tag: 'Adults', title: 'Adult birthdays',
+    href: '/birthday-parties/adult/', photo: 'adult' as PhotoKey, tag: 'Adults', title: 'Adult birthdays',
     body: '30th, 40th, 50th — trade the restaurant table for a live game show built around the birthday person.',
   },
   {
-    href: '/group-events/corporate-team-building/', tag: 'Companies', title: 'Corporate team building',
+    href: '/group-events/corporate-team-building/', photo: 'corporate' as PhotoKey, tag: 'Companies', title: 'Corporate team building',
     body: 'Company-specific trivia, team rounds and an overall champion. Scales to 40–60 players.',
   },
   {
-    href: '/group-events/school-and-youth-groups/', tag: 'Schools & teams', title: 'School & youth groups',
+    href: '/group-events/school-and-youth-groups/', photo: 'school' as PhotoKey, tag: 'Schools & teams', title: 'School & youth groups',
     body: 'Field trips, sports teams, scouts and clubs. Trivia can be tuned to the group’s age.',
   },
   {
-    href: '/game-show-experience/', tag: 'Friends & family', title: 'A night out, any night',
+    href: '/game-show-experience/', photo: 'stacking' as PhotoKey, tag: 'Friends & family', title: 'A night out, any night',
     body: 'Book a private session for 6–8 players — date night, family visit, reunion or just because.',
   },
 ];
@@ -72,7 +73,7 @@ export const home: RouteDef = {
         lead={settingsContent.homeHero.lead}
         primary={<Button href="/book/" size="lg" track={{ event: 'click_book_now', label: 'home_hero' }}>Book your game show</Button>}
         secondary={<Button href="/birthday-parties/" size="lg" variant="ghost-light" track={{ event: 'click_book_now', label: 'home_hero_birthday' }}>Plan a birthday party</Button>}
-        note={<span className="flex flex-wrap items-center gap-x-3 gap-y-1"><GoogleRatingLine dark label="home_hero" /><span>Book 48+ hours ahead · Free parking</span></span>}
+        note={<span className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1"><GoogleRatingLine dark label="home_hero" /><span>Book 48+ hours ahead · Free parking</span></span>}
         artOnMobile
         chips={[
           { k: 'Price', v: 'From $%PRICE%/guest' },
@@ -95,9 +96,11 @@ export const home: RouteDef = {
             </p>
             <p className="mt-3 text-lg">
               It&rsquo;s not an escape room and it&rsquo;s not an arcade: nobody gets locked in, nobody wanders off to a screen —
-              everyone plays together for the whole hour. <a className="font-bold text-flash-dark underline" href="/game-show-vs-escape-room/">See how it compares to an escape room</a>.
+              everyone plays together for the whole hour. <a className="font-bold text-gold underline" href="/game-show-vs-escape-room/">See how it compares to an escape room</a>.
             </p>
           </div>
+          <div className="grid gap-5">
+          <Photo name="winners" framed sizes="(min-width: 1024px) 40vw, 100vw" />
           <QuickAnswer q="The 5-second version">
             <ul className="mt-1 space-y-1.5">
               <li><strong>Where:</strong> Rockaway Townsquare, 301 Mt Hope Ave, Rockaway NJ — by the JCPenney entrance</li>
@@ -106,21 +109,26 @@ export const home: RouteDef = {
               <li><strong>Cost:</strong> from $%PRICE% per guest</li>
             </ul>
           </QuickAnswer>
+          </div>
         </div>
-        <div className="mt-10"><TrustRow /></div>
+        <div className="mt-12"><TrustRow /></div>
       </Section>
 
       <Section tone="paper" labelledBy="occ-title">
-        <Eyebrow>Choose your occasion</Eyebrow>
-        <H2 id="occ-title">What are you celebrating?</H2>
-        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <SectionHead id="occ-title" eyebrow="Choose your occasion" title="What are you celebrating?" lead="One private studio, a live host and a show tuned to your crew." />
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {occasions.map((o) => (
             <li key={o.href}>
-              <a href={o.href} className="flex h-full flex-col rounded-2xl border-2 border-ink bg-cream p-5 text-ink no-underline shadow-[var(--shadow-pop)] transition hover:-translate-y-0.5">
-                <span className="self-start rounded-full bg-ink px-3 py-1 text-xs font-bold uppercase tracking-wider text-gold">{o.tag}</span>
-                <span className="mt-3 text-xl font-black">{o.title}</span>
-                <span className="mt-1 flex-1 text-muted">{o.body}</span>
-                <span className="mt-4 font-bold text-flash-dark">See details →</span>
+              <a href={o.href} className="card-noir group flex h-full flex-col overflow-hidden text-bone no-underline transition hover:-translate-y-0.5 hover:border-bronze">
+                <span className="relative block aspect-[2/1] overflow-hidden sm:aspect-[16/10]">
+                  <img src={photos[o.photo].card} alt="" width={900} height={600} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" style={{ objectPosition: photos[o.photo].position }} />
+                  <span className="eyebrow-x absolute left-3 top-3 rounded-[4px] bg-night/85 px-2.5 py-1 text-[0.7rem] text-gold">{o.tag}</span>
+                </span>
+                <span className="flex flex-1 flex-col p-5">
+                  <span className="font-display text-2xl font-semibold uppercase text-gold">{o.title}</span>
+                  <span className="mt-2 flex-1 text-mist">{o.body}</span>
+                  <span className="mt-4 font-bold text-bone group-hover:text-gold">See details →</span>
+                </span>
               </a>
             </li>
           ))}
@@ -130,8 +138,7 @@ export const home: RouteDef = {
       <ReviewSnippets path="/" />
 
       <Section tone="dark" labelledBy="how-title">
-        <Eyebrow dark>How it works</Eyebrow>
-        <H2 id="how-title">From booking to champion in four steps</H2>
+        <SectionHead id="how-title" eyebrow="How it works" title="From booking to champion in four steps" />
         <Steps
           dark
           steps={[
@@ -144,8 +151,7 @@ export const home: RouteDef = {
       </Section>
 
       <Section tone="light" labelledBy="play-title">
-        <Eyebrow>What you&rsquo;ll play</Eyebrow>
-        <H2 id="play-title">Challenges for brains, buzzers and big personalities</H2>
+        <SectionHead id="play-title" eyebrow="What you’ll play" title="Challenges for brains, buzzers and big personalities" />
         <Features
           items={[
             { icon: 'buzzer', title: 'Buzz-in trivia', body: 'Fast rounds where the quickest hand on the buzzer wins the points.' },
@@ -158,7 +164,9 @@ export const home: RouteDef = {
         />
       </Section>
 
-      <Section tone="paper" labelledBy="price-title">
+      <Gallery />
+
+      <Section tone="light" labelledBy="price-title">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
           <div>
             <Eyebrow>Pricing</Eyebrow>

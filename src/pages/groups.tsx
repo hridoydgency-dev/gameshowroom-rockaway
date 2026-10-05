@@ -28,6 +28,7 @@ export const groupsHub: RouteDef = {
   render: () => (
     <Shell breadcrumb={crumbs()} sticky={{ href: '#quote', label: 'Get an event quote' }}>
       <Hero
+        image="groups"
         eyebrow="Group events · 8 to 60 players"
         title={<>Private group events in <span className="text-gold">Rockaway, NJ</span></>}
         lead={<>Turn a group outing into a tournament. Teams rotate through host-led rounds of trivia, puzzles and challenges — with one overall champion — at Rockaway Townsquare.</>}
@@ -55,7 +56,7 @@ export const groupsHub: RouteDef = {
             { h: 'Schools & youth groups', d: 'Field trips, sports teams, scouts, clubs and end-of-season parties.', href: '/group-events/school-and-youth-groups/', cta: 'School & youth groups' },
             { h: 'Families & friends', d: 'Reunions, bachelor/bachelorette parties, big birthdays and holiday get-togethers.', href: '/birthday-parties/', cta: 'Birthday & celebration parties' },
           ].map((c) => (
-            <Card key={c.h}><h3 className="text-xl font-black">{c.h}</h3><p className="mt-2 text-muted">{c.d}</p><a href={c.href} className="mt-3 inline-block font-bold text-flash-dark underline">{c.cta} →</a></Card>
+            <Card key={c.h}><h3 className="text-xl font-bold">{c.h}</h3><p className="mt-2 text-mist">{c.d}</p><a href={c.href} className="mt-3 inline-block font-bold text-gold underline">{c.cta} →</a></Card>
           ))}
         </div>
         <div className="mt-10"><PriceStrip trackLabel="groups" /></div>
@@ -88,6 +89,7 @@ export const corporate: RouteDef = {
   render: () => (
     <Shell breadcrumb={crumbs('Corporate team building', '/group-events/corporate-team-building/')} sticky={{ href: '#quote', label: 'Get a team quote' }}>
       <Hero
+        image="corporate"
         eyebrow="Corporate team building · Morris County"
         title={<>Team building your team <span className="text-gold">won&rsquo;t groan about</span></>}
         lead={<>A private, host-led game show with trivia about your company or industry. Departments compete, everyone participates, and an overall champion takes the bragging rights. Rockaway Townsquare, off Route 80.</>}
@@ -167,6 +169,7 @@ export const school: RouteDef = {
   render: () => (
     <Shell breadcrumb={crumbs('Schools & youth groups', '/group-events/school-and-youth-groups/')} sticky={{ href: '#quote', label: 'Get a group quote' }}>
       <Hero
+        image="school"
         eyebrow="Schools · sports teams · youth groups"
         title={<>A field trip that&rsquo;s <span className="text-gold">secretly a quiz</span></>}
         lead={<>Classes, teams, scouts and clubs play a private, host-led game show at Rockaway Townsquare — trivia can be tuned to your group&rsquo;s age or subject. Up to 60 players.</>}
@@ -188,7 +191,7 @@ export const school: RouteDef = {
             { h: 'Classes & field trips', d: 'Trivia tuned to the group’s age; teams rotate rounds.' },
             { h: 'Sports teams', d: 'End-of-season party with a different kind of competition.' },
             { h: 'Scouts, clubs & youth groups', d: 'A reward outing or rainy-day plan that keeps everyone together.' },
-          ].map((c) => <Card key={c.h}><h3 className="text-xl font-black">{c.h}</h3><p className="mt-2 text-muted">{c.d}</p></Card>)}
+          ].map((c) => <Card key={c.h}><h3 className="text-xl font-bold">{c.h}</h3><p className="mt-2 text-mist">{c.d}</p></Card>)}
         </div>
         <CheckList items={['Every session is private to your group', 'Wheelchair accessible', 'Free parking for buses and parents — confirm bus drop-off with the team', 'Fundraiser donations available for schools & nonprofits']} />
       </Section>

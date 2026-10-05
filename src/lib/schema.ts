@@ -41,7 +41,7 @@ export function sitewideSchema() {
     url: absUrl('/'),
     telephone: business.phone.e164,
     email: business.email,
-    image: absUrl('/images/og-default.png'),
+    image: absUrl('/images/og-default.jpg'),
     logo: absUrl('/images/logo.png'),
     priceRange: '$%PRICE%+ per guest',
     currenciesAccepted: 'USD',
@@ -164,7 +164,7 @@ export function article(path: string, headline: string, description: string, dat
     mainEntityOfPage: { '@id': absUrl(path) + '#webpage' },
     author: { '@type': 'Organization', name: business.name, url: absUrl('/') },
     publisher: { '@id': ids.business },
-    image: absUrl('/images/og-default.png'),
+    image: absUrl('/images/og-default.jpg'),
     inLanguage: 'en-US',
   };
 }

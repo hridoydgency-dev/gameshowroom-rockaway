@@ -34,6 +34,7 @@ export const gameShow: RouteDef = {
   render: () => (
     <Shell breadcrumb={bc('The Game Show', '/game-show-experience/')}>
       <Hero
+        image="gameShow"
         eyebrow="The experience"
         title={<>A live game show where <span className="text-gold">your group</span> are the contestants</>}
         lead={<>One hour. One live host. Buzzers, lights, music and rounds of trivia, puzzles and challenges — in a private room at Rockaway Townsquare, NJ.</>}
@@ -97,18 +98,18 @@ export const gameShow: RouteDef = {
             <Eyebrow>Who it&rsquo;s for</Eyebrow>
             <H2 id="gs-who">Great for almost any group of 6 or more</H2>
             <CheckList items={[
-              <><a className="font-bold text-flash-dark underline" href="/birthday-parties/kids/">Kids birthday parties</a> — ages 6+, with a private Party Room for cake</>,
-              <><a className="font-bold text-flash-dark underline" href="/birthday-parties/teen-and-sweet-16/">Teen &amp; Sweet 16 parties</a> — competitive, social, phone-free fun</>,
-              <><a className="font-bold text-flash-dark underline" href="/birthday-parties/adult/">Adult birthdays</a>, reunions and bachelor/bachelorette groups</>,
-              <><a className="font-bold text-flash-dark underline" href="/group-events/corporate-team-building/">Corporate team building</a> with custom company trivia</>,
-              <><a className="font-bold text-flash-dark underline" href="/group-events/school-and-youth-groups/">School trips, sports teams and youth groups</a></>,
-              <>Families looking for something <a className="font-bold text-flash-dark underline" href="/things-to-do-rockaway-nj/">indoors to do in Rockaway</a> on a weekend or rainy day</>,
+              <><a className="font-bold text-gold underline" href="/birthday-parties/kids/">Kids birthday parties</a> — ages 6+, with a private Party Room for cake</>,
+              <><a className="font-bold text-gold underline" href="/birthday-parties/teen-and-sweet-16/">Teen &amp; Sweet 16 parties</a> — competitive, social, phone-free fun</>,
+              <><a className="font-bold text-gold underline" href="/birthday-parties/adult/">Adult birthdays</a>, reunions and bachelor/bachelorette groups</>,
+              <><a className="font-bold text-gold underline" href="/group-events/corporate-team-building/">Corporate team building</a> with custom company trivia</>,
+              <><a className="font-bold text-gold underline" href="/group-events/school-and-youth-groups/">School trips, sports teams and youth groups</a></>,
+              <>Families looking for something <a className="font-bold text-gold underline" href="/things-to-do-rockaway-nj/">indoors to do in Rockaway</a> on a weekend or rainy day</>,
             ]} />
           </div>
           <div>
             <Eyebrow>Pricing</Eyebrow>
             <H2>From $%PRICE% per guest</H2>
-            <p className="mt-3 text-lg">Pricing depends on group size and package. See <a className="font-bold text-flash-dark underline" href="/pricing/">full pricing</a>.</p>
+            <p className="mt-3 text-lg">Pricing depends on group size and package. See <a className="font-bold text-gold underline" href="/pricing/">full pricing</a>.</p>
             <div className="mt-5"><PriceStrip trackLabel="game_show" /></div>
           </div>
         </div>
@@ -121,15 +122,15 @@ export const gameShow: RouteDef = {
           <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((g) => (
               <li key={g.image}>
-                <figure className="overflow-hidden rounded-2xl border-2 border-ink bg-paper">
+                <figure className="overflow-hidden rounded-2xl border border-edge bg-panel">
                   <img src={g.image} alt={g.alt} loading="lazy" decoding="async" width={800} height={600} className="aspect-[4/3] w-full object-cover" />
-                  {g.caption && <figcaption className="px-4 py-3 text-sm text-muted">{g.caption}</figcaption>}
+                  {g.caption && <figcaption className="px-4 py-3 text-sm text-mist">{g.caption}</figcaption>}
                 </figure>
               </li>
             ))}
           </ul>
         ) : (
-          <p className="mt-3 max-w-2xl text-lg text-muted">Real photos of the Rockaway set — podiums, buzzers and the Party Room — are being added here. In the meantime, call {business.phone.display} and the team can describe the room for your group.</p>
+          <p className="mt-3 max-w-2xl text-lg text-mist">Real photos of the Rockaway set — podiums, buzzers and the Party Room — are being added here. In the meantime, call {business.phone.display} and the team can describe the room for your group.</p>
         )}
       </Section>
       <ReviewSnippets path="/game-show-experience/" title="Reviews from real players" />
@@ -173,7 +174,7 @@ export const vsEscape: RouteDef = {
     <Shell breadcrumb={bc('Game show vs. escape room', '/game-show-vs-escape-room/')}>
       <Section tone="light">
         <Eyebrow>Rockaway Townsquare guide</Eyebrow>
-        <h1 className="text-[2rem] font-black leading-tight sm:text-5xl">Game Show Room vs. escape room: which one for your group?</h1>
+        <h1 className="text-[2rem] font-bold leading-tight sm:text-5xl">Game Show Room vs. escape room: which one for your group?</h1>
         <div className="mt-6 grid gap-8 lg:grid-cols-[1.3fr_1fr]">
           <div className="prose-x text-lg">
             <p>
@@ -192,16 +193,16 @@ export const vsEscape: RouteDef = {
             challenges with buzzers and lights. The escape rooms are a separate experience run by the same company.
           </QuickAnswer>
         </div>
-        <div className="mt-10 overflow-x-auto rounded-2xl border-2 border-ink bg-paper">
+        <div className="mt-10 overflow-x-auto rounded-2xl border border-edge bg-panel">
           <table className="w-full min-w-[34rem] text-left">
             <caption className="sr-only">Comparison of the Game Show Room and a typical escape room</caption>
-            <thead className="bg-ink text-paper">
+            <thead className="bg-night text-paper">
               <tr><th scope="col" className="p-3"> </th><th scope="col" className="p-3 text-gold">Game Show Room</th><th scope="col" className="p-3">Typical escape room</th></tr>
             </thead>
             <tbody>
               {escRows.map(([k, a, b]) => (
-                <tr key={k} className="border-t-2 border-line align-top">
-                  <th scope="row" className="p-3 font-bold">{k}</th><td className="p-3">{a}</td><td className="p-3 text-muted">{b}</td>
+                <tr key={k} className="border-t-2 border-edge align-top">
+                  <th scope="row" className="p-3 font-bold">{k}</th><td className="p-3">{a}</td><td className="p-3 text-mist">{b}</td>
                 </tr>
               ))}
             </tbody>
@@ -209,14 +210,14 @@ export const vsEscape: RouteDef = {
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           <Card>
-            <h2 className="text-2xl font-black">Pick the game show if…</h2>
+            <h2 className="text-2xl font-bold">Pick the game show if…</h2>
             <CheckList items={['Ages range from 6 to 60+', 'You’re celebrating a birthday and want a Party Room after', 'Your group is bigger than 8 (up to 40–60)', 'Some guests would rather watch than play', 'You want a host to run everything']} />
             <BookingLink kind="small" label="vs_escape_card" className="mt-5 w-full">Book the game show</BookingLink>
           </Card>
           <Card>
-            <h2 className="text-2xl font-black">Pick an escape room if…</h2>
+            <h2 className="text-2xl font-bold">Pick an escape room if…</h2>
             <CheckList items={['Your group loves puzzles above all', 'You’re a small group of friends or a couple of families', 'You prefer self-directed play with hints on request']} />
-            <a href={business.sisterExperiences[0].url} rel="noopener" className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full border-2 border-ink bg-paper px-6 font-bold text-ink no-underline" data-track="outbound_click" data-track-label="vs_escape_aia">Visit All In Adventures escape rooms</a>
+            <a href={business.sisterExperiences[0].url} rel="noopener" className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full border border-edge bg-panel px-6 font-bold text-bone no-underline" data-track="outbound_click" data-track-label="vs_escape_aia">Visit All In Adventures escape rooms</a>
           </Card>
         </div>
       </Section>
@@ -244,7 +245,7 @@ export const njGuide: RouteDef = {
       <Section tone="light">
         <article className="mx-auto max-w-3xl">
           <Eyebrow>Guide · updated October 2026</Eyebrow>
-          <h1 className="text-[2rem] font-black leading-tight sm:text-5xl">Live game show experiences in New Jersey</h1>
+          <h1 className="text-[2rem] font-bold leading-tight sm:text-5xl">Live game show experiences in New Jersey</h1>
           <div className="prose-x mt-4 text-lg">
             <p>
               In-person game shows — where your group plays on a set with a host, buzzers and a scoreboard — have become one of New
@@ -268,7 +269,7 @@ export const njGuide: RouteDef = {
                 </tbody>
               </table>
             </div>
-            <p className="text-sm text-muted">*Details for other venues come from their public websites and press coverage (e.g. NJ Monthly) as of October 2026 and can change — confirm directly with each venue. Game Show Room is not affiliated with these businesses or with &ldquo;Game Show Battle Rooms&rdquo;.</p>
+            <p className="text-sm text-mist">*Details for other venues come from their public websites and press coverage (e.g. NJ Monthly) as of October 2026 and can change — confirm directly with each venue. Game Show Room is not affiliated with these businesses or with &ldquo;Game Show Battle Rooms&rdquo;.</p>
             <h2>What to compare before you book</h2>
             <h3>1. Will you play with strangers?</h3>
             <p>Some venues fill open seats with other guests unless you buy out the show. Every Game Show Room booking is private to your group — useful for birthday parties and company events.</p>

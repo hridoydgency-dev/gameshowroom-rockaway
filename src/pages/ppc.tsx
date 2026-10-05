@@ -90,7 +90,7 @@ export const ppcRoutes: RouteDef[] = landingPages.map((lp) => {
     render: () => (
       <Shell minimal sticky={lp.goal === 'book' ? { href: '#book', label: 'See available times' } : { href: '#quote', label: 'Get my free quote' }}>
         <Hero
-          eyebrow={lp.eyebrow} title={lp.h1} lead={lp.lead} chips={lp.chips} primary={primary}
+          image={/kid/.test(lp.slug) ? 'kids' : /birthday|party/.test(lp.slug) ? 'birthday' : /team|corporate/.test(lp.slug) ? 'corporate' : 'home'} eyebrow={lp.eyebrow} title={lp.h1} lead={lp.lead} chips={lp.chips} primary={primary}
           secondary={lp.goal === 'quote' ? <BookingLink kind="large" label={`lp_${lp.slug}_hero_calendar`} size="lg" variant="ghost-light">Check party dates</BookingLink> : undefined}
           note={<span className="flex flex-wrap items-center gap-x-3 gap-y-1"><GoogleRatingLine dark label={`lp_${lp.slug}_hero`} /><span>Rockaway Townsquare · Rockaway NJ</span></span>}
         />
@@ -103,9 +103,9 @@ export const ppcRoutes: RouteDef[] = landingPages.map((lp) => {
               <div className="mt-6"><PriceStrip trackLabel={`lp_${lp.slug}`} /></div>
             </div>
             {lp.goal === 'quote' ? <PackageCard trackLabel={`lp_${lp.slug}`} /> : (
-              <div id="book" className="rounded-[var(--radius-card)] border-2 border-ink bg-paper p-6 shadow-[var(--shadow-pop)]">
-                <h2 className="text-2xl font-black">Book in under 2 minutes</h2>
-                <p className="mt-2 text-muted">Choose your date and time for 6–8 players. Bigger group or a party? Use the party calendar.</p>
+              <div id="book" className="rounded-[var(--radius-card)] border border-edge bg-panel p-6 shadow-[var(--shadow-pop)]">
+                <h2 className="text-2xl font-bold">Book in under 2 minutes</h2>
+                <p className="mt-2 text-mist">Choose your date and time for 6–8 players. Bigger group or a party? Use the party calendar.</p>
                 <div className="mt-5 grid gap-3">
                   <BookingLink kind="small" label={`lp_${lp.slug}_card`} size="lg">See available times</BookingLink>
                   <BookingLink kind="large" label={`lp_${lp.slug}_card_large`} variant="outline">Party &amp; large-group calendar</BookingLink>
@@ -132,7 +132,7 @@ export const ppcRoutes: RouteDef[] = landingPages.map((lp) => {
           <H2 className="text-2xl sm:text-3xl">Quick answers</H2>
           <dl className="mt-5 grid gap-4 md:grid-cols-2">
             {faqs.map((f) => (
-              <div key={f.id} className="rounded-2xl border-2 border-ink bg-paper p-5"><dt className="font-black">{f.q}</dt><dd className="mt-1 text-muted">{f.a}</dd></div>
+              <div key={f.id} className="rounded-2xl border border-edge bg-panel p-5"><dt className="font-bold">{f.q}</dt><dd className="mt-1 text-mist">{f.a}</dd></div>
             ))}
           </dl>
         </Section>

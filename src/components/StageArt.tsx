@@ -80,7 +80,7 @@ export function StageArt({ className, title = 'Illustration of a game show stage
 }
 
 /** Simple icon set (inline, decorative). */
-export const Icon = ({ name, className = 'h-6 w-6' }: { name: 'clock' | 'users' | 'cake' | 'pin' | 'ticket' | 'star' | 'phone' | 'buzzer' | 'brain' | 'trophy' | 'parking' | 'access'; className?: string }) => {
+export const Icon = ({ name, className = 'h-6 w-6' }: { name: 'clock' | 'users' | 'cake' | 'pin' | 'ticket' | 'star' | 'phone' | 'buzzer' | 'brain' | 'trophy' | 'parking' | 'access' | 'mail'; className?: string }) => {
   const p: Record<string, ReactElement> = {
     clock: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>,
     users: <><circle cx="9" cy="8" r="3.5" /><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5" /><circle cx="17" cy="9" r="2.5" /><path d="M16.5 14.6c2.6.2 4.4 1.9 5 5.4" /></>,
@@ -93,6 +93,7 @@ export const Icon = ({ name, className = 'h-6 w-6' }: { name: 'clock' | 'users' 
     brain: <><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 6 1V5a2 2 0 0 0-3-1z" /><path d="M15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-6 1" /></>,
     trophy: <><path d="M8 4h8v5a4 4 0 0 1-8 0z" /><path d="M8 6H4a3 3 0 0 0 4 4M16 6h4a3 3 0 0 1-4 4" /><path d="M12 13v4M8 21h8M9 17h6v4H9z" /></>,
     parking: <><rect x="4" y="3" width="16" height="18" rx="3" /><path d="M10 17V8h3a2.5 2.5 0 0 1 0 5h-3" /></>,
+    mail: <><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3.5 6.5l8.5 6.5 8.5-6.5" /></>,
     access: <><circle cx="12" cy="4.5" r="1.8" /><path d="M6 8.5l6 1 6-1M12 9.5v5l-3 6M12 14.5l3 6" /></>,
   };
   return (

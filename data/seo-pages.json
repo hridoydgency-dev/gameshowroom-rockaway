@@ -25,7 +25,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1624,
+    "words": 1640,
     "trackView": "view_service"
   },
   {
@@ -55,7 +55,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1558,
+    "words": 1544,
     "trackView": "view_game_show"
   },
   {
@@ -85,7 +85,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1535,
+    "words": 1520,
     "trackView": "view_birthday_party"
   },
   {
@@ -116,7 +116,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1363,
+    "words": 1347,
     "trackView": "view_birthday_party"
   },
   {
@@ -146,7 +146,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1188,
+    "words": 1166,
     "trackView": "view_birthday_party"
   },
   {
@@ -177,7 +177,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1279,
+    "words": 1263,
     "trackView": "view_birthday_party"
   },
   {
@@ -207,7 +207,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1105,
+    "words": 1090,
     "trackView": "view_service"
   },
   {
@@ -238,7 +238,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 1060,
+    "words": 1038,
     "trackView": "view_service"
   },
   {
@@ -268,7 +268,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 884,
+    "words": 862,
     "trackView": "view_service"
   },
   {
@@ -297,7 +297,7 @@
       "Service",
       "FAQPage"
     ],
-    "words": 854,
+    "words": 850,
     "trackView": "pricing_view"
   },
   {
@@ -321,7 +321,7 @@
       "BreadcrumbList",
       "FAQPage"
     ],
-    "words": 1530,
+    "words": 1529,
     "trackView": null
   },
   {
@@ -350,7 +350,7 @@
       "BreadcrumbList",
       "FAQPage"
     ],
-    "words": 728,
+    "words": 727,
     "trackView": "view_location"
   },
   {
@@ -378,7 +378,7 @@
       "BreadcrumbList",
       "FAQPage"
     ],
-    "words": 874,
+    "words": 873,
     "trackView": "view_service"
   },
   {
@@ -407,7 +407,7 @@
       "BreadcrumbList",
       "BlogPosting"
     ],
-    "words": 798,
+    "words": 794,
     "trackView": "view_service"
   },
   {
@@ -437,7 +437,7 @@
       "BreadcrumbList",
       "BlogPosting"
     ],
-    "words": 615,
+    "words": 611,
     "trackView": "view_service"
   },
   {
@@ -460,7 +460,7 @@
       "CollectionPage",
       "BreadcrumbList"
     ],
-    "words": 314,
+    "words": 310,
     "trackView": null
   },
   {
@@ -491,7 +491,7 @@
       "BreadcrumbList",
       "BlogPosting"
     ],
-    "words": 862,
+    "words": 861,
     "trackView": "view_article"
   },
   {
@@ -520,7 +520,7 @@
       "BreadcrumbList",
       "BlogPosting"
     ],
-    "words": 775,
+    "words": 774,
     "trackView": "view_article"
   },
   {
@@ -543,7 +543,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 458,
+    "words": 454,
     "trackView": "view_booking"
   },
   {
@@ -566,7 +566,7 @@
       "ContactPage",
       "BreadcrumbList"
     ],
-    "words": 467,
+    "words": 463,
     "trackView": null
   },
   {
@@ -589,7 +589,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 664,
+    "words": 668,
     "trackView": "view_reviews"
   },
   {
@@ -612,7 +612,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 683,
+    "words": 664,
     "trackView": "view_game_show"
   },
   {
@@ -635,7 +635,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 700,
+    "words": 681,
     "trackView": "view_game_show"
   },
   {
@@ -658,7 +658,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 881,
+    "words": 861,
     "trackView": "view_birthday_party"
   },
   {
@@ -681,7 +681,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 917,
+    "words": 898,
     "trackView": "view_birthday_party"
   },
   {
@@ -704,7 +704,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 753,
+    "words": 727,
     "trackView": "view_service"
   },
   {
@@ -727,7 +727,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 275,
+    "words": 271,
     "trackView": null
   },
   {
@@ -750,7 +750,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 312,
+    "words": 308,
     "trackView": null
   },
   {
@@ -773,7 +773,7 @@
       "WebPage",
       "BreadcrumbList"
     ],
-    "words": 315,
+    "words": 311,
     "trackView": null
   }
 ]

@@ -20,3 +20,8 @@ qa-artifacts/
 /push-updates.ps1
 /push-updates.bat
 !/start-local-dev.bat
+
+# Raw brand downloads (source files; optimized copies live in public/images/brand)
+_brand-src/
+_brand-urls.txt
+fetch-brand-assets.bat

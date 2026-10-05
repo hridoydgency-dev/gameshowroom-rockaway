@@ -193,7 +193,7 @@
     "/game-show-experience/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/birthday-parties/",
@@ -347,7 +347,7 @@
     "/birthday-parties/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -493,7 +493,7 @@
     "/birthday-parties/kids/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -627,7 +627,7 @@
     "/birthday-parties/teen-and-sweet-16/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -761,7 +761,7 @@
     "/birthday-parties/adult/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -903,7 +903,7 @@
     "/group-events/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -1037,7 +1037,7 @@
     "/group-events/corporate-team-building/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -1175,7 +1175,7 @@
     "/group-events/school-and-youth-groups/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -1293,7 +1293,7 @@
     "/pricing/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -1427,7 +1427,7 @@
     "/faq/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -1549,7 +1549,7 @@
     "/location/rockaway-nj/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -1675,7 +1675,7 @@
     "/game-show-vs-escape-room/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -1801,7 +1801,7 @@
     "/game-show-experiences-new-jersey/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -1935,7 +1935,7 @@
     "/things-to-do-rockaway-nj/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -2081,7 +2081,7 @@
     "/blog/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -2203,7 +2203,7 @@
     "/blog/birthday-party-ideas-by-age/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -2353,7 +2353,7 @@
     "/blog/how-much-does-a-kids-birthday-party-cost-nj/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -2495,7 +2495,7 @@
     "/book/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -2609,7 +2609,7 @@
     "/contact/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",
@@ -2727,7 +2727,7 @@
     "/reviews/": [
       {
         "to": "/",
-        "anchor": "GAME SHOW ROOM Rockaway, NJ"
+        "anchor": ""
       },
       {
         "to": "/game-show-experience/",

@@ -3,7 +3,7 @@ import { marked } from 'marked';
 import { blogFiles } from '../lib/content-store';
 import type { RouteDef } from '../lib/types';
 import { Shell } from '../components/Layout';
-import { QuickAnswer, Related, CtaBand } from '../components/sections';
+import { QuickAnswer, Related, CtaBand, PageHero } from '../components/sections';
 import { Section, Eyebrow, Button } from '../components/ui';
 import { article } from '../lib/schema';
 
@@ -48,8 +48,8 @@ export const blogRoutes: RouteDef[] = posts.map((p) => {
         <Section tone="light">
           <article className="mx-auto max-w-3xl">
             <Eyebrow>Party planning · {new Date(p.modified).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</Eyebrow>
-            <h1 className="text-[2rem] font-black leading-tight sm:text-5xl">{p.title}</h1>
-            <p className="mt-3 text-sm text-muted">By the Game Show Room Rockaway team · Updated <time dateTime={p.modified}>{p.modified}</time></p>
+            <h1 className="text-[2rem] font-bold leading-tight sm:text-5xl">{p.title}</h1>
+            <p className="mt-3 text-sm text-mist">By the Game Show Room Rockaway team · Updated <time dateTime={p.modified}>{p.modified}</time></p>
             <div className="prose-x mt-6 text-lg" dangerouslySetInnerHTML={{ __html: p.html }} />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button href="/birthday-parties/" size="lg" track={{ event: 'click_book_now', label: `blog_${p.slug}` }}>See game show birthday parties</Button>
@@ -75,16 +75,15 @@ export const blogIndex: RouteDef = {
   sitemap: { priority: 0.5, changefreq: 'weekly' },
   render: () => (
     <Shell breadcrumb={[{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog/' }]}>
-      <Section tone="light">
-        <Eyebrow>Blog</Eyebrow>
-        <h1 className="text-[2rem] font-black sm:text-5xl">Party planning guides</h1>
+      <PageHero eyebrow="Blog" id="blog-h" image="birthday" title={<>Party planning guides</>} />
+      <Section tone="light" className="!pt-10">
         <ul className="mt-8 grid gap-5 md:grid-cols-2">
           {posts.map((p) => (
             <li key={p.slug}>
-              <a href={`/blog/${p.slug}/`} className="block h-full rounded-2xl border-2 border-ink bg-paper p-6 text-ink no-underline shadow-[var(--shadow-pop)] hover:-translate-y-0.5">
-                <h2 className="text-2xl font-black">{p.title}</h2>
-                <p className="mt-2 text-muted">{p.excerpt}</p>
-                <span className="mt-3 inline-block font-bold text-flash-dark">Read the guide →</span>
+              <a href={`/blog/${p.slug}/`} className="block h-full rounded-2xl border border-edge bg-panel p-6 text-bone no-underline shadow-[var(--shadow-pop)] hover:-translate-y-0.5">
+                <h2 className="text-2xl font-bold">{p.title}</h2>
+                <p className="mt-2 text-mist">{p.excerpt}</p>
+                <span className="mt-3 inline-block font-bold text-gold">Read the guide →</span>
               </a>
             </li>
           ))}

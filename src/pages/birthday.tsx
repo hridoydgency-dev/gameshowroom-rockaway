@@ -82,7 +82,7 @@ export const birthdayHub: RouteDef = {
     <BirthdayTemplate
       path="/birthday-parties/" label="bday_hub" faqs={hubFaqs} hub
       hero={{
-        eyebrow: 'Birthday parties · Rockaway, NJ',
+        eyebrow: 'Birthday parties · Rockaway, NJ', image: 'birthday',
         title: <>Game show birthday parties in <span className="text-gold">Rockaway, NJ</span></>,
         lead: <>The birthday guest gets the spotlight, everyone gets a buzzer. <strong>One hour of live game show</strong> + <strong>one hour in a private Party Room</strong> for cake and food — at Rockaway Townsquare.</>,
         primary: <Button href="#quote" size="lg" track={{ event: 'click_book_now', label: 'bday_hub_hero' }}>Get my party quote</Button>,
@@ -149,7 +149,7 @@ export const kidsBirthday: RouteDef = {
         { title: 'Cake time', body: 'Champions crowned, then everyone moves to the private Party Room.' },
       ]}
       hero={{
-        eyebrow: 'Kids birthday parties · ages 6–12',
+        eyebrow: 'Kids birthday parties · ages 6–12', image: 'kids',
         title: <>A kids birthday party <span className="text-gold">starring your kid</span></>,
         lead: <>Buzzers, lights, a live host and trivia about the birthday kid — then cake in a private Party Room. An indoor party place in <strong>Rockaway, NJ</strong> that works rain or shine.</>,
         primary: <Button href="#quote" size="lg" track={{ event: 'click_book_now', label: 'bday_kids_hero' }}>Get my party quote</Button>,
@@ -186,7 +186,7 @@ export const kidsBirthday: RouteDef = {
               { t: '2+ weeks out', d: 'Pick a date and request a quote. Weekends and evenings fill first.' },
               { t: '1 week out', d: 'Send the birthday kid’s name, age and favorite things for custom trivia. Confirm cake/pizza plans.' },
               { t: 'Party day', d: 'Arrive 10–15 minutes early. One adult (18+) stays. We run the show.' },
-            ].map((x) => <Card key={x.t}><p className="font-black text-flash-dark">{x.t}</p><p className="mt-1">{x.d}</p></Card>)}
+            ].map((x) => <Card key={x.t}><p className="font-bold text-gold">{x.t}</p><p className="mt-1">{x.d}</p></Card>)}
           </div>
         </Section>
       }
@@ -223,7 +223,7 @@ export const teenBirthday: RouteDef = {
         { title: 'Cake & content', body: 'The Party Room is yours for cake, food and the group photo.' },
       ]}
       hero={{
-        eyebrow: 'Teen, 13th & Sweet 16 parties',
+        eyebrow: 'Teen, 13th & Sweet 16 parties', image: 'teen',
         title: <>The party teens <span className="text-gold">won&rsquo;t call babyish</span></>,
         lead: <>A private, host-led game show with trivia written around the guest of honor — then the Party Room for cake. Competitive, loud and very group-chat-worthy. At Rockaway Townsquare, NJ.</>,
         primary: <Button href="#quote" size="lg" track={{ event: 'click_book_now', label: 'bday_teen_hero' }}>Get my party quote</Button>,
@@ -277,7 +277,7 @@ export const adultBirthday: RouteDef = {
         { title: 'Toast after', body: 'Add the Party Room for cake, or head to dinner at the mall.' },
       ]}
       hero={{
-        eyebrow: 'Adult & milestone birthdays',
+        eyebrow: 'Adult & milestone birthdays', image: 'adult',
         title: <>Skip the dinner reservation. <span className="text-gold">Host a game show.</span></>,
         lead: <>For a 30th, 40th, 50th or 60th: a private live game show with adult-level questions and a custom round about the birthday person. In Rockaway, NJ — dinner nearby after.</>,
         primary: <Button href="#quote" size="lg" track={{ event: 'click_book_now', label: 'bday_adult_hero' }}>Get my party quote</Button>,

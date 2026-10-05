@@ -1,5 +1,5 @@
 /** Minimal static server for dist/ (local preview + QA). Honors trailing-slash dirs, 404.html and _redirects. */
-import { createServer } from 'node:http';
+import { createServer, request } from 'node:http';
 import { readFileSync, existsSync, statSync } from 'node:fs';
 import { join, extname, resolve } from 'node:path';
 
@@ -16,6 +16,14 @@ export function serve(dir = resolve(import.meta.dirname, '../dist'), port = 4173
     const url = new URL(req.url || '/', 'http://x');
     const p = decodeURIComponent(url.pathname);
     const isAdmin = !!opts.admin && (p === '/admin' || p.startsWith('/admin/'));
+    // Local admin only: forward Decap's API to `npx decap-server` (:8081) so the browser stays same-origin.
+    if (opts.admin && p.startsWith('/api/v1')) {
+      const up = request({ host: '127.0.0.1', port: 8081, path: req.url, method: req.method, headers: req.headers }, (r) => {
+        res.writeHead(r.statusCode || 502, r.headers); r.pipe(res);
+      });
+      up.on('error', () => { res.writeHead(502, { 'Content-Type': 'text/plain' }); res.end('Admin backend not running — start it with: npx decap-server'); });
+      return void req.pipe(up);
+    }
     for (const [from, to, code] of isAdmin ? [] : redirects) {
       const wild = from.endsWith('/*');
       if (!(wild ? p.startsWith(from.slice(0, -1)) : p === from)) continue;

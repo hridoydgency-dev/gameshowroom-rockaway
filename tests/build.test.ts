@@ -52,7 +52,7 @@ test('canonical, robots and OG tags present; staging build is noindex', () => {
     const h = html(r.path);
     assert.match(h, /<link rel="canonical" href="https:\/\/gameshowroomrockaway\.com\//);
     assert.match(h, /<meta name="robots" content="noindex/); // ALLOW_INDEXING unset in tests
-    assert.match(h, /property="og:image" content="https:\/\/[^"]+\/images\/og-default\.png"/);
+    assert.match(h, /property="og:image" content="https:\/\/[^"]+\/images\/og-default\.jpg"/);
   }
   assert.match(readFileSync(join(DIST, 'robots.txt'), 'utf8'), /Disallow: \//);
 });
@@ -185,7 +185,7 @@ test('admin (Decap CMS) is local-only: not in the build, 404 on Netlify, config 
   assert.ok(!existsSync(join(DIST, 'admin')), 'dist/admin must not exist');
   assert.match(readFileSync(join(DIST, '_redirects'), 'utf8'), /^\/admin\/\*\s+\/404\.html\s+404!$/m);
   const cfg = readFileSync(join(ROOT, 'admin/config.yml'), 'utf8');
-  assert.match(cfg, /local_backend: true/);
+  assert.match(cfg, /local_backend:\s*\n\s*url: http:\/\/localhost:4173\/api\/v1/);
   for (const f of ['business.json', 'settings.json', 'faqs.json', 'reviews.json', 'promotions.json', 'packages.json', 'gallery.json', 'seo.json']) assert.match(cfg, new RegExp(`content/${f}`));
 });
 
